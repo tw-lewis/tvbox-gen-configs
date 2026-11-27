@@ -151,7 +151,8 @@ def test_sync_explicit_subscriptions_kind(tmp_path: Path, monkeypatch) -> None:
     assert subs[0]["url"] == "https://example.com/m.json"
 
 
-def test_promote_and_build_three_products(tmp_path: Path) -> None:
+def test_promote_and_build_three_products(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr("tvboxgen.cdn.url_reachable", lambda url, timeout=12.0: True)
     root = tmp_path
     pending = root / "sources" / "pending"
     manual = root / "sources" / "manual"
@@ -366,10 +367,12 @@ pure_name = "纯源"
         "https://manual.example.com/api.json",
     }
 
-    # 多仓源
+    # 多仓源（纯源已是 jsDelivr；GitHub 订阅应被改写）
     depot = json.loads((root / "dist" / "urls.json").read_text(encoding="utf-8"))
     assert "urls" in depot
     names = [u["name"] for u in depot["urls"]]
     assert names[0] == "纯源"
+    assert "cdn.jsdelivr.net/gh/" in depot["urls"][0]["url"]
     assert depot["urls"][0]["url"].endswith("/dist/index.json")
     assert len(depot["urls"]) == 3
+    assert not any("raw.githubusercontent.com" in u["url"] for u in depot["urls"])

@@ -7,6 +7,12 @@ import logging
 from collections import defaultdict
 from typing import Any
 
+from tvboxgen.cdn import (
+    clear_reach_cache,
+    resolve_public_url,
+    rewrite_diy_lives,
+    rewrite_urls_in_obj,
+)
 from tvboxgen.config import Config
 from tvboxgen.logger import get_logger, log_kv
 from tvboxgen.models import ProbeResult, Report, Site
@@ -73,15 +79,17 @@ def build_lives_entry(cfg: Config, *, has_channels: bool) -> list[dict[str, Any]
 
 
 def build_subscriptions_product(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """订阅源产物：精简为 name/url（及可选 id/note）。"""
+    """订阅源产物：GitHub→jsDelivr，且改写后必须可达，否则丢弃。"""
     out: list[dict[str, Any]] = []
+    skipped = 0
     for row in sorted(rows, key=lambda r: (str(r.get("name") or ""), str(r.get("url") or ""))):
-        url = str(row.get("url") or "").strip()
-        if not url:
+        resolved = resolve_public_url(str(row.get("url") or "").strip())
+        if not resolved:
+            skipped += 1
             continue
         item: dict[str, Any] = {
-            "name": str(row.get("name") or row.get("id") or url),
-            "url": url,
+            "name": str(row.get("name") or row.get("id") or resolved),
+            "url": resolved,
         }
         sid = str(row.get("id") or row.get("key") or "")
         if sid:
@@ -90,14 +98,17 @@ def build_subscriptions_product(rows: list[dict[str, Any]]) -> list[dict[str, An
         if note:
             item["note"] = note
         out.append(item)
+    if skipped:
+        log_kv(log, logging.WARNING, "subscriptions_cdn_skipped", skipped=skipped, kept=len(out))
     return out
 
 
 def build_urls_depot(cfg: Config, subscriptions: list[dict[str, Any]]) -> dict[str, Any]:
-    """多仓源：TVBox urls depot = 纯源 + 各订阅 URL。"""
+    """多仓源：纯源 + 已校验的订阅 URL（订阅列表应已通过 resolve）。"""
     urls: list[dict[str, str]] = [
         {
             "name": cfg.pure_name or "纯源",
+            # 本仓库产物：发布后由 jsDelivr 提供；本地 build 不远程校验（可能尚未推送）
             "url": cfg.dist_public_url("index.json"),
         }
     ]
@@ -183,13 +194,15 @@ def build(cfg: Config, *, dry_run: bool = False) -> dict[str, Any]:
         trusted_lives=len(lives),
         trusted_subscriptions=len(sub_rows),
     )
-    index = build_index(report, sites, lives, cfg)
+    # GitHub → jsDelivr；改写后的地址必须可达，否则不采用 / 不写入订阅产物
+    clear_reach_cache()
+    index = rewrite_urls_in_obj(build_index(report, sites, lives, cfg), verify=True)
     subs_product = build_subscriptions_product(sub_rows)
     depot = build_urls_depot(cfg, subs_product)
     text = dumps(index)
     subs_text = dumps(subs_product)
     depot_text = dumps(depot)
-    diy = lives_to_diy(lives)
+    diy = rewrite_diy_lives(lives_to_diy(lives), verify=True)
 
     if dry_run:
         existing = cfg.index_path.read_text(encoding="utf-8") if cfg.index_path.is_file() else ""

@@ -6,7 +6,7 @@
     },
     {
       "name": "gaotianliuyun/gao js.json",
-      "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"
+      "url": "https://cdn.jsdelivr.net/gh/gaotianliuyun/gao@master/js.json"
     },
     {
       "name": "kstore wex.json",
@@ -18,7 +18,7 @@
     },
     {
       "name": "qist/tvbox xiaosa api.json",
-      "url": "https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json"
+      "url": "https://cdn.jsdelivr.net/gh/qist/tvbox@master/xiaosa/api.json"
     }
   ]
 }
