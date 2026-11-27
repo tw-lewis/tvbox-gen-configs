@@ -1,18 +1,18 @@
 [
   {
-    "id": "gao-js",
-    "key": "gao-js",
-    "name": "gaotianliuyun/gao js.json",
-    "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
+    "id": "liucn-box-m",
+    "key": "liucn-box-m",
+    "name": "liucn",
+    "url": "https://raw.liucn.cc/box/m.json",
     "kind": "vod_config",
-    "note": "完整 TVBox 点播配置（drpy/js 相对路径依赖该仓库地址）",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）",
     "origin": "",
     "added_at": ""
   },
   {
     "id": "kstore-wex",
     "key": "kstore-wex",
-    "name": "kstore wex.json",
+    "name": "王小二",
     "url": "https://9280.kstore.space/wex.json",
     "kind": "vod_config",
     "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该地址）",
@@ -20,12 +20,12 @@
     "added_at": ""
   },
   {
-    "id": "liucn-box-m",
-    "key": "liucn-box-m",
-    "name": "liucn/box m.json",
-    "url": "https://raw.liucn.cc/box/m.json",
+    "id": "gao-js",
+    "key": "gao-js",
+    "name": "高天流云",
+    "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
     "kind": "vod_config",
-    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）",
+    "note": "完整 TVBox 点播配置（drpy/js 相对路径依赖该仓库地址）",
     "origin": "",
     "added_at": ""
   },
@@ -34,6 +34,16 @@
     "key": "qist-xiaosa-api",
     "name": "qist/tvbox xiaosa api.json",
     "url": "https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json",
+    "kind": "vod_config",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）",
+    "origin": "",
+    "added_at": ""
+  },
+  {
+    "id": "ygbh-dc2",
+    "key": "ygbh-dc2",
+    "name": "月光宝盒",
+    "url": "https://github.com/guot55/YGBH/blob/main/dc2.json",
     "kind": "vod_config",
     "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）",
     "origin": "",

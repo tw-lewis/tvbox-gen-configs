@@ -1,21 +1,21 @@
 [
   {
     "id": "liucn-box-m",
-    "name": "liucn/box m.json",
+    "name": "liucn",
     "url": "https://raw.liucn.cc/box/m.json",
     "kind": "vod_config",
     "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）"
   },
   {
     "id": "kstore-wex",
-    "name": "kstore wex.json",
+    "name": "王小二",
     "url": "https://9280.kstore.space/wex.json",
     "kind": "vod_config",
     "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该地址）"
   },
   {
     "id": "gao-js",
-    "name": "gaotianliuyun/gao js.json",
+    "name": "高天流云",
     "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
     "kind": "vod_config",
     "note": "完整 TVBox 点播配置（drpy/js 相对路径依赖该仓库地址）"
@@ -24,6 +24,13 @@
     "id": "qist-xiaosa-api",
     "name": "qist/tvbox xiaosa api.json",
     "url": "https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json",
+    "kind": "vod_config",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）"
+  },
+  {
+    "id": "ygbh-dc2",
+    "name": "月光宝盒",
+    "url": "https://github.com/guot55/YGBH/blob/main/dc2.json",
     "kind": "vod_config",
     "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）"
   }

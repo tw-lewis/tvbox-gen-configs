@@ -5,20 +5,24 @@
       "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox-gen-configs@main/dist/tvbox.json"
     },
     {
-      "name": "gaotianliuyun/gao js.json",
-      "url": "https://cdn.jsdelivr.net/gh/gaotianliuyun/gao@master/js.json"
-    },
-    {
-      "name": "kstore wex.json",
-      "url": "https://9280.kstore.space/wex.json"
-    },
-    {
-      "name": "liucn/box m.json",
+      "name": "liucn",
       "url": "https://raw.liucn.cc/box/m.json"
     },
     {
       "name": "qist/tvbox xiaosa api.json",
       "url": "https://cdn.jsdelivr.net/gh/qist/tvbox@master/xiaosa/api.json"
+    },
+    {
+      "name": "月光宝盒",
+      "url": "https://cdn.jsdelivr.net/gh/guot55/YGBH@main/dc2.json"
+    },
+    {
+      "name": "王小二",
+      "url": "https://9280.kstore.space/wex.json"
+    },
+    {
+      "name": "高天流云",
+      "url": "https://cdn.jsdelivr.net/gh/gaotianliuyun/gao@master/js.json"
     }
   ]
 }
