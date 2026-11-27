@@ -9,6 +9,7 @@ from typing import Any
 from urllib.parse import urlparse
 
 from tvboxgen.config import Config
+from tvboxgen.diag import log_duplicate
 from tvboxgen.logger import get_logger, log_kv
 from tvboxgen.models import Site
 
@@ -122,24 +123,34 @@ def _parse_site_items(batch: list[dict[str, Any]], *, origin: str) -> list[Site]
             log_kv(log, logging.WARNING, "skip_incomplete_site", name=site.name)
             continue
         if site.key in seen_keys:
-            log_kv(
-                log,
-                logging.WARNING,
-                "duplicate_key",
-                key=site.key,
-                keep=seen_keys[site.key],
-                drop=row_origin,
+            log_duplicate(
+                stage="load",
+                kind="site",
+                by="key",
+                keep_key=site.key,
+                drop_key=site.key,
+                keep_name=site.name,
+                drop_name=site.name,
+                keep_origin=seen_keys[site.key],
+                drop_origin=row_origin,
+                target=site.api,
             )
             continue
         fp = _api_fingerprint(site.api)
         if fp and fp in seen_fps:
-            log_kv(
-                log,
-                logging.WARNING,
-                "suspect_duplicate_api",
-                key=site.key,
-                other=seen_fps[fp],
-                api=site.api,
+            other = seen_fps[fp]
+            log_duplicate(
+                stage="load",
+                kind="site",
+                by="api",
+                keep_key=other,
+                drop_key=site.key,
+                keep_name=other,
+                drop_name=site.name,
+                keep_origin=seen_keys.get(other, ""),
+                drop_origin=row_origin,
+                target=site.api,
+                action="keep_both",
             )
         seen_keys[site.key] = row_origin
         if fp:
@@ -150,7 +161,7 @@ def _parse_site_items(batch: list[dict[str, Any]], *, origin: str) -> list[Site]
 
 def _parse_live_items(batch: list[dict[str, Any]], *, origin: str) -> list[Site]:
     lives: list[Site] = []
-    seen: set[str] = set()
+    seen: dict[str, Site] = {}
     for item in batch:
         row_origin = str(item.get("origin") or origin)
         try:
@@ -162,8 +173,21 @@ def _parse_live_items(batch: list[dict[str, Any]], *, origin: str) -> list[Site]
         if not live.key:
             live.key = live.name
         if live.key in seen:
+            keep = seen[live.key]
+            log_duplicate(
+                stage="load",
+                kind="live",
+                by="key",
+                keep_key=keep.key,
+                drop_key=live.key,
+                keep_name=keep.name,
+                drop_name=live.name,
+                keep_origin=keep.origin,
+                drop_origin=row_origin,
+                target=live.url,
+            )
             continue
-        seen.add(live.key)
+        seen[live.key] = live
         lives.append(live)
     return lives
 
@@ -172,6 +196,21 @@ def _merge_by_key(base: list[Site], overlay: list[Site]) -> list[Site]:
     """按 key 合并；overlay 覆盖同名 key（手维优先于采集）。"""
     by_key = {s.key: s for s in base}
     for s in overlay:
+        if s.key in by_key:
+            old = by_key[s.key]
+            log_duplicate(
+                stage="inventory_merge",
+                kind=s.kind,
+                by="key",
+                keep_key=s.key,
+                drop_key=old.key,
+                keep_name=s.name,
+                drop_name=old.name,
+                keep_origin=s.origin,
+                drop_origin=old.origin,
+                target=s.api or s.url,
+                action="override",
+            )
         by_key[s.key] = s
     return list(by_key.values())
 

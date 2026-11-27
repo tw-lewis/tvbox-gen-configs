@@ -10,16 +10,6 @@
     "added_at": ""
   },
   {
-    "id": "qist-xiaosa-api",
-    "key": "qist-xiaosa-api",
-    "name": "qist/tvbox xiaosa api.json",
-    "url": "https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json",
-    "kind": "vod_config",
-    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）",
-    "origin": "",
-    "added_at": ""
-  },
-  {
     "id": "kstore-wex",
     "key": "kstore-wex",
     "name": "王小二",
@@ -36,6 +26,26 @@
     "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
     "kind": "vod_config",
     "note": "完整 TVBox 点播配置（drpy/js 相对路径依赖该仓库地址）",
+    "origin": "",
+    "added_at": ""
+  },
+  {
+    "id": "qist-xiaosa-api",
+    "key": "qist-xiaosa-api",
+    "name": "qist/tvbox xiaosa api.json",
+    "url": "https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json",
+    "kind": "vod_config",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）",
+    "origin": "",
+    "added_at": ""
+  },
+  {
+    "id": "ygbh-dc2",
+    "key": "ygbh-dc2",
+    "name": "月光宝盒",
+    "url": "https://raw.githubusercontent.com/guot55/YGBH/main/dc2.json",
+    "kind": "vod_config",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）",
     "origin": "",
     "added_at": ""
   }

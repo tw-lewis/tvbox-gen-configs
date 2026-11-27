@@ -14,6 +14,20 @@ from tvboxgen.logger import get_logger, log_kv
 
 log = get_logger()
 
+# 工作流必须入库的 pending / trusted（及整棵 sources）
+_SOURCES_PATHS = (
+    "sources/pending",
+    "sources/trusted",
+    "sources/manual",
+    "sources/collectors",
+)
+_DIST_PATHS = (
+    "dist/tvbox.json",
+    "dist/lives.txt",
+    "dist/subscriptions.json",
+    "dist/urls.json",
+)
+
 
 def _run(cmd: list[str], cwd: Path) -> subprocess.CompletedProcess[str]:
     """执行 git 子进程。"""
@@ -35,44 +49,77 @@ def _summary_from_report(cfg: Config) -> str:
 
 
 def purge_jsdelivr(cfg: Config) -> bool:
-    """清理 jsDelivr 上 dist/tvbox.json 的缓存。"""
-    url = f"https://purge.jsdelivr.net/gh/{cfg.owner}/{cfg.name}@{cfg.branch}/dist/tvbox.json"
-    log_kv(log, logging.INFO, "purge_start", url=url)
-    try:
-        resp = requests.get(url, timeout=15)
-        ok = resp.status_code < 400
-        log_kv(
-            log,
-            logging.INFO if ok else logging.WARNING,
-            "purge_done",
-            url=url,
-            code=resp.status_code,
-        )
-        return ok
-    except requests.RequestException as exc:
-        log_kv(log, logging.WARNING, "purge_failed", error=str(exc))
-        return False
+    """清理 jsDelivr 上全部 dist 产物缓存（@branch 别名常滞后，需逐文件 purge）。"""
+    base = f"https://purge.jsdelivr.net/gh/{cfg.owner}/{cfg.name}@{cfg.branch}"
+    paths = [
+        "dist/tvbox.json",
+        "dist/urls.json",
+        "dist/subscriptions.json",
+        "dist/lives.txt",
+    ]
+    all_ok = True
+    for rel in paths:
+        url = f"{base}/{rel}"
+        log_kv(log, logging.INFO, "purge_start", url=url)
+        try:
+            resp = requests.get(url, timeout=20)
+            ok = resp.status_code < 400
+            log_kv(
+                log,
+                logging.INFO if ok else logging.WARNING,
+                "purge_done",
+                url=url,
+                code=resp.status_code,
+            )
+            all_ok = all_ok and ok
+        except requests.RequestException as exc:
+            log_kv(log, logging.WARNING, "purge_failed", url=url, error=str(exc))
+            all_ok = False
+    return all_ok
 
 
-def publish(cfg: Config, *, local: bool = False, do_purge: bool = True) -> int:
-    """暂存 sources/dist/data，有变更则 commit；非 local 时 push。"""
-    log_kv(log, logging.INFO, "publish_start", local=local, purge=do_purge, root=str(cfg.root))
+def publish(
+    cfg: Config,
+    *,
+    local: bool = False,
+    do_purge: bool = True,
+    sources_only: bool = False,
+) -> int:
+    """暂存并提交；默认 sources + dist + data。sources_only 时只提交 pending/trusted 等源目录。"""
+    log_kv(
+        log,
+        logging.INFO,
+        "publish_start",
+        local=local,
+        purge=do_purge,
+        sources_only=sources_only,
+        root=str(cfg.root),
+    )
     root = cfg.root
-    add = _run(
+
+    # -A：包含新增/修改/删除，确保 pending、trusted 一定入库
+    add_cmd = ["git", "add", "-A", *_SOURCES_PATHS]
+    if not sources_only:
+        add_cmd.extend(_DIST_PATHS)
+        add_cmd.append("data/")
+    add = _run(add_cmd, cwd=root)
+    if add.returncode != 0:
+        log_kv(log, logging.ERROR, "git_add_failed", stderr=add.stderr.strip())
+        return 1
+
+    # 再显式点名 pending/trusted，避免漏掉未跟踪文件
+    explicit = _run(
         [
             "git",
             "add",
-            "sources/",
-            "dist/tvbox.json",
-            "dist/lives.txt",
-            "dist/subscriptions.json",
-            "dist/urls.json",
-            "data/",
+            "-A",
+            "sources/pending/",
+            "sources/trusted/",
         ],
         cwd=root,
     )
-    if add.returncode != 0:
-        log_kv(log, logging.ERROR, "git_add_failed", stderr=add.stderr.strip())
+    if explicit.returncode != 0:
+        log_kv(log, logging.ERROR, "git_add_pending_trusted_failed", stderr=explicit.stderr.strip())
         return 1
 
     diff = _run(["git", "diff", "--cached", "--quiet"], cwd=root)
@@ -80,7 +127,18 @@ def publish(cfg: Config, *, local: bool = False, do_purge: bool = True) -> int:
         log_kv(log, logging.INFO, "publish_skip", reason="no_changes")
         return 0
 
-    msg = f"chore(auto): refresh sources ({_summary_from_report(cfg)}) [skip ci]"
+    staged = _run(["git", "diff", "--cached", "--name-only"], cwd=root)
+    log_kv(
+        log,
+        logging.INFO,
+        "publish_staged",
+        files=(staged.stdout or "").replace("\n", ",").strip(","),
+    )
+
+    if sources_only:
+        msg = f"chore(auto): refresh pending/trusted ({_summary_from_report(cfg)}) [skip ci]"
+    else:
+        msg = f"chore(auto): refresh sources ({_summary_from_report(cfg)}) [skip ci]"
     commit = _run(["git", "commit", "-m", msg], cwd=root)
     if commit.returncode != 0:
         log_kv(log, logging.ERROR, "git_commit_failed", stderr=commit.stderr.strip())
@@ -97,7 +155,7 @@ def publish(cfg: Config, *, local: bool = False, do_purge: bool = True) -> int:
         return 1
     log_kv(log, logging.INFO, "git_pushed")
 
-    if do_purge:
+    if do_purge and not sources_only:
         purge_jsdelivr(cfg)
     log_kv(log, logging.INFO, "publish_done", push=True)
     return 0

@@ -152,7 +152,20 @@ def test_sync_explicit_subscriptions_kind(tmp_path: Path, monkeypatch) -> None:
 
 
 def test_promote_and_build_three_products(tmp_path: Path, monkeypatch) -> None:
-    monkeypatch.setattr("tvboxgen.cdn.url_reachable", lambda url, timeout=12.0: True)
+    # 坏订阅 CDN 不可达；其余可达（含 promote CDN 兜底 / build 改写校验）
+    def fake_reachable(url: str, timeout: float = 12.0) -> bool:
+        return "bad.example.com" not in (url or "")
+
+    monkeypatch.setattr("tvboxgen.cdn.url_reachable", fake_reachable)
+    monkeypatch.setattr(
+        "tvboxgen.promote.resolve_public_url",
+        lambda url, timeout=12.0: None
+        if not url or "bad.example.com" in url
+        else url,
+    )
+    from tvboxgen.cdn import clear_reach_cache
+
+    clear_reach_cache()
     root = tmp_path
     pending = root / "sources" / "pending"
     manual = root / "sources" / "manual"

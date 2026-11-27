@@ -17,7 +17,9 @@ from urllib.parse import quote
 import aiohttp
 
 from tvboxgen.build import dumps
+from tvboxgen.cdn import github_to_jsdelivr
 from tvboxgen.config import Config
+from tvboxgen.diag import log_unavailable
 from tvboxgen.logger import get_logger, log_kv
 from tvboxgen.models import ProbeResult, Report, Site
 from tvboxgen.sources import load_probe_targets
@@ -182,7 +184,19 @@ async def probe_one(
     async with global_sem, domain_sems[domain]:
         # Live / subscription: L0 reachability on url only
         if site.kind in ("live", "subscription"):
-            code, body, ms, err = await _fetch(session, site.url, timeout=timeout)
+            # 订阅优先探测 jsDelivr（GitHub blob/raw 在 GHA 易失败或返回 HTML）
+            probe_url = site.url
+            if site.kind == "subscription":
+                alt = github_to_jsdelivr(site.url)
+                if alt:
+                    probe_url = alt
+            code, body, ms, err = await _fetch(session, probe_url, timeout=timeout)
+            if (
+                site.kind == "subscription"
+                and probe_url != site.url
+                and (err or code is None or (code is not None and code >= 400 and code != 405))
+            ):
+                code, body, ms, err = await _fetch(session, site.url, timeout=timeout)
             result.latency_ms = int(ms)
             result.http_code = code
             if err or code is None or (code >= 400 and code != 405):
@@ -487,4 +501,40 @@ def probe(cfg: Config) -> Report:
     streaks = update_streaks_from_results(streaks, report.sites)
     save_streaks(cfg, streaks)
     save_report(report, cfg)
+
+    # 逐条输出不可用源，方便 CI / 本地定位
+    by_site = {s.key: s for s in targets}
+    fail_n = skip_n = 0
+    for r in report.sites:
+        if r.status not in {"fail", "skipped"}:
+            continue
+        site = by_site.get(r.key)
+        kind = site.kind if site else "unknown"
+        name = site.name if site else r.key
+        target = (site.api or site.url) if site else ""
+        if r.status == "fail":
+            fail_n += 1
+        else:
+            skip_n += 1
+        log_unavailable(
+            stage="probe",
+            kind=kind,
+            key=r.key,
+            name=name,
+            target=target,
+            reason=r.error or r.status,
+            status=r.status,
+            level=r.level,
+            latency_ms=r.latency_ms,
+            http_code=r.http_code if r.http_code is not None else "",
+        )
+    log_kv(
+        log,
+        logging.INFO,
+        "probe_unavailable_summary",
+        fail=fail_n,
+        skipped=skip_n,
+        ok=report.summary.get("ok", 0),
+        degraded=report.summary.get("degraded", 0),
+    )
     return report

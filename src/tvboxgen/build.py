@@ -14,6 +14,7 @@ from tvboxgen.cdn import (
     rewrite_urls_in_obj,
 )
 from tvboxgen.config import Config
+from tvboxgen.diag import log_unavailable
 from tvboxgen.logger import get_logger, log_kv
 from tvboxgen.models import ProbeResult, Report, Site
 from tvboxgen.sources import load_lives, load_trusted_subscriptions, sites_for_build
@@ -83,15 +84,25 @@ def build_subscriptions_product(rows: list[dict[str, Any]]) -> list[dict[str, An
     out: list[dict[str, Any]] = []
     skipped = 0
     for row in sorted(rows, key=lambda r: (str(r.get("name") or ""), str(r.get("url") or ""))):
-        resolved = resolve_public_url(str(row.get("url") or "").strip())
+        sid = str(row.get("id") or row.get("key") or "")
+        name = str(row.get("name") or sid)
+        raw_url = str(row.get("url") or "").strip()
+        resolved = resolve_public_url(raw_url)
         if not resolved:
             skipped += 1
+            log_unavailable(
+                stage="cdn",
+                kind="subscription",
+                key=sid or raw_url,
+                name=name,
+                target=raw_url,
+                reason="unreachable_after_rewrite",
+            )
             continue
         item: dict[str, Any] = {
-            "name": str(row.get("name") or row.get("id") or resolved),
+            "name": name or resolved,
             "url": resolved,
         }
-        sid = str(row.get("id") or row.get("key") or "")
         if sid:
             item["id"] = sid
         note = str(row.get("note") or "")
@@ -136,16 +147,52 @@ def build_index(
         pr = by_key.get(site.key)
         if pr is None:
             skip["no_report"] += 1
+            log_unavailable(
+                stage="build",
+                kind="site",
+                key=site.key,
+                name=site.name,
+                target=site.api,
+                reason="no_report",
+            )
             continue
         if pr.status not in accept:
             skip["status"] += 1
+            log_unavailable(
+                stage="build",
+                kind="site",
+                key=site.key,
+                name=site.name,
+                target=site.api,
+                reason=f"status:{pr.status}",
+                status=pr.status,
+                error=pr.error or "",
+                latency_ms=pr.latency_ms,
+            )
             continue
         if cfg.max_latency_ms and pr.latency_ms > cfg.max_latency_ms:
             skip["latency"] += 1
+            log_unavailable(
+                stage="build",
+                kind="site",
+                key=site.key,
+                name=site.name,
+                target=site.api,
+                reason="latency",
+                latency_ms=pr.latency_ms,
+                max_latency_ms=cfg.max_latency_ms,
+            )
             continue
         if in_watchlist(cfg, site.key):
             skip["watchlist"] += 1
-            log_kv(log, logging.INFO, "build_watchlist_skip", key=site.key)
+            log_unavailable(
+                stage="build",
+                kind="site",
+                key=site.key,
+                name=site.name,
+                target=site.api,
+                reason="watchlist_or_fail_streak",
+            )
             continue
         alive.append((site, pr))
 

@@ -61,6 +61,16 @@ jobs:
         if: success()
         run: python -m tvboxgen promote
 
+      - name: Commit pending + trusted to repo
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 探测后立刻入库 pending/trusted，不依赖后续 update 产物步骤
+          python -m tvboxgen publish --sources-only --no-purge
+
       - name: Persist report
         if: always()
         uses: actions/upload-artifact@v4

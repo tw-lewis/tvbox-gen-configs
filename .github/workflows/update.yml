@@ -55,20 +55,28 @@ jobs:
           if [ ! -f data/probe_report.json ]; then
             python -m tvboxgen probe
           fi
-          python -m tvboxgen promote
+
+      - name: Promote (含订阅 CDN 兜底，避免刷掉可用手维订阅)
+        run: python -m tvboxgen promote
 
       - name: Build
         run: python -m tvboxgen build
 
-      - name: Publish
+      - name: Publish dist + pending/trusted
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 先对齐远程（probe 可能刚推过 pending/trusted）
+          git pull --rebase --autostash || git pull --autostash || true
+          # 显式提交 dist 与 sources/pending、sources/trusted
           python -m tvboxgen publish --no-purge
 
       - name: Purge jsDelivr
         continue-on-error: true
         run: |
-          curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/dist/tvbox.json" || true
+          base="https://purge.jsdelivr.net/gh/${{ github.repository }}@main"
+          for f in dist/tvbox.json dist/urls.json dist/subscriptions.json dist/lives.txt; do
+            curl -fsS "$base/$f" || true
+          done

@@ -15,6 +15,7 @@ import requests
 
 from tvboxgen.build import dumps
 from tvboxgen.config import Config, Upstream
+from tvboxgen.diag import log_duplicate, log_unavailable
 from tvboxgen.logger import get_logger, log_kv
 
 log = get_logger()
@@ -465,12 +466,38 @@ def _prepare_rows(
         if not row.get("added_at"):
             row["added_at"] = date.today().isoformat()
         key = str(row.get("key") or "")
+        name = str(row.get("name") or key)
+        target = str(row.get("api") or row.get("url") or "")
         fp = _fingerprint(row, kind=kind)
         if key and key in seen_keys:
-            log_kv(log, logging.INFO, "sync_dedupe_key", key=key, upstream=upstream_id)
+            log_duplicate(
+                stage="sync",
+                kind=kind,
+                by="key",
+                keep_key=key,
+                drop_key=key,
+                keep_name=name,
+                drop_name=name,
+                keep_origin=origin,
+                drop_origin=origin,
+                target=target,
+                upstream=upstream_id,
+            )
             continue
         if fp and fp in seen_fps:
-            log_kv(log, logging.INFO, "sync_dedupe_api", fp=fp, upstream=upstream_id)
+            log_duplicate(
+                stage="sync",
+                kind=kind,
+                by="api" if kind == "site" else "url",
+                keep_key=fp,
+                drop_key=key or fp,
+                keep_name=name,
+                drop_name=name,
+                keep_origin=origin,
+                drop_origin=origin,
+                target=target,
+                upstream=upstream_id,
+            )
             continue
         if key:
             seen_keys.add(key)
@@ -483,19 +510,48 @@ def _prepare_rows(
 def _dedupe_rows(rows: list[dict[str, Any]], *, kind: str) -> list[dict[str, Any]]:
     """跨采集源去重：先到先得。"""
     out: list[dict[str, Any]] = []
-    seen_keys: set[str] = set()
-    seen_fps: set[str] = set()
+    seen_keys: dict[str, dict[str, Any]] = {}
+    seen_fps: dict[str, dict[str, Any]] = {}
     for row in rows:
         key = str(row.get("key") or "")
+        name = str(row.get("name") or key)
+        origin = str(row.get("origin") or "")
+        target = str(row.get("api") or row.get("url") or "")
         fp = _fingerprint(row, kind=kind)
         if key and key in seen_keys:
+            keep = seen_keys[key]
+            log_duplicate(
+                stage="sync",
+                kind=kind,
+                by="key",
+                keep_key=key,
+                drop_key=key,
+                keep_name=str(keep.get("name") or key),
+                drop_name=name,
+                keep_origin=str(keep.get("origin") or ""),
+                drop_origin=origin,
+                target=target,
+            )
             continue
         if fp and fp in seen_fps:
+            keep = seen_fps[fp]
+            log_duplicate(
+                stage="sync",
+                kind=kind,
+                by="api" if kind == "site" else "url",
+                keep_key=str(keep.get("key") or fp),
+                drop_key=key or fp,
+                keep_name=str(keep.get("name") or ""),
+                drop_name=name,
+                keep_origin=str(keep.get("origin") or ""),
+                drop_origin=origin,
+                target=target,
+            )
             continue
         if key:
-            seen_keys.add(key)
+            seen_keys[key] = row
         if fp:
-            seen_fps.add(fp)
+            seen_fps[fp] = row
         out.append(row)
     out.sort(key=lambda x: (str(x.get("name") or ""), str(x.get("key") or "")))
     return out
@@ -580,19 +636,48 @@ def _subscription_row(upstream: Upstream, *, uid: str) -> dict[str, Any]:
 
 def _dedupe_subscriptions(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
-    seen_ids: set[str] = set()
-    seen_urls: set[str] = set()
+    seen_ids: dict[str, dict[str, Any]] = {}
+    seen_urls: dict[str, dict[str, Any]] = {}
     for row in rows:
         sid = str(row.get("id") or row.get("key") or "")
-        url = str(row.get("url") or "").strip().lower()
+        name = str(row.get("name") or sid)
+        origin = str(row.get("origin") or "")
+        url = str(row.get("url") or "").strip()
+        url_l = url.lower()
         if sid and sid in seen_ids:
+            keep = seen_ids[sid]
+            log_duplicate(
+                stage="sync",
+                kind="subscription",
+                by="key",
+                keep_key=sid,
+                drop_key=sid,
+                keep_name=str(keep.get("name") or sid),
+                drop_name=name,
+                keep_origin=str(keep.get("origin") or ""),
+                drop_origin=origin,
+                target=url,
+            )
             continue
-        if url and url in seen_urls:
+        if url_l and url_l in seen_urls:
+            keep = seen_urls[url_l]
+            log_duplicate(
+                stage="sync",
+                kind="subscription",
+                by="url",
+                keep_key=str(keep.get("id") or keep.get("key") or ""),
+                drop_key=sid,
+                keep_name=str(keep.get("name") or ""),
+                drop_name=name,
+                keep_origin=str(keep.get("origin") or ""),
+                drop_origin=origin,
+                target=url,
+            )
             continue
         if sid:
-            seen_ids.add(sid)
-        if url:
-            seen_urls.add(url)
+            seen_ids[sid] = row
+        if url_l:
+            seen_urls[url_l] = row
         out.append(row)
     out.sort(key=lambda x: (str(x.get("name") or ""), str(x.get("id") or "")))
     return out
@@ -673,13 +758,13 @@ def sync_upstreams(cfg: Config, *, dry_run: bool = False) -> dict[str, int]:
                 payload = fetch_url(upstream.url, timeout=cfg.timeout_read + 30)
                 log_kv(log, logging.INFO, "sync_fetch_ok", id=uid, bytes=len(payload))
             except Exception as exc:  # noqa: BLE001 — 单源失败不中断整轮
-                log_kv(
-                    log,
-                    logging.WARNING,
-                    "sync_fetch_fail",
-                    id=uid,
-                    url=upstream.url,
-                    error=str(exc),
+                log_unavailable(
+                    stage="sync",
+                    kind=str(upstream.kind or "feed"),
+                    key=uid,
+                    name=upstream.name or uid,
+                    target=upstream.url,
+                    reason=f"fetch_fail:{exc}",
                 )
                 stats["errors"] += 1
                 continue

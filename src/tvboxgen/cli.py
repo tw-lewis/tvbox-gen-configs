@@ -44,6 +44,11 @@ def _parser() -> argparse.ArgumentParser:
     pub = sub.add_parser("publish", help="提交产物（可选 push / 清 CDN）")
     pub.add_argument("--local", action="store_true", help="只 commit，不 push")
     pub.add_argument("--no-purge", action="store_true", help="跳过 jsDelivr 清缓存")
+    pub.add_argument(
+        "--sources-only",
+        action="store_true",
+        help="只提交 sources/pending 与 sources/trusted（及 manual/collectors）",
+    )
 
     return p
 
@@ -129,8 +134,21 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.cmd == "publish":
-        code = publish(cfg, local=args.local, do_purge=not args.no_purge)
-        log_kv(log, logging.INFO, "cli_done", cmd="publish", exit=code, local=args.local)
+        code = publish(
+            cfg,
+            local=args.local,
+            do_purge=not args.no_purge,
+            sources_only=bool(getattr(args, "sources_only", False)),
+        )
+        log_kv(
+            log,
+            logging.INFO,
+            "cli_done",
+            cmd="publish",
+            exit=code,
+            local=args.local,
+            sources_only=bool(getattr(args, "sources_only", False)),
+        )
         return code
 
     log_kv(log, logging.ERROR, "cli_unknown_cmd", cmd=args.cmd)
