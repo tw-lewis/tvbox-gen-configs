@@ -14,7 +14,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "origin": "manual"
   },
   {
     "key": "api-ukuapi88-com",
@@ -31,7 +31,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "origin": "manual"
   },
   {
     "key": "lbapi9com_3831",
@@ -51,9 +51,9 @@
     "origin": "upstream:ziyuanzu-cms"
   },
   {
-    "key": "wujinzy-com",
-    "name": "无尽影视",
-    "api": "https://api.wujinapi.com/api.php/provide/vod",
+    "key": "1080zyk4-com",
+    "name": "优质",
+    "api": "https://api.yzzy-api.com/inc/apijson.php",
     "type": 1,
     "searchable": 1,
     "quickSearch": 1,
@@ -68,9 +68,26 @@
     "origin": "upstream:ouonnki-full-noadult"
   },
   {
-    "key": "zuida-xyz",
-    "name": "最大",
-    "api": "https://api.zuidapi.com/api.php/provide/vod",
+    "key": "api-guangsuapi-com",
+    "name": "光速",
+    "api": "https://api.guangsuapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "manual"
+  },
+  {
+    "key": "www-ryzyw-com",
+    "name": "如意",
+    "api": "https://cj.rycjapi.com/api.php/provide/vod",
     "type": 1,
     "searchable": 1,
     "quickSearch": 1,
@@ -83,6 +100,125 @@
     "added_at": "2026-11-27",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "apixiaojizylive_69c4",
+    "name": "小鸡",
+    "api": "https://api.xiaojizy.live/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "jipinvip1com_a4a7",
+    "name": "新极品",
+    "api": "https://jipinvip1.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "manual"
+  },
+  {
+    "key": "xinlangapi-com",
+    "name": "新浪",
+    "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "wujinzy_me",
+    "name": "无尽",
+    "api": "https://api.wujinapi.me/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from tw-lewis/TVbox-Configs trusted seed",
+    "origin": "manual"
+  },
+  {
+    "key": "wujinzy-com",
+    "name": "无尽影视",
+    "api": "https://api.wujinapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "manual"
+  },
+  {
+    "key": "zuidazy-co",
+    "name": "最大点播",
+    "api": "https://zuidazy.me/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "jszyapicom_e314",
+    "name": "极速",
+    "api": "https://jszyapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
   },
   {
     "key": "thzy1me_4d7f",
@@ -102,6 +238,23 @@
     "origin": "upstream:ziyuanzu-cms"
   },
   {
+    "key": "slapibfcom_678b",
+    "name": "森林",
+    "api": "https://slapibf.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "manual"
+  },
+  {
     "key": "apiddapicc_39e1",
     "name": "滴滴",
     "api": "https://api.ddapi.cc/api.php/provide/vod",
@@ -116,7 +269,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "origin": "manual"
   },
   {
     "key": "iqiyizyapi-com",
@@ -133,7 +286,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "origin": "manual"
   },
   {
     "key": "www-maoyanzy-com",
@@ -150,7 +303,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "origin": "manual"
   },
   {
     "key": "apiyutucom_36cf",
@@ -167,7 +320,24 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "origin": "manual"
+  },
+  {
+    "key": "dyttzyapi-com",
+    "name": "电影天堂",
+    "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
   },
   {
     "key": "fqzyme_c0d4",
@@ -184,7 +354,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "origin": "manual"
   },
   {
     "key": "apiapibdzycom_38e1",
@@ -201,7 +371,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "origin": "manual"
   },
   {
     "key": "bhziyuancom_f8ca",
@@ -221,9 +391,26 @@
     "origin": "upstream:ziyuanzu-cms"
   },
   {
-    "key": "apidouapicc_d136",
-    "name": "豆豆",
-    "api": "https://api.douapi.cc/api.php/provide/vod",
+    "key": "www-hongniuzy-com",
+    "name": "红牛",
+    "api": "https://www.hongniuzy2.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "lovedannet_9986",
+    "name": "艾旦",
+    "api": "https://lovedan.net/api.php/provide/vod",
     "type": 1,
     "searchable": 1,
     "quickSearch": 1,
@@ -235,7 +422,24 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "origin": "manual"
+  },
+  {
+    "key": "www-huyaapi-com",
+    "name": "虎牙",
+    "api": "https://www.huyaapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "manual"
   },
   {
     "key": "haohuazycom_6b1e",
@@ -252,24 +456,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "subocjcom_a08c",
-    "name": "速播",
-    "api": "https://subocj.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "origin": "manual"
   },
   {
     "key": "suboziyuannet_3cf8",
@@ -286,12 +473,12 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "origin": "manual"
   },
   {
-    "key": "jyzyapicom_ddff",
-    "name": "金鹰",
-    "api": "https://jyzyapi.com/provide/vod",
+    "key": "www-subozy-com",
+    "name": "速播",
+    "api": "https://subocaiji.com/api.php/provide/vod",
     "type": 1,
     "searchable": 1,
     "quickSearch": 1,
@@ -302,8 +489,42 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "cj-lzcaiji-com",
+    "name": "量子",
+    "api": "https://cj.lzcaiji.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "lzizy-net",
+    "name": "量子影视",
+    "api": "https://cj.lziapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
   },
   {
     "key": "ffzy5tv_b71c",
@@ -320,7 +541,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "origin": "manual"
   },
   {
     "key": "ffzyapi-com",
@@ -337,7 +558,7 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "origin": "manual"
   },
   {
     "key": "moduzy_net",
@@ -353,7 +574,25 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "from tw-lewis/TVbox-Configs trusted seed"
+    "note": "from tw-lewis/TVbox-Configs trusted seed",
+    "origin": "manual"
+  },
+  {
+    "key": "www-moduzy-net",
+    "name": "魔都",
+    "api": "https://www.mdzyapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
   },
   {
     "key": "caiji-moduapi-cc",
@@ -370,6 +609,6 @@
     ],
     "added_at": "2026-11-27",
     "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "origin": "manual"
   }
 ]
