@@ -12,9 +12,11 @@ concurrency:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # ~3700 目标（含直播）；失败重试会拉长墙钟时间
+    timeout-minutes: 90
     permissions:
       contents: write
+      actions: read
     steps:
       - uses: actions/checkout@v4
 
@@ -28,6 +30,23 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
 
+      - name: Restore fail streak
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          id="$(gh api "repos/${{ github.repository }}/actions/artifacts?name=fail-streak&per_page=5" \
+            --jq '.artifacts[] | select(.expired == false) | .id' | head -n1 || true)"
+          if [ -z "${id}" ]; then
+            echo "no prior fail-streak artifact"
+            exit 0
+          fi
+          gh api "repos/${{ github.repository }}/actions/artifacts/${id}/zip" > /tmp/fail-streak.zip
+          unzip -o /tmp/fail-streak.zip -d data/
+          ls -la data/fail_streak.json || true
+
       - name: Sync upstreams into pending
         run: python -m tvboxgen sync
 
@@ -37,16 +56,29 @@ jobs:
         run: python -m tvboxgen probe
 
       - name: Promote ok → trusted
+        if: success()
         run: python -m tvboxgen promote
 
       - name: Persist report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: probe-report
           path: data/probe_report.json
+          if-no-files-found: ignore
+
+      - name: Persist fail streak
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fail-streak
+          path: data/fail_streak.json
+          if-no-files-found: ignore
 
       - name: Persist sources
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: synced-sources
           path: sources/
+          if-no-files-found: ignore

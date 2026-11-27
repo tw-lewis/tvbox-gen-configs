@@ -296,7 +296,54 @@ async def _probe_with_retry(
     return last
 
 
-async def run_probe(sites: list[Site], cfg: Config) -> Report:
+def _checkpoint(
+    cfg: Config,
+    completed: list[ProbeResult],
+    base_streaks: dict[str, int] | None,
+    *,
+    done: int,
+    total: int,
+) -> None:
+    """中途落盘：超时取消时仍能留下 streak / 半成品报告。"""
+    if base_streaks is not None:
+        save_streaks(cfg, update_streaks_from_results(dict(base_streaks), completed))
+    summary: dict[str, int] = defaultdict(int)
+    summary["total"] = len(completed)
+    for r in completed:
+        summary[r.status] = summary.get(r.status, 0) + 1
+    for key in ("ok", "degraded", "fail", "skipped"):
+        summary.setdefault(key, 0)
+    runner = os.environ.get("TVBOXGEN_RUNNER") or (
+        "gha-linux" if os.environ.get("GITHUB_ACTIONS") else "local"
+    )
+    report = Report(
+        generated_at=_now(),
+        runner=runner,
+        summary=dict(summary),
+        sites=list(completed),
+    )
+    cfg.report_path.parent.mkdir(parents=True, exist_ok=True)
+    cfg.report_path.write_text(dumps(report.to_dict()), encoding="utf-8")
+    log_kv(
+        log,
+        logging.INFO,
+        "probe_checkpoint",
+        done=done,
+        probe_total=total,
+        path=str(cfg.report_path),
+        ok=summary.get("ok", 0),
+        degraded=summary.get("degraded", 0),
+        fail=summary.get("fail", 0),
+        skipped=summary.get("skipped", 0),
+    )
+
+
+async def run_probe(
+    sites: list[Site],
+    cfg: Config,
+    *,
+    base_streaks: dict[str, int] | None = None,
+) -> Report:
     global_sem = asyncio.Semaphore(cfg.concurrency)
     domain_sems: dict[str, asyncio.Semaphore] = {}
     timeout = aiohttp.ClientTimeout(
@@ -312,6 +359,8 @@ async def run_probe(sites: list[Site], cfg: Config) -> Report:
     log_kv(log, logging.INFO, "probe_start", total=total, sites=n_sites, lives=n_lives)
 
     done = 0
+    completed: list[ProbeResult] = []
+    checkpoint_every = 200
 
     async with aiohttp.ClientSession(
         connector=connector, headers=headers, timeout=timeout
@@ -321,6 +370,7 @@ async def run_probe(sites: list[Site], cfg: Config) -> Report:
             nonlocal done
             r = await _probe_with_retry(site, session, domain_sems, global_sem, cfg)
             done += 1
+            completed.append(r)
             if done == 1 or done % 50 == 0 or done == total:
                 log_kv(
                     log,
@@ -330,6 +380,10 @@ async def run_probe(sites: list[Site], cfg: Config) -> Report:
                     total=total,
                     key=site.key,
                     status=r.status,
+                )
+            if done % checkpoint_every == 0:
+                _checkpoint(
+                    cfg, completed, base_streaks, done=done, total=total
                 )
             return r
 
@@ -399,7 +453,7 @@ def probe(cfg: Config) -> Report:
     )
 
     if to_probe:
-        report = asyncio.run(run_probe(to_probe, cfg))
+        report = asyncio.run(run_probe(to_probe, cfg, base_streaks=streaks))
         report.sites = list(report.sites) + pre_skipped
         # refresh summary
         summary: dict[str, int] = defaultdict(int)

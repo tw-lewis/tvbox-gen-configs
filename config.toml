@@ -12,8 +12,9 @@ collectors_dir = "sources/collectors"
 pending_affects_output = false
 
 [probe]
-concurrency = 8
-per_domain_concurrency = 2
+# GHA 约 3700 目标；8 并发 + 20min 会在中途被取消
+concurrency = 16
+per_domain_concurrency = 4
 timeout_connect = 5
 timeout_read = 8
 retries = 1

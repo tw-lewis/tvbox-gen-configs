@@ -20,29 +20,9 @@
     "note": "点播采集源"
   },
   {
-    "id": "tvbox-tvboxtv",
-    "name": "tw-lewis/tvbox tvboxtv",
-    "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox@master/tvboxtv.txt",
-    "enabled": true,
-    "target": "pending",
-    "kind": "lives",
-    "format": "txt",
-    "note": "直播采集源（DIY #genre# 列表）"
-  },
-  {
-    "id": "tvbox-list",
-    "name": "tw-lewis/tvbox list",
-    "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox@master/list.txt",
-    "enabled": true,
-    "target": "pending",
-    "kind": "lives",
-    "format": "txt",
-    "note": "直播采集源（DIY #genre# 列表）"
-  },
-  {
-    "id": "tvbox-zb",
-    "name": "tw-lewis/tvbox zb",
-    "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox@master/zb.txt",
+    "id": "tvbox-ITV",
+    "name": "tw-lewis/tvbox ITV",
+    "url": "https://raw.githubusercontent.com/tw-lewis/tvbox/master/xiaosa/ITV.txt",
     "enabled": true,
     "target": "pending",
     "kind": "lives",

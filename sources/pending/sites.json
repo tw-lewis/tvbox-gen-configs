@@ -1,25 +1,27 @@
 [
   {
-    "key": "ikunzy_com",
-    "name": "iKun",
-    "api": "https://ikunzyapi.com/api.php/provide/vod",
-    "type": 1,
+    "key": "cc_03__",
+    "name": "03影院",
+    "api": "csp_XBPQ",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/c/03yy.json",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "from tw-lewis/TVbox-Configs trusted seed"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/c.jar"
   },
   {
-    "key": "wujinzy_me",
-    "name": "无尽",
-    "api": "https://api.wujinapi.me/api.php/provide/vod",
-    "type": 1,
+    "key": "FakeAi115Share",
+    "name": "115分享",
+    "api": "csp_FakeAi115ShareGuard",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -29,97 +31,102 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "from tw-lewis/TVbox-Configs trusted seed"
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
   },
   {
-    "key": "jszyapi_com",
-    "name": "极速",
-    "api": "https://jszyapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
+    "key": "123__",
+    "name": "123  云盘",
+    "api": "csp_Pan123",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 0,
     "ext": "",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "from tw-lewis/TVbox-Configs trusted seed"
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
   },
   {
-    "key": "hongniuzy_com",
-    "name": "红牛",
-    "api": "https://www.hongniuzy2.com/api.php/provide/vod",
-    "type": 1,
+    "key": "1905",
+    "name": "1905  影视",
+    "api": "csp_Web1905",
+    "type": 3,
     "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
+    "quickSearch": 0,
+    "filterable": 0,
     "ext": "",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "from tw-lewis/TVbox-Configs trusted seed"
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
   },
   {
-    "key": "moduzy_net",
-    "name": "魔都",
-    "api": "https://www.mdzyapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
+    "key": "csp_310__",
+    "name": "310看球",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/js/310直播.js",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "from tw-lewis/TVbox-Configs trusted seed"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "155_df02",
-    "name": "155",
-    "api": "https://155api.com/api.php/provide/vod",
-    "type": 1,
+    "key": "dr_360__",
+    "name": "360官",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/js/360.js",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "360_11dd",
-    "name": "360",
-    "api": "https://360zy.com/api.php/provide/vod",
-    "type": 1,
+    "key": "csp_555__",
+    "name": "555电影",
+    "api": "csp_XBPQ",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/hccx/555电影.json",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
   },
   {
-    "key": "api-ukuapi88-com",
-    "name": "U酷影视",
-    "api": "https://api.ukuapi88.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
+    "key": "88__",
+    "name": "88  看球",
+    "api": "csp_Sports88",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
     "filterable": 1,
     "ext": "",
     "tags": [
@@ -127,99 +134,99 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
   },
   {
-    "key": "ck_d83e",
-    "name": "ck",
-    "api": "https://api.ckzy.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
+    "key": "88js",
+    "name": "88看球",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/js/88看球.js",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "ok_ea54",
-    "name": "ok",
-    "api": "https://api.okzy.com/api.php/provide/vod",
-    "type": 1,
+    "key": "AList",
+    "name": "AList",
+    "api": "csp_AList",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/js/alist1.json",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "u_6649",
-    "name": "u酷",
-    "api": "https://api.ukuzy.com/api.php/provide/vod",
-    "type": 1,
+    "key": "Auete",
+    "name": "Aue无广",
+    "api": "csp_Auete",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "https://auete.pro/",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "lbapi9com_3831",
-    "name": "乐播",
-    "api": "https://lbapi9.com/api.php/provide/vod",
-    "type": 1,
+    "key": "js_bzys",
+    "name": "B站影视",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/js/bzys.js",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "1080zyk4-com",
-    "name": "优质",
-    "api": "https://api.yzzy-api.com/inc/apijson.php",
-    "type": 1,
+    "key": "Emby001",
+    "name": "Emby0014K",
+    "api": "csp_EmbyDiyGuard",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "{'embynumber': 0}",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
   },
   {
-    "key": "apiyzzycom_86bd",
-    "name": "优质",
-    "api": "https://api.yzzy.com/api.php/provide/vod",
-    "type": 1,
+    "key": "Emby",
+    "name": "Emby4K",
+    "api": "csp_EmbyGuard",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -229,31 +236,32 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
   },
   {
-    "key": "api-guangsuapi-com",
-    "name": "光速",
-    "api": "https://api.guangsuapi.com/api.php/provide/vod",
-    "type": 1,
+    "key": "csp_Free",
+    "name": "Free影院",
+    "api": "csp_XBPQ",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/hccx/Free影视.json",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
   },
   {
-    "key": "dadiapicom_3e54",
-    "name": "大地",
-    "api": "https://dadiapi.com/api.php",
-    "type": 1,
+    "key": "FreeOK",
+    "name": "Fre影视",
+    "api": "csp_FreeOK",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -263,31 +271,32 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
   },
   {
-    "key": "tyyszyapicom_4fa9",
-    "name": "天涯",
-    "api": "https://tyyszyapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
+    "key": "csp_qiumi",
+    "name": "Jrs球迷",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/js/jrk.js",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "aosikazycom_b05b",
-    "name": "奥斯卡",
-    "api": "https://aosikazy.com/api.php/provide/vod",
-    "type": 1,
+    "key": "MusicAiIKtv",
+    "name": "KTV音乐",
+    "api": "csp_MusicAiIKtvGuard",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -297,48 +306,48 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
   },
   {
-    "key": "www-ryzyw-com",
-    "name": "如意",
-    "api": "https://cj.rycjapi.com/api.php/provide/vod",
-    "type": 1,
+    "key": "js_Lib",
+    "name": "Lib影视",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/js/libvio.js",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "apiryzycom_4920",
-    "name": "如意",
-    "api": "https://api.ryzy.com/api.php/provide/vod",
-    "type": 1,
+    "key": "Lib",
+    "name": "Lib秒播",
+    "api": "csp_Libvio",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "{'Cloud-drive': 'tvfan/Cloud-drive.txt', 'from': '4k|auto'}",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "apixiaojizylive_69c4",
-    "name": "小鸡",
-    "api": "https://api.xiaojizy.live/provide/vod",
-    "type": 1,
+    "key": "Iktv",
+    "name": "MV  KTVjar",
+    "api": "csp_Iktv",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -348,31 +357,31 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from gao-js",
+    "origin": "import:gao-js"
   },
   {
-    "key": "apikczycom_3d6a",
-    "name": "快车",
-    "api": "https://api.kczy.com/api.php/provide/vod",
-    "type": 1,
+    "key": "drpy_js___MV",
+    "name": "MV  爱车MVjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./js/爱车MV.js",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from gao-js",
+    "origin": "import:gao-js"
   },
   {
-    "key": "jipinvip1com_a4a7",
-    "name": "新极品",
-    "api": "https://jipinvip1.com/api.php/provide/vod",
-    "type": 1,
+    "key": "Yinyuetai",
+    "name": "MV  音悦台jar",
+    "api": "csp_Yinyuetai",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -382,116 +391,119 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from gao-js",
+    "origin": "import:gao-js"
   },
   {
-    "key": "xinlangapi-com",
-    "name": "新浪",
-    "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
-    "type": 1,
+    "key": "New6v",
+    "name": "New6V  磁力",
+    "api": "csp_New6v",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "https://www.xb6v.com",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
   },
   {
-    "key": "apixlzycom_8bbb",
-    "name": "新浪",
-    "api": "https://api.xlzy.com/api.php/provide/vod",
-    "type": 1,
+    "key": "csp_TVB",
+    "name": "TVB云播",
+    "api": "csp_XBPQ",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/hccx/TVB云播.json",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
   },
   {
-    "key": "wujinzy-com",
-    "name": "无尽影视",
-    "api": "https://api.wujinapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
+    "key": "UC__",
+    "name": "UC  网盘",
+    "api": "csp_PanUC",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 0,
     "ext": "",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
   },
   {
-    "key": "bfzy-tv",
-    "name": "暴风",
-    "api": "https://bfzyapi.com/api.php/provide/vod",
-    "type": 1,
+    "key": "UpYun",
+    "name": "Up搜搜索",
+    "api": "csp_UpYun",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "{'Cloud-drive': 'tvfan/Cloud-drive.txt', 'from': '4k|auto'}",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "zuida-xyz",
-    "name": "最大",
-    "api": "https://api.zuidapi.com/api.php/provide/vod",
-    "type": 1,
+    "key": "csp_voflix",
+    "name": "VOF高清",
+    "api": "csp_XBPQ",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/hccx/voflix.json",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
   },
   {
-    "key": "zuidazy-co",
-    "name": "最大点播",
-    "api": "https://zuidazy.me/api.php/provide/vod",
-    "type": 1,
+    "key": "csp_XYQHiker_VSYY",
+    "name": "VS影院",
+    "api": "csp_XYQHiker",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/xyq/VS影院.json",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/XYQH.jar"
   },
   {
-    "key": "thzy1me_4d7f",
-    "name": "桃花",
-    "api": "https://thzy1.me/api.php/provide/vod",
-    "type": 1,
+    "key": "csp_Vidhub2",
+    "name": "Vid影视",
+    "api": "csp_Vidhub2",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -501,14 +513,15 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
   },
   {
-    "key": "slapibfcom_678b",
-    "name": "森林",
-    "api": "https://slapibf.com/api.php/provide/vod",
-    "type": 1,
+    "key": "DiyVod",
+    "name": "VodDIY",
+    "api": "csp_DiyVodGuard",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -518,14 +531,14 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
   },
   {
-    "key": "m3u8apiyhzycom_fa9c",
-    "name": "樱花",
-    "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
-    "type": 1,
+    "key": "SportAiWwe",
+    "name": "WWE体育",
+    "api": "csp_SportAiWweGuard",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -535,31 +548,31 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
   },
   {
-    "key": "apiddapicc_39e1",
-    "name": "滴滴",
-    "api": "https://api.ddapi.cc/api.php/provide/vod",
-    "type": 1,
+    "key": "WebDAV",
+    "name": "WebDAV",
+    "api": "csp_WebDAV",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
-    "ext": "",
+    "ext": "./libs/js/webdav.json",
     "tags": [
       "点播",
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
-    "key": "iqiyizyapi-com",
-    "name": "爱奇艺",
-    "api": "https://iqiyizyapi.com/api.php/provide/vod",
-    "type": 1,
+    "key": "webdav",
+    "name": "WebDavDIY",
+    "api": "csp_WebDAVGuard",
+    "type": 3,
     "searchable": 1,
     "quickSearch": 1,
     "filterable": 1,
@@ -569,8 +582,5436 @@
       "综合"
     ],
     "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "alllive",
+    "name": "一直播LIVE",
+    "api": "csp_Alllive",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "AiQwMkv",
+    "name": "七味4K",
+    "api": "csp_AiQwMkvGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "js_555",
+    "name": "三五影视",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/555.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "js_4KHDR",
+    "name": "世界磁力Js",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/4khdr.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_Bili_zyy",
+    "name": "中医药区",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/中医.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "XYQH_JOJO",
+    "name": "久久影视",
+    "api": "csp_XYQHiker",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/xyq/jojo.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/XYQH.jar"
+  },
+  {
+    "key": "cc___",
+    "name": "乌鸦影视",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/c/乌鸦.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/c.jar"
+  },
+  {
+    "key": "SoAiPanSoo",
+    "name": "九七综合",
+    "api": "csp_SoAiPanSooGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "AliShareEBook",
+    "name": "书籍  分享jar",
+    "api": "csp_AliShare",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$./json/alishare.ebook.txt$$$db$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "____",
+    "name": "云播影视",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/TVB云播.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "py_qie",
+    "name": "企鹅体育",
+    "api": "py_qie",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/qie.py",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_XPath_____",
+    "name": "企鹅直播",
+    "api": "csp_XPath",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/企鹅直播.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "WexAiYiYs",
+    "name": "伊影秒播",
+    "api": "csp_WexAiYiYsGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "dr_youku",
+    "name": "优酷官",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/youku.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "WexAiBoBo",
+    "name": "伯伯秒播",
+    "api": "csp_WexAiBoBoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "dr___",
+    "name": "低端Js",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/ddys.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "drpy_js_310__",
+    "name": "体育  310直播js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/310直播.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_88__",
+    "name": "体育  88看球js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/88看球.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_JRKAN__",
+    "name": "体育  JRKAN直播js",
+    "api": "./lib/drpy.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/JRKAN直播.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "csp_Bili_TYjs",
+    "name": "体育健身",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/体育.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "dr____",
+    "name": "儿童启蒙",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/js/兔小贝.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp___",
+    "name": "兄弟影视",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/hccx/兄弟.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "Douban",
+    "name": "免费分享",
+    "api": "csp_NewDouBanGuard",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "https://cdn.waimaimingtang.com/file/images/bwc/20260414181247-ae51abfbfe.txt",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "ChildrenAiTuTu",
+    "name": "兔兔儿歌",
+    "api": "csp_ChildrenAiTuTuGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "SoAiQuanPanGuard",
+    "name": "全盘综合",
+    "api": "csp_SoAiQuanPanGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "SportAiKanqiu",
+    "name": "八八体育",
+    "api": "csp_SportAiKanqiuGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_MeiJu69",
+    "name": "六九美剧",
+    "api": "csp_AppYsV2",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "https://www.69mj.com/xgapp.php/v2/",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "js_6V",
+    "name": "六维磁力Js",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/6V.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "AnimeAiGongHeGuo",
+    "name": "共和动漫",
+    "api": "csp_AnimeAiGongHeGuoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "js___",
+    "name": "农民影视",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/nongmin.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_Bili_czxx",
+    "name": "初中教育",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/初中.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "__99",
+    "name": "剧圈  APP",
+    "api": "csp_App99",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'host': 'http://124.221.3.182:19987/app/bn', 'versionName': '1.2.0', 'name': '剧圈圈', 'package': 'com.qingtangxiaozhuan.xyz', 'buildNumber': '2002', 'buildSignature': '054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
+  },
+  {
+    "key": "csp_Juqq",
+    "name": "剧圈影视",
+    "api": "csp_Juqq",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "AiNewJuTou",
+    "name": "剧透4K",
+    "api": "csp_AiNewJuTouGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "drpy_js_58__",
+    "name": "动漫  58动漫js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/58动漫.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_AGE__",
+    "name": "动漫  AGE动漫js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/AGE动漫.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_AnFuns",
+    "name": "动漫  AnFunsjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/AnFuns.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_Anime1__",
+    "name": "动漫  Anime1动畫js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/Anime1动畫.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_NT__",
+    "name": "动漫  NT动漫js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/NT动漫.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_NyaFun",
+    "name": "动漫  NyaFunjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/NyaFun.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "csp_Dm84",
+    "name": "动漫巴士",
+    "api": "csp_Dm84",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_nkdyw",
+    "name": "南柯电影",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/hccx/nkdyw.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "nangua",
+    "name": "南瓜影视",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/南瓜.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "SoKaKa",
+    "name": "卡卡综合",
+    "api": "csp_SoKaKaGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "js_czsapp",
+    "name": "厂长Js",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/czspp.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "YGP",
+    "name": "叨观新片",
+    "api": "csp_YGP",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "drpy_js_i275__",
+    "name": "听书  i275听书js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/i275听书.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "__DJ",
+    "name": "呦呦  DJ",
+    "api": "csp_Djuu",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
+  },
+  {
+    "key": "SportAiKaFei",
+    "name": "咖啡体育",
+    "api": "csp_SportAiKaFeiGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "Bili",
+    "name": "哔哔合集",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/bilibili.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "Biliych",
+    "name": "哔哔歌曲",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/biliych.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "______",
+    "name": "哔哩  音乐",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "{'n': '哔哩音乐', 'cookie': 'http://127.0.0.1:9978/file/TVBox/bili_cookie.txt'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
+  },
+  {
+    "key": "csp_Bili",
+    "name": "哔哩合集",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/bili.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/XBPQ.jar"
+  },
+  {
+    "key": "bilibili",
+    "name": "哔哩合集",
+    "api": "csp_BiliGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'json': 'https://support-chat.rongcloud.cn/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYkE9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--47a8ff0e68559a89a9a75b37d09a2b0854dc5a8a/bili001.txt'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "biliys",
+    "name": "哔哩影视",
+    "api": "csp_BiliYsGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "bilixiqu",
+    "name": "哔哩戏曲",
+    "api": "csp_BiliGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'json': 'https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/183E562_773_xiqu_20251130182006749newMediaImage.txt'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "biliych",
+    "name": "哔哩歌曲",
+    "api": "csp_BiliGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'json': 'https://support-chat.rongcloud.cn/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYkU9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3083f43a14e6b59f4bfe248478a3a8765b34bfdd/bilisong.txt'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "LiveAiBiLi",
+    "name": "哔哩直播",
+    "api": "csp_LiveAiBiLiGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "js_B___",
+    "name": "哔哩精简",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/js/B站精简.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_trj",
+    "name": "唐人街飞",
+    "api": "csp_Tangrenjie",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_SC1080",
+    "name": "圣城影视",
+    "api": "csp_SC1080",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "zxzj",
+    "name": "在线外剧",
+    "api": "csp_Zxzj",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "https://www.zxzjhd.com/",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "AiNewDuoDuo",
+    "name": "多多4K",
+    "api": "csp_AiNewDuoDuoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "py_cctv",
+    "name": "央视py",
+    "api": "py_cctv",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/cctv.py",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "cctv",
+    "name": "央视大全",
+    "api": "csp_CCTV",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "./libs/hccx/央视大全.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "py_cctv___",
+    "name": "央视少儿",
+    "api": "py_cctv_full",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/py_央视少儿.py",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "Funletu",
+    "name": "夸克   趣盘搜jar",
+    "api": "csp_Funletu",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_yyets",
+    "name": "夸克  人人影视搜js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/yyets.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "push_quark",
+    "name": "夸克  推送",
+    "api": "csp_Quark",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "http://127.0.0.1:9978/file/TV/quark.txt",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "QuarkPanso",
+    "name": "夸克  盘搜jar",
+    "api": "csp_QuarkPanso",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "dr_____",
+    "name": "奇珍异兽",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/奇珍异兽.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "js_a8__",
+    "name": "奥迪音乐",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/a8音乐.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_Bili_Nvtuan",
+    "name": "女团热舞",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/女团.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "drpy_js_360__",
+    "name": "官源  360js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/360影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "ChildrenAiBaoBao",
+    "name": "宝宝儿歌",
+    "api": "csp_ChildrenAiBaoBaoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_Bili_xiaoxue",
+    "name": "小学教育",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/小学.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "WexFengYe4K",
+    "name": "小枫秒播",
+    "api": "csp_WexFengYe4KGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "BookHongGuo",
+    "name": "小红听书",
+    "api": "csp_BookHongGuoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "MusicAiKuWoa",
+    "name": "小酷音乐",
+    "api": "csp_MusicAiKuWoaGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_AList",
+    "name": "小雅云盘",
+    "api": "csp_AList",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'vodPic': 'https://up.mediy.cn/033_喜欢_adf390021f221477b26a94f5eaf02643.png', 'drives': [{'name': 'Ecve', 'server': 'https://pan.ecve.cn/'}, {'name': '小鸭', 'server': 'https://pan.mediy.cn/'}, {'name': '秋雨', 'server': 'https://share.qiuyu.org/'}, {'name': '小雅', 'server': 'http://alist.xiaoya.pro/'}, {'name': '七米蓝', 'server': 'https://al.chirmyram.com/'}, {'name': '蓼茶', 'server': 'http://175.178.16.226:62494/'}, {'name': '柯南', 'server': 'https://alist.523.monster/'}, {'name': '老谭', 'server': 'https://pan.cqtjy.cn/ali'}]}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "BookHeMa",
+    "name": "小马听书",
+    "api": "csp_BookHeMaGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "js____",
+    "name": "师兄影视",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/大师兄影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "AppV7______",
+    "name": "师兄秒播",
+    "api": "csp_WexAppV7Guard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'config': 'AppV7Dsx', 'proxyImg': False}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_Bili_youer",
+    "name": "幼儿教育",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/幼儿.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "drpy_js____FM",
+    "name": "广播  广播迷FMjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/广播迷FM.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js___FM",
+    "name": "广播  蜻蜓FMjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/蜻蜓FM.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "csp_Ysj",
+    "name": "异界动漫",
+    "api": "csp_Ysj",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "115Share",
+    "name": "弹幕  115分享jar",
+    "api": "csp_P115Share",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$./json/115share.txt$$$db$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "4KHDR",
+    "name": "弹幕  4KHDRjar",
+    "api": "csp_FourKHDR",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$http://127.0.0.1:9978/file/TV/4khdr.txt",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Moli",
+    "name": "弹幕  HDmolijar",
+    "api": "csp_Moli",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://www.hdmoli.pro/$$$null$$$1$$$./json/moli.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_JustLive",
+    "name": "弹幕  JustLivejs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/JustLive.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "PikPakShare",
+    "name": "弹幕  PikPak分享jar",
+    "api": "csp_PikPakShare",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$./json/pikpakclass.json$$$./json/pikpakclass.json.db.gz",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "SambaShare",
+    "name": "弹幕  Samba分享jar",
+    "api": "csp_SambaShare",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$./json/sambashare.txt",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "UCShare",
+    "name": "弹幕  UC分享jar",
+    "api": "csp_UCShare",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$./json/ucshare.txt$$$db$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Bt0",
+    "name": "弹幕  不太灵jar",
+    "api": "csp_Bt0",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$null$$$null$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "YunPan",
+    "name": "弹幕  云盘jar",
+    "api": "csp_YunPan",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$null$$$proxy$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "ddys",
+    "name": "弹幕  低端jar",
+    "api": "csp_Ddys",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://ddys.pro/$$$proxy$$$1$$$",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "NanGua",
+    "name": "弹幕  南瓜jar",
+    "api": "csp_NanGua",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "null$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Bdys_spider",
+    "name": "弹幕  哔滴jar",
+    "api": "csp_Bdys01",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://www.bdys03.com/$$$null$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "QuarkShare",
+    "name": "弹幕  夸克分享jar",
+    "api": "csp_QuarkShare",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$./json/quarkshare.txt",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Xpanpan",
+    "name": "弹幕  小盘盘jar",
+    "api": "csp_Xpanpan",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://xpanpan.site$$$null$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Hdhive",
+    "name": "弹幕  影巢jar",
+    "api": "csp_Hdh",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://hdhive.online$$$noproxy$$$1$$$http://127.0.0.1:9978/file/TV/hdhive.txt",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "AliShare",
+    "name": "弹幕  影视分享jar",
+    "api": "csp_AliShare",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$./json/alishare.txt$$$db$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Xinshijue",
+    "name": "弹幕  新视觉jar",
+    "api": "csp_Xinshijue",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://www.80yy3.com/$$$1$$$./lib/wogg.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Wo4k",
+    "name": "弹幕  玩偶4kjar",
+    "api": "csp_Wo4k",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://www.wo4k.com/$$$proxy$$$1$$$./wogg.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Wogg",
+    "name": "弹幕  玩偶jar",
+    "api": "csp_Wogg",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://www.wogg.net/$$$null$$$1$$$./wogg.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Ppxzy",
+    "name": "弹幕  皮皮虾jar",
+    "api": "csp_Ppxzy",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://ppxzy.net/$$$null",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Panta",
+    "name": "弹幕  盘Tajar",
+    "api": "csp_Panta",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://www.91panta.cn/$$$null$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "yydsys",
+    "name": "弹幕  老哥jar",
+    "api": "csp_Wobg",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://tv.yydsys.top/$$$null$$$1$$$./wogg.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Wobg",
+    "name": "弹幕  表哥jar",
+    "api": "csp_Wobg",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://wobge.run.goorm.io$$$null$$$1$$$./wogg.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "PushShare",
+    "name": "弹幕  资源分享jar",
+    "api": "csp_PushShare",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$./json/pushshare.txt$$$db$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "ThunderShare",
+    "name": "弹幕  迅雷分享jar",
+    "api": "csp_ThunderShare",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$./json/thundershare.txt",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Gaoqing",
+    "name": "弹幕  高清网jar",
+    "api": "csp_Gaoqing",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://gaoqing.la/$$$proxy$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_139__",
+    "name": "影视  139影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/139影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_188__",
+    "name": "影视  188影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/188影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_18_",
+    "name": "影视  18哈js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/18哈.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_333__",
+    "name": "影视  333影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/333影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_348___",
+    "name": "影视  348电影网js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/348电影网.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_369__",
+    "name": "影视  369影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/369影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_4K___",
+    "name": "影视  4K电影网js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/4K电影网.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_4k__",
+    "name": "影视  4k剧院js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/4k剧院.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_539__",
+    "name": "影视  539影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/539影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_555___V2_",
+    "name": "影视  555电影V2",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/555电影[V2].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_567___",
+    "name": "影视  567电影院js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/567电影院.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_69___V2_",
+    "name": "影视  69美剧V2",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/69美剧[V2].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_69__",
+    "name": "影视  69美剧js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/69美剧.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_7___",
+    "name": "影视  7喜影院js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/7喜影院.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_8___",
+    "name": "影视  8号影院js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/8号影院.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_97tvs",
+    "name": "影视  97tvsjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/97tvs.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_996__",
+    "name": "影视  996影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/996影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_Auete",
+    "name": "影视  Auetejs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/Auete.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_B___",
+    "name": "影视  B站影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/B站影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_Fun4K",
+    "name": "影视  Fun4Kjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/Fun4K.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_JangoIndex",
+    "name": "影视  JangoIndexjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/JangoIndex.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_KOK__",
+    "name": "影视  KOK影院js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/KOK影院.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_LIBVIO",
+    "name": "影视  LIBVIOjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/LIBVIO.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_NY__",
+    "name": "影视  NY影院js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/NY影院.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_TVB__",
+    "name": "影视  TVB云播js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/TVB云播.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_UM___V2_",
+    "name": "影视  UM电影V2",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/UM电影[V2].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_UrleBird___",
+    "name": "影视  UrleBird飞js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/UrleBird[飞].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_cokemv_V2_",
+    "name": "影视  cokemvV2",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/cokemv[V2].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_cokemv",
+    "name": "影视  cokemvjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/cokemv.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_dydhhy",
+    "name": "影视  dydhhyjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/dydhhy.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_libvio",
+    "name": "影视  libviojs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/libvio.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_meow",
+    "name": "影视  meow搜js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/meow.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_rrdyw",
+    "name": "影视  rrdywjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/rrdyw.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_voflix",
+    "name": "影视  voflixjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/voflix.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js___BT",
+    "name": "影视  两个BTjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/两个BT.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_______",
+    "name": "影视  中国人线上看js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/中国人线上看.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_ddys",
+    "name": "影视  低端影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/ddys.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js___su",
+    "name": "影视  剧迷sujs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/剧迷su.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_____V2_",
+    "name": "影视  北极狐V2",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/北极狐[V2].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_____",
+    "name": "影视  南瓜影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/南瓜影视.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_tzfile",
+    "name": "影视  团长影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/tzfile.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js______V2_",
+    "name": "影视  影视之家V2js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/影视之家[V2].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js____",
+    "name": "影视  热播库js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/热播库.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_ikanbot2",
+    "name": "影视  爱看机器人2js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/ikanbot2.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_ikanbot3",
+    "name": "影视  爱看机器人3js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/ikanbot3.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js____V2_",
+    "name": "影视  爱迪V2js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/爱迪[V2].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_jsapi2",
+    "name": "影视  百度测试js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/jsapi2.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js____TV",
+    "name": "影视  网飞TVjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/网飞.TV.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js___TV",
+    "name": "影视  花猫TVjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/花猫TV.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_______V2_",
+    "name": "影视  落攻阁影视V2",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/落攻阁影视[V2].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js___77",
+    "name": "影视  酷云77js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/酷云77.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "csp_AppRZ",
+    "name": "忍者影视",
+    "api": "csp_AppRZ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "http://rzys.xyz/",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "AiNewKuaiYing",
+    "name": "快影4K",
+    "api": "csp_AiNewKuaiYingGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "__fox",
+    "name": "快映  APP",
+    "api": "csp_AppFox",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 0,
+    "ext": "./json/ky4kbgq7b273.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
+  },
+  {
+    "key": "P4_Kuaikan",
+    "name": "快看影视",
+    "api": "csp_Kuaikan",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/P4.jar"
+  },
+  {
+    "key": "Aid",
+    "name": "急救教学",
+    "api": "csp_FirstAid",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "BookAiYueTing",
+    "name": "悦庭听书",
+    "api": "csp_BookAiYueTingGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_Bili_xuqu1",
+    "name": "戏曲合集",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/戏曲.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "MusicAiLiYuan",
+    "name": "戏曲秒播",
+    "api": "csp_MusicAiLiYuanGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "MyPan",
+    "name": "我的网盘",
+    "api": "csp_MyPanGuard",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "push_agent",
+    "name": "手机推送",
+    "api": "csp_Push",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "{'Cloud-drive': 'tvfan/Cloud-drive.txt', 'from': '4k|auto'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "TGYunPanLocal",
+    "name": "搜索  TGjar",
+    "api": "csp_TGYunPanLocal",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://t.me/$$$hao115,guaguale115,dianyingshare,XiangxiuNB,yunpanpan,kuakeyun,zaihuayun,Quark_Movies,alyp_4K_Movies,vip115hot,yunpanshare,ucwangpan,Quark_Share_Channel,Aliyundrive_Share_Channel,shareAliyun,ikiviyyp,wanwansubchat,wangpanziyuan2021,alyp_1,quanziyuanshe$$$socks5://127.0.0.1:10172$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js______",
+    "name": "搜索  磁力熊js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./js/cilixiong.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js___",
+    "name": "搜索  豆瓣js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./js/drpy.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "lf_js_search",
+    "name": "搜索  路飞js",
+    "api": "./lib/lf_search3_min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "csp_Bili_dashan",
+    "name": "搭讪教程",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/搭讪.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_Bili__dapei",
+    "name": "搭配教程",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/搭配.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "WexAiWenCai",
+    "name": "文才秒播",
+    "api": "csp_WexAiWenCaiGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_XYQBiu___",
+    "name": "斗鱼直播",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/js/斗鱼直播.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "LiveAiDouYu",
+    "name": "斗鱼直播",
+    "api": "csp_LiveAiDouYuGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "_6V",
+    "name": "新6V磁力",
+    "api": "csp_SixV",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "https://www.xb6v.com/",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_Anime1",
+    "name": "日本动漫",
+    "api": "csp_Anime1",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "MusicAi163",
+    "name": "易听音乐",
+    "api": "csp_MusicAi163Guard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "YiSo",
+    "name": "易搜搜索",
+    "api": "csp_YiSo",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'Cloud-drive': 'tvfan/Cloud-drive.txt', 'from': '4k|auto'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "AiNewMuOu",
+    "name": "木偶4K",
+    "api": "csp_AiNewMuOuGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_lkvod",
+    "name": "来看点播",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/hccx/lkvod.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_beijihu",
+    "name": "极狐App",
+    "api": "csp_AppYsV2",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "https://www.kuin.one/api.php/app/",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_Ying",
+    "name": "樱花动漫",
+    "api": "csp_Ying",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "AnimeCiYuanCheng",
+    "name": "次元动漫",
+    "api": "csp_AnimeCiYuanChengGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_Bili_yanchh",
+    "name": "歌手合集",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/歌手.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_Bili_MTV",
+    "name": "歌曲演唱",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/歌曲.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_Nbys",
+    "name": "泥巴飞",
+    "api": "csp_NiNi",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "XYQH____",
+    "name": "港口磁力",
+    "api": "csp_XYQHiker",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/xyq/港口.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/XYQH.jar"
+  },
+  {
+    "key": "ManJuAiQiMao",
+    "name": "漫剧小猫",
+    "api": "csp_ManJuAiQiMaoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "ManJuAiHuoLong",
+    "name": "漫剧小龙",
+    "api": "csp_ManJuAiHuoLongGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "ManJuAiXiFan",
+    "name": "漫短小喜",
+    "api": "csp_ManJuAiXiFanGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "ManJuAiHongGuo",
+    "name": "漫短小红",
+    "api": "csp_ManJuAiHongGuoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "ManJuAiHeMa",
+    "name": "漫短小马",
+    "api": "csp_ManJuAiHeMaGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "cc_____",
+    "name": "热播之家",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/c/热播之家.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/c.jar"
+  },
+  {
+    "key": "WexAiReBo",
+    "name": "热播秒播",
+    "api": "csp_WexAiReBoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "BookAi23TingShu",
+    "name": "爱上听书",
+    "api": "csp_BookAi23TingShuGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "dr_iqiyi",
+    "name": "爱奇异官",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/iqiyi.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "SoAiAiPanSo",
+    "name": "爱盘综合",
+    "api": "csp_SoAiAiPanSoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_Ikanbot",
+    "name": "爱看Bot",
+    "api": "csp_Ikanbot",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "[排序:lz线路,kuaik]",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/XYQH.jar"
+  },
+  {
+    "key": "csp_Ikan",
+    "name": "爱看影视",
+    "api": "csp_Ikan",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "WexAiIkanBot",
+    "name": "爱看采集",
+    "api": "csp_WexAiIkanBotGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "js_007",
+    "name": "特工影视",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/007.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "WexAiDuBoKu",
+    "name": "独播秒播",
+    "api": "csp_WexAiDuBoKuGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "__",
+    "name": "玩偶哥哥4K弹幕",
+    "api": "csp_WoGG",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'Cloud-drive': 'tvfan/Cloud-drive.txt', 'from': '4k|auto', 'siteUrl': 'https://www.wogg.net/', 'danMu': '弹'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "SportAiKanQiuTong",
+    "name": "球通体育",
+    "api": "csp_SportAiKanQiuTongGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_Bili_FBqx",
+    "name": "球队球星",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/球队.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "SportAiGuaZi",
+    "name": "瓜子体育",
+    "api": "csp_SportAiGuaZiGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "WexAiGuaZi",
+    "name": "瓜子秒播",
+    "api": "csp_WexAiGuaZiGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "lf_js_lf_live",
+    "name": "电视  直播js",
+    "api": "./lib/lf_live_min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/lf_live.txt",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "_____",
+    "name": "电视点播",
+    "api": "./libs/tv/zb.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "./libs/tv/zb.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_FengGo",
+    "name": "疯狗影视",
+    "api": "csp_FengGo",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "P4____",
+    "name": "皮皮影视",
+    "api": "csp_PipiXia",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/P4.jar"
+  },
+  {
+    "key": "PanSearch",
+    "name": "盘Se搜索",
+    "api": "csp_PanSearch",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'Cloud-drive': 'tvfan/Cloud-drive.txt', 'from': '4k|auto'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "AiNewPianKu",
+    "name": "盘库4K",
+    "api": "csp_AiNewPianKuGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "PanSou",
+    "name": "盘搜搜索",
+    "api": "csp_PanSou",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'Cloud-drive': 'tvfan/Cloud-drive.txt', 'from': '4k|auto'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "SoAiHaiYin",
+    "name": "盘搜综合",
+    "api": "csp_SoAiHaiYinGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "AiPan1Me",
+    "name": "盘迷4K",
+    "api": "csp_AiPan1MeGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_Bili_xiangsh",
+    "name": "相声小品",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/相声.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_Bili__",
+    "name": "短剧BiL",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/xyq/Bili短剧.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/XYQH.jar"
+  },
+  {
+    "key": "csp_XBPQ_aoaotv",
+    "name": "短剧嗷嗷",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'分类url': 'https://aoao.tv/vodshow/{cateId}--------{catePg}---.html', '分类': '短剧$20#电视剧$21#电影$22#动漫$23#综艺$24'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/XBPQ.jar"
+  },
+  {
+    "key": "DuanJuAiHaoKan",
+    "name": "短剧好看",
+    "api": "csp_DuanJuAiHaoKanGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "DuanJuAiQiMiao",
+    "name": "短剧小猫",
+    "api": "csp_DuanJuAiQiMiaoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "DuanJuAiWeiGuan",
+    "name": "短剧小薇",
+    "api": "csp_DuanJuAiWeiGuanGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "DuanJuAiXingYa",
+    "name": "短剧星星",
+    "api": "csp_DuanJuAiXingYaGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "XBPQ___",
+    "name": "短剧葡萄",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'数组': 'class=\"stui-vodlist__box&&</li', '分类url': 'https://www.putaojuchang.com/show/{cateId}/area/{area}/class/{class}/by/{by}/page/{catePg}/year/{year}.html', '分类': '微剧场$1#言情$6#逆袭$7#战神$8#异能$9#生活$10#重生$12#复仇$20#爱情$11'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "drpy_js_4KHDR",
+    "name": "磁力  4KHDRjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/4khdr.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_6V_____",
+    "name": "磁力  6V新版js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/6V新版[磁].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_MP4US",
+    "name": "磁力  MP4电影js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/mp4us.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "YingSo",
+    "name": "磁力  影搜jar",
+    "api": "csp_YingSo",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_xb6v",
+    "name": "磁力  新版6vjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/xb6v.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_kuba",
+    "name": "磁力  酷吧js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/kuba.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_lf_p2p",
+    "name": "磁力p2p搜索",
+    "api": "./libs/js/lf_p2p1_min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "AnimeXiFan",
+    "name": "稀饭动漫",
+    "api": "csp_AnimeXiFanGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "AiNewLibvio",
+    "name": "立播4K",
+    "api": "csp_AiNewLibvioGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "AppV7_______",
+    "name": "粉猪秒播",
+    "api": "csp_WexAppV7Guard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'config': 'AppV7Fz', 'proxyImg': False}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_SuBaiBai",
+    "name": "素白影视",
+    "api": "csp_SuBaiBai",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "csp_XYQ___",
+    "name": "素白白影视",
+    "api": "csp_XYQHiker",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/xyq/素白白.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/XYQH.jar"
+  },
+  {
+    "key": "mtv_xp_____",
+    "name": "维奇丨动漫",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/维奇动漫.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "P4___",
+    "name": "绿豆影视",
+    "api": "csp_Lvdou",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "{'server': 'http://s.weixine.net/api.php/app/', 'mackey': '6JLF1OWhgEnMexAs|6CrRdTxr2qXj9258'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "88Pan",
+    "name": "网盘  88网盘jar",
+    "api": "csp_EightEight",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://662688.xyz",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_Alist",
+    "name": "网盘  Alistjs",
+    "api": "./libs/js/alist.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/alist.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "Libvio",
+    "name": "网盘  LIBVIOjar",
+    "api": "csp_Libvio",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://www.libvio.fun$$$null",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "TGYunPan",
+    "name": "网盘  TG搜索jar",
+    "api": "csp_TGYunPan",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$http://144.126.217.226:8000/$$$hao115,Aliyundrive_Share_Channel,kuakeyun$$$noproxy$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "YunPanOne",
+    "name": "网盘  云盘jar",
+    "api": "csp_YunPanOne",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Qianfan",
+    "name": "网盘  千帆jar",
+    "api": "csp_Qianfan",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://pan.qianfan.app$$$null$$$QianFanID=",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "DaPanSo",
+    "name": "网盘  大盘搜jar",
+    "api": "csp_DaPanSo",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://dapanso.com$$$null",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "YunSo",
+    "name": "网盘  小云jar",
+    "api": "csp_YunSo",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Mogg",
+    "name": "网盘  木偶哥哥jar",
+    "api": "csp_Wobg",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$http://mogg.top/$$$noproxy$$$1$$$./lib/wogg.json$$$MOGG",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "csp_HunHePan",
+    "name": "网盘  混合盘jar",
+    "api": "csp_HunHePan",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 0,
+    "ext": "./lib/token.json$$$null$$$1",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "PikaSo",
+    "name": "网盘  皮卡搜jar",
+    "api": "csp_PikaSo",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json$$$https://www.pikaso.top/$$$null",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "csp_Yj1211",
+    "name": "网红直播",
+    "api": "csp_Yj1211",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "___",
+    "name": "网红美女",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "./libs/hccx/短视频聚合.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_KmeiJu",
+    "name": "美剧影视",
+    "api": "csp_KmeiJu",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "csp_MeijuMi",
+    "name": "美剧迷",
+    "api": "csp_MeijuMi",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/xyq.jar"
+  },
+  {
+    "key": "csp_Bili_Meinvw",
+    "name": "美女舞蹈",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/美女.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_Bili_meishi",
+    "name": "美食合集",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/美食合集.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_nkvlog",
+    "name": "耐看电影",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/hccx/nkvlog.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_nkvod",
+    "name": "耐看电影",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/hccx/nkvod.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "drpy_js__6_",
+    "name": "聚合  酷6网js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/酷6网.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "dr_qq",
+    "name": "腾讯官",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/qq.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "csp_Netfixtv",
+    "name": "至臻影视",
+    "api": "csp_Netfixtv",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "dr_mgtv",
+    "name": "芒果官",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/mgtv.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "__Get",
+    "name": "茉莉  APP",
+    "api": "csp_AppGet",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "{'site': 'https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt', 'dataKey': '88689667dce61725', 'dataIv': '88689667dce61725'}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
+  },
+  {
+    "key": "cc____",
+    "name": "茶杯狐",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/c/茶杯狐.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/c.jar"
+  },
+  {
+    "key": "AiNewHuBan",
+    "name": "虎斑4K",
+    "api": "csp_AiNewHuBanGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "____js",
+    "name": "虎牙直播",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/js/虎牙直播.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "LiveAiHuYa",
+    "name": "虎牙直播",
+    "api": "csp_LiveAiHuYaGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "__1",
+    "name": "虎虎影视",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/虎虎.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "APP__",
+    "name": "蜂蜜商店",
+    "api": "csp_Market",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/market.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/app.jar"
+  },
+  {
+    "key": "AiNewLaBi",
+    "name": "蜡笔4K",
+    "api": "csp_AiNewLaBiGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_Duopan",
+    "name": "蜡笔云盘",
+    "api": "csp_Duopan",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "https://duopan.fun/",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Panda.jar"
+  },
+  {
+    "key": "__FM",
+    "name": "蜻蜓  FM",
+    "api": "csp_QingtingFM",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from qist-xiaosa-api",
+    "origin": "import:qist-xiaosa-api"
+  },
+  {
+    "key": "MusicAiQingTing",
+    "name": "蜻蜓电台",
+    "api": "csp_MusicAiQingTingGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "xgapp",
+    "name": "西瓜v3",
+    "api": "csp_AppYsV2",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "https://www.gsjtlxy.top/xgapp.php/v3/",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "AiNewGuanYing",
+    "name": "观影4K",
+    "api": "csp_AiNewGuanYingGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "js_Xinsj",
+    "name": "视觉影院",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/xsj.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "Youtube",
+    "name": "视频  Youtubejar",
+    "api": "csp_Youtube",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "{'token': './lib/token.json', 'json': './json/youtube.json', 'type': '直播#新闻#剧集#电影#综艺#纪录片#音乐#体育#动物#风光#放松#4K#HDR#movie#music#documentary#bbc documentary#national geographic documentary', 'proxy': 'socks5://127.0.0.1:10172', 'keywords': '排行榜,HOT,TRENDS,热门话题,热门趋势,热门综艺,热门电影,热门电视剧,小姐姐', 'codecs': '', 'danmu': True}",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "csp_KungFu404",
+    "name": "设置Token",
+    "api": "csp_KungFu404",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "http://127.0.0.1:9978/file/tvfan/token.txt",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/Token.jar"
+  },
+  {
+    "key": "csp_douban",
+    "name": "豆瓣热播",
+    "api": "csp_DouDou",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 0,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "ChildrenAiBeiWa",
+    "name": "贝贝儿歌",
+    "api": "csp_ChildrenAiBeiWaGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "drpy_js_555_____",
+    "name": "起飞  555影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/555影视[飞].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_KUBO_____",
+    "name": "起飞  KUBO影视js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/KUBO影视[飞].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_if101___",
+    "name": "起飞  if101js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/if101[飞].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js________",
+    "name": "起飞  欧乐影院js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/欧乐影院[飞].js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "lf_js_p2p",
+    "name": "路飞  磁力js",
+    "api": "./lib/lf_p2p2_min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "MusicAiTangDou",
+    "name": "跳舞教学",
+    "api": "csp_MusicAiTangDouGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "MusicAiLunHui",
+    "name": "轮回舞曲",
+    "api": "csp_MusicAiLunHuiGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_Xunlei8",
+    "name": "迅雷吧",
+    "api": "csp_Xunlei8",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/xyq.jar"
+  },
+  {
+    "key": "AiNewYiDong4K",
+    "name": "逸动4K",
+    "api": "csp_AiNewYiDong4KGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "Wexconfig",
+    "name": "配置中心",
+    "api": "csp_PanConfigGuard",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "MusicAiKuWo",
+    "name": "酷听音乐",
+    "api": "csp_MusicAiKuWoGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "__js",
+    "name": "酷奇MV",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/js/酷奇MV.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "WexAiYueYue",
+    "name": "闪电秒播",
+    "api": "csp_WexAiYueYueGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "UP__",
+    "name": "阿里  up云搜jar",
+    "api": "csp_UpYun",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./lib/token.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Gitcafe",
+    "name": "阿里  纸条jar",
+    "api": "csp_Gitcafe",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 0,
+    "ext": "./lib/token.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "Zhaozy",
+    "name": "阿里Zhaozy",
+    "api": "csp_Zhaozy",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "http://127.0.0.1:9978/file/tvfan/token.txt+4k|auto|fhd$$$zhaoziyuan777$$$qqq111",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "WexHanXiaoQuan",
+    "name": "韩剧秒播",
+    "api": "csp_WexAiHanXiaoQuanGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "csp_hanjulao",
+    "name": "韩剧高清",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/hccx/hanjulao.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "csp_Bili_Yinl2",
+    "name": "音悦合集",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/音悦.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "drpy_js_A8__",
+    "name": "音频  A8音乐js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/A8音乐.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js_DJ__",
+    "name": "音频  DJ音乐js",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/DJ音乐.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "drpy_js___DJ",
+    "name": "音频  啦啦DJjs",
+    "api": "./lib/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./js/啦啦DJ.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from gao-js",
+    "origin": "import:gao-js"
+  },
+  {
+    "key": "SportAiFeiQiu",
+    "name": "飞球体育",
+    "api": "csp_SportAiFeiQiuGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "js_____",
+    "name": "骚火影视",
+    "api": "./libs/js/drpy2.min.js",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/js/saohuo.js",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
+  },
+  {
+    "key": "cc_shdy2",
+    "name": "骚火电影",
+    "api": "csp_XBPQ",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "./libs/c/骚火2.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/c.jar"
+  },
+  {
+    "key": "csp_Bili_gaozxx",
+    "name": "高中教育",
+    "api": "csp_Bili",
+    "type": 3,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "ext": "./libs/hccx/高中.json",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m",
+    "jar": "./libs/jar/HCCX.jar"
+  },
+  {
+    "key": "AnimeAiMoDu",
+    "name": "魔都动漫",
+    "api": "csp_AnimeAiMoDuGuard",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from kstore-wex",
+    "origin": "import:kstore-wex"
+  },
+  {
+    "key": "yaya",
+    "name": "鸭鸭App",
+    "api": "csp_AppYsV2",
+    "type": 3,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "https://yayayaaapp.ynf.icu/api.php/app/",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from liucn-box-m",
+    "origin": "import:liucn-box-m"
   },
   {
     "key": "apiniuniuzyme_2af7",
@@ -590,315 +6031,9 @@
     "origin": "upstream:ziyuanzu-cms"
   },
   {
-    "key": "www-maoyanzy-com",
-    "name": "猫眼",
-    "api": "https://api.maoyanapi.top/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
-  },
-  {
-    "key": "apiyutucom_36cf",
-    "name": "玉兔",
-    "api": "https://apiyutu.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "dyttzyapi-com",
-    "name": "电影天堂",
-    "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
-  },
-  {
     "key": "fqzyme_c0d4",
     "name": "番茄",
     "api": "https://fqzy.me/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "apiapibdzycom_38e1",
-    "name": "百度云",
-    "api": "https://api.apibdzy.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "bhziyuancom_f8ca",
-    "name": "百花",
-    "api": "https://bhziyuan.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "suonizynet_124b",
-    "name": "索尼",
-    "api": "https://suonizy.net/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "apihnzy2com_39ad",
-    "name": "红牛",
-    "api": "https://api.hnzy2.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "lovedannet_9986",
-    "name": "艾旦",
-    "api": "https://lovedan.net/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "mtzy5com_5410",
-    "name": "茅台",
-    "api": "https://mtzy5.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "www-huyaapi-com",
-    "name": "虎牙",
-    "api": "https://www.huyaapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
-  },
-  {
-    "key": "huyazynet_61b6",
-    "name": "虎牙",
-    "api": "https://huyazy.net/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "dbzytv_0c0e",
-    "name": "豆瓣",
-    "api": "https://dbzy.tv/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "apidouapicc_d136",
-    "name": "豆豆",
-    "api": "https://api.douapi.cc/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "www-haohuazy-com",
-    "name": "豪华",
-    "api": "https://hhzyapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
-  },
-  {
-    "key": "haohuazycom_6b1e",
-    "name": "豪华",
-    "api": "https://haohuazy.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "apivnzyzcom_65a5",
-    "name": "越南",
-    "api": "https://api.vnzyz.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "www-subozy-com",
-    "name": "速播",
-    "api": "https://subocaiji.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
-  },
-  {
-    "key": "subocjcom_a08c",
-    "name": "速播",
-    "api": "https://subocj.com/api.php/provide/vod",
     "type": 1,
     "searchable": 1,
     "quickSearch": 1,
@@ -930,40 +6065,6 @@
     "origin": "upstream:ziyuanzu-cms"
   },
   {
-    "key": "cj-lzcaiji-com",
-    "name": "量子",
-    "api": "https://cj.lzcaiji.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
-  },
-  {
-    "key": "lzizy-net",
-    "name": "量子影视",
-    "api": "https://cj.lziapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
-  },
-  {
     "key": "jyzyapicom_ddff",
     "name": "金鹰",
     "api": "https://jyzyapi.com/provide/vod",
@@ -981,43 +6082,9 @@
     "origin": "upstream:ziyuanzu-cms"
   },
   {
-    "key": "apijyzycom_2c47",
-    "name": "金鹰",
-    "api": "https://api.jyzy.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "apisdzycom_a15d",
-    "name": "闪电",
-    "api": "https://api.sdzy.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "apiyjzycom_0fd5",
-    "name": "雅集",
-    "api": "https://api.yjzy.com/api.php/provide/vod",
+    "key": "mtzy5com_5410",
+    "name": "茅台",
+    "api": "https://mtzy5.com/api.php/provide/vod",
     "type": 1,
     "searchable": 1,
     "quickSearch": 1,
@@ -1049,40 +6116,6 @@
     "origin": "upstream:ouonnki-full-noadult"
   },
   {
-    "key": "ffzy5tv_b71c",
-    "name": "非凡",
-    "api": "https://ffzy5.tv/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "p2100net_64b4",
-    "name": "飘零影院",
-    "api": "https://p2100.net/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ziyuanzu-cms",
-    "origin": "upstream:ziyuanzu-cms"
-  },
-  {
     "key": "caiji-moduapi-cc",
     "name": "魔都动漫",
     "api": "https://caiji.moduapi.cc/api.php/provide/vod",
@@ -1100,9 +6133,413 @@
     "origin": "upstream:ouonnki-full-noadult"
   },
   {
+    "key": "slapibfcom_678b",
+    "name": "森林",
+    "api": "https://slapibf.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "zuida-xyz",
+    "name": "最大",
+    "api": "https://api.zuidapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "tyyszyapicom_4fa9",
+    "name": "天涯",
+    "api": "https://tyyszyapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
     "key": "cjyayazynet_13e7",
     "name": "鸭鸭",
     "api": "https://cj.yayazy.net/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "huyazynet_61b6",
+    "name": "虎牙",
+    "api": "https://huyazy.net/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "apiddapicc_39e1",
+    "name": "滴滴",
+    "api": "https://api.ddapi.cc/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "jipinvip1com_a4a7",
+    "name": "新极品",
+    "api": "https://jipinvip1.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "www-huyaapi-com",
+    "name": "虎牙",
+    "api": "https://www.huyaapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "apiapibdzycom_38e1",
+    "name": "百度云",
+    "api": "https://api.apibdzy.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "api-ukuapi88-com",
+    "name": "U酷影视",
+    "api": "https://api.ukuapi88.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "www-haohuazy-com",
+    "name": "豪华",
+    "api": "https://hhzyapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "iqiyizyapi-com",
+    "name": "爱奇艺",
+    "api": "https://iqiyizyapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "360_11dd",
+    "name": "360",
+    "api": "https://360zy.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "lovedannet_9986",
+    "name": "艾旦",
+    "api": "https://lovedan.net/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "jszyapi_com",
+    "name": "极速",
+    "api": "https://jszyapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from tw-lewis/TVbox-Configs trusted seed"
+  },
+  {
+    "key": "www-maoyanzy-com",
+    "name": "猫眼",
+    "api": "https://api.maoyanapi.top/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "moduzy_net",
+    "name": "魔都",
+    "api": "https://www.mdzyapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from tw-lewis/TVbox-Configs trusted seed"
+  },
+  {
+    "key": "subocjcom_a08c",
+    "name": "速播",
+    "api": "https://subocj.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "hongniuzy_com",
+    "name": "红牛",
+    "api": "https://www.hongniuzy2.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from tw-lewis/TVbox-Configs trusted seed"
+  },
+  {
+    "key": "wujinzy-com",
+    "name": "无尽影视",
+    "api": "https://api.wujinapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "haohuazycom_6b1e",
+    "name": "豪华",
+    "api": "https://haohuazy.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "wujinzy_me",
+    "name": "无尽",
+    "api": "https://api.wujinapi.me/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "from tw-lewis/TVbox-Configs trusted seed"
+  },
+  {
+    "key": "ffzy5tv_b71c",
+    "name": "非凡",
+    "api": "https://ffzy5.tv/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
+  },
+  {
+    "key": "api-guangsuapi-com",
+    "name": "光速",
+    "api": "https://api.guangsuapi.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "ext": "",
+    "tags": [
+      "点播",
+      "综合"
+    ],
+    "added_at": "2026-11-27",
+    "note": "auto sync from ouonnki-full-noadult",
+    "origin": "upstream:ouonnki-full-noadult"
+  },
+  {
+    "key": "apiyutucom_36cf",
+    "name": "玉兔",
+    "api": "https://apiyutu.com/api.php/provide/vod",
     "type": 1,
     "searchable": 1,
     "quickSearch": 1,

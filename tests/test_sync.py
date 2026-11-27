@@ -71,6 +71,32 @@ def test_parse_api_site_object() -> None:
     assert "关闭" not in names
 
 
+def test_parse_tvbox_json_with_line_comments() -> None:
+    text = """// collected for self use
+{
+  "sites": [
+    {
+      "key": "ikun",
+      "name": "iKun",
+      "type": 1,
+      "api": "https://ikunzyapi.com/api.php/provide/vod",
+      "searchable": 1
+    },
+    // skip spider-only
+    {
+      "key": "csp_x",
+      "name": "蜘蛛",
+      "type": 3,
+      "api": "csp_Demo"
+    }
+  ]
+}
+"""
+    sites = parse_sites_payload(text.encode(), fmt="json")
+    assert len(sites) == 1
+    assert sites[0]["api"] == "https://ikunzyapi.com/api.php/provide/vod"
+
+
 def test_parse_lives() -> None:
     lives = parse_lives_payload(json.dumps(TVBOX_SAMPLE).encode())
     assert len(lives) == 2

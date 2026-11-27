@@ -239,16 +239,77 @@ def _from_items(raw_items: list[Any], *, kind: str) -> list[dict[str, Any]]:
     return out
 
 
+def _strip_json_comments(text: str) -> str:
+    """去掉 // 与 /* */ 注释，保留字符串字面量内的斜杠。"""
+    out: list[str] = []
+    i = 0
+    n = len(text)
+    in_str = False
+    esc = False
+    while i < n:
+        ch = text[i]
+        if in_str:
+            out.append(ch)
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+            i += 1
+            continue
+        if ch == '"':
+            in_str = True
+            out.append(ch)
+            i += 1
+            continue
+        if ch == "/" and i + 1 < n and text[i + 1] == "/":
+            i += 2
+            while i < n and text[i] not in "\r\n":
+                i += 1
+            continue
+        if ch == "/" and i + 1 < n and text[i + 1] == "*":
+            i += 2
+            while i + 1 < n and not (text[i] == "*" and text[i + 1] == "/"):
+                i += 1
+            i = min(i + 2, n)
+            continue
+        out.append(ch)
+        i += 1
+    return "".join(out)
+
+
+def _loads_json_lenient(text: str) -> Any | None:
+    """解析 TVBox 配置常见的带注释 JSON；失败返回 None。"""
+    raw = text.lstrip("\ufeff").strip()
+    if not raw:
+        return None
+    candidates = [raw]
+    stripped = _strip_json_comments(raw).strip()
+    if stripped != raw:
+        candidates.append(stripped)
+    for cand in candidates:
+        for start_ch in ("{", "["):
+            idx = cand.find(start_ch)
+            if idx < 0:
+                continue
+            blob = cand[idx:]
+            try:
+                return json.loads(blob)
+            except json.JSONDecodeError:
+                continue
+    return None
+
+
 def parse_sites_payload(data: bytes, *, fmt: str = "auto") -> list[dict[str, Any]]:
     """解析远程点播清单。fmt: auto | json | txt。"""
     text = data.decode("utf-8", errors="ignore").lstrip("\ufeff").strip()
     fmt = (fmt or "auto").lower()
     if fmt in ("txt", "text", "lines"):
         return _parse_site_lines(text)
-    if fmt == "json" or text.startswith("{") or text.startswith("["):
-        try:
-            root = json.loads(text)
-        except json.JSONDecodeError:
+    if fmt == "json" or text.startswith("{") or text.startswith("[") or text.startswith("//"):
+        root = _loads_json_lenient(text)
+        if root is None:
             if fmt == "json":
                 return []
             return _parse_site_lines(text)
@@ -258,10 +319,9 @@ def parse_sites_payload(data: bytes, *, fmt: str = "auto") -> list[dict[str, Any
 
 def parse_lives_payload(data: bytes) -> list[dict[str, Any]]:
     text = data.decode("utf-8", errors="ignore").lstrip("\ufeff").strip()
-    if text.startswith("{") or text.startswith("["):
-        try:
-            root = json.loads(text)
-        except json.JSONDecodeError:
+    if text.startswith("{") or text.startswith("[") or text.startswith("//"):
+        root = _loads_json_lenient(text)
+        if root is None:
             return _parse_live_lines(text)
         return _parse_lives_json(root)
     return _parse_live_lines(text)
