@@ -1,0 +1,40 @@
+[repo]
+owner = "tw-lewis"
+name = "tvbox-gen-configs"
+branch = "main"
+
+[sources]
+trusted_dir = "sources/trusted"
+pending_dir = "sources/pending"
+# 采集源 JSON 配置目录（手动维护）
+collectors_dir = "sources/collectors"
+# 产物只读 trusted；pending 是全量池
+pending_affects_output = false
+
+[probe]
+concurrency = 8
+per_domain_concurrency = 2
+timeout_connect = 5
+timeout_read = 8
+retries = 1
+probe_search = true
+# 直播约 3600+ 路，打开会很慢；先测点播可设 false
+probe_lives = true
+search_keyword = "庆余年"
+# 连续失败达到该次数后跳过探测（记在 data/fail_streak.json）
+fail_streak_limit = 3
+
+[build]
+accept_status = ["ok"]
+allow_degraded = false
+max_latency_ms = 8000
+fail_streak_limit = 3
+sort = "score_desc"
+
+[watchlist]
+keys = []
+
+[static]
+flags = ["qq", "iqiyi", "youku", "mgtv", "bilibili"]
+wallpaper = ""
+parses = []

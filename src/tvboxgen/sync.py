@@ -1,0 +1,600 @@
+"""拉取远程采集清单，解析后追加合并到 pending/trusted。"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import logging
+import re
+from datetime import date
+from pathlib import Path
+from typing import Any
+from urllib.parse import urlparse
+
+import requests
+
+from tvboxgen.build import dumps
+from tvboxgen.config import Config, Upstream
+from tvboxgen.logger import get_logger, log_kv
+
+log = get_logger()
+
+UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+)
+MAX_BODY = 4 << 20
+REFUSE_WORDS = ("adult", "nsfw", "porn", "hentai", "18+", "r18")
+STRIP_SUFFIX = ("影视资源站", "资源站", "采集站", "接口站", "资源", "影视站")
+
+
+def fetch_url(url: str, timeout: float = 40.0) -> bytes:
+    if _refuse_url(url):
+        raise ValueError(f"refused feed url: {url}")
+    last_err: Exception | None = None
+    for attempt in range(3):
+        try:
+            resp = requests.get(
+                url,
+                timeout=timeout,
+                headers={"User-Agent": UA, "Accept": "text/plain,application/json,*/*"},
+            )
+            if resp.status_code != 200:
+                last_err = RuntimeError(f"http {resp.status_code}")
+                continue
+            return resp.content[:MAX_BODY]
+        except requests.RequestException as exc:
+            last_err = exc
+    raise RuntimeError(f"fetch failed: {url}: {last_err}")
+
+
+def _refuse_url(raw: str) -> bool:
+    u = raw.lower()
+    for safe in ("no-adult", "no_adult", "noadult", "noadults"):
+        u = u.replace(safe, "")
+    return any(w in u for w in REFUSE_WORDS)
+
+
+def _usable_url(raw: str) -> bool:
+    raw = (raw or "").strip()
+    if not raw.lower().startswith("http"):
+        return False
+    try:
+        u = urlparse(raw)
+    except Exception:
+        return False
+    return bool(u.hostname)
+
+
+def _clean_name(name: str, api: str) -> str:
+    name = (name or "").strip()
+    if not name:
+        host = urlparse(api).hostname or api
+        name = host.removeprefix("www.")
+    # keep letters/digits/space/-/_/CJK
+    name = "".join(
+        ch for ch in name if ch.isalnum() or ch in " -_" or ("\u4e00" <= ch <= "\u9fff")
+    ).strip(" -_")
+    changed = True
+    while changed:
+        changed = False
+        for suffix in STRIP_SUFFIX:
+            if name.endswith(suffix) and len(name) > len(suffix):
+                name = name[: -len(suffix)].strip()
+                changed = True
+    return name or api
+
+
+def _short_hash(text: str) -> str:
+    return hashlib.sha1(text.encode("utf-8")).hexdigest()[:4]
+
+
+def _make_key(name: str, api: str, explicit: str | None = None) -> str:
+    if explicit:
+        return re.sub(r"[^a-zA-Z0-9_-]", "_", explicit)[:64]
+    host = (urlparse(api).hostname or "src").lower().removeprefix("www.")
+    host = re.sub(r"[^a-z0-9.-]", "", host).replace(".", "")
+    base = re.sub(r"[^a-zA-Z0-9_]", "", name)[:24] or host[:16] or "src"
+    return f"{base}_{_short_hash(api)}"
+
+
+_ADULT_NAME_MARKERS = (
+    "adult",
+    "nsfw",
+    "18+",
+    "r18",
+    "色情",
+    "番号",
+    "麻豆",
+    "色猫",
+    "老色",
+    "湿乐园",
+    "黑料",
+    "辣椒",
+    "香蕉",
+    "鲨鱼",
+    "jkun",
+    "a-v",
+    "av资源",
+    "x色",
+    "搜a",
+    "美少女",
+    "白嫖",
+    "清水源",
+    "香系源",
+    "细胞网",
+    "奶香",
+    "大x子",
+    "精品x",
+)
+
+
+def _is_adult_item(item: dict[str, Any]) -> bool:
+    if item.get("isAdult") or item.get("is_adult"):
+        return True
+    for field in ("category", "type", "group", "name", "tags", "note"):
+        val = item.get(field)
+        if isinstance(val, list):
+            text = " ".join(str(x) for x in val).lower()
+        else:
+            text = str(val or "").lower()
+        if any(w in text for w in _ADULT_NAME_MARKERS):
+            return True
+    return False
+
+
+def _disabled(item: dict[str, Any]) -> bool:
+    if "enabled" in item and item["enabled"] is False:
+        return True
+    if "isEnabled" in item and item["isEnabled"] is False:
+        return True
+    return False
+
+
+def _item_api(item: dict[str, Any]) -> str:
+    for key in ("api", "url", "baseUrl"):
+        v = item.get(key)
+        if isinstance(v, str) and v.strip():
+            # live entries use url for stream — handled separately
+            return v.strip().rstrip("/")
+    return ""
+
+
+def _normalize_site(item: dict[str, Any], *, prefer_api: bool = True) -> dict[str, Any] | None:
+    if _is_adult_item(item) or _disabled(item):
+        return None
+    api = ""
+    if prefer_api:
+        api = (item.get("api") or item.get("baseUrl") or "").strip().rstrip("/")
+        if not api:
+            # OuonnkiTV / MoonTV style: url is the CMS api endpoint
+            cand = str(item.get("url") or item.get("detailUrl") or "").strip().rstrip("/")
+            if _usable_url(cand) and not any(
+                cand.lower().endswith(ext) for ext in (".m3u8", ".m3u", ".flv")
+            ):
+                api = cand
+    else:
+        api = _item_api(item)
+    if not _usable_url(api):
+        return None
+    # skip obvious live playlists in site parse
+    if any(api.lower().endswith(ext) for ext in (".m3u8", ".m3u", ".flv")):
+        return None
+    name = _clean_name(str(item.get("name") or item.get("title") or ""), api)
+    key = _make_key(name, api, explicit=str(item.get("key") or item.get("id") or "") or None)
+    site_type = item.get("type", 1)
+    try:
+        site_type = int(site_type)
+    except (TypeError, ValueError):
+        site_type = 1
+    searchable = int(item.get("searchable", 1) or 0)
+    return {
+        "key": key,
+        "name": name,
+        "api": api,
+        "type": site_type if site_type in (0, 1, 3, 4) else 1,
+        "searchable": searchable,
+        "quickSearch": int(item.get("quickSearch", searchable) or 0),
+        "filterable": int(item.get("filterable", 1) or 0),
+        "ext": str(item.get("ext") or ""),
+        "tags": list(item.get("tags") or (["点播", str(item.get("group") or "综合")])),
+        "added_at": str(item.get("added_at") or date.today().isoformat()),
+        "note": str(item.get("note") or ""),
+    }
+
+
+def _normalize_live(item: dict[str, Any]) -> dict[str, Any] | None:
+    if _is_adult_item(item) or _disabled(item):
+        return None
+    url = str(item.get("url") or "").strip()
+    if not _usable_url(url):
+        return None
+    name = str(item.get("name") or "").strip() or (urlparse(url).hostname or "live")
+    key = _make_key(name, url, explicit=str(item.get("key") or "") or None)
+    return {
+        "key": key,
+        "name": name,
+        "url": url,
+        "group": str(item.get("group") or "直播"),
+        "logo": str(item.get("logo") or ""),
+        "added_at": str(item.get("added_at") or date.today().isoformat()),
+        "note": str(item.get("note") or ""),
+    }
+
+
+def _from_items(raw_items: list[Any], *, kind: str) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for raw in raw_items:
+        if not isinstance(raw, dict):
+            continue
+        item = _normalize_site(raw) if kind == "site" else _normalize_live(raw)
+        if not item:
+            continue
+        fp = item.get("api") or item.get("url") or ""
+        if fp in seen:
+            continue
+        seen.add(fp)
+        out.append(item)
+    return out
+
+
+def parse_sites_payload(data: bytes, *, fmt: str = "auto") -> list[dict[str, Any]]:
+    """解析远程点播清单。fmt: auto | json | txt。"""
+    text = data.decode("utf-8", errors="ignore").lstrip("\ufeff").strip()
+    fmt = (fmt or "auto").lower()
+    if fmt in ("txt", "text", "lines"):
+        return _parse_site_lines(text)
+    if fmt == "json" or text.startswith("{") or text.startswith("["):
+        try:
+            root = json.loads(text)
+        except json.JSONDecodeError:
+            if fmt == "json":
+                return []
+            return _parse_site_lines(text)
+        return _parse_sites_json(root)
+    return _parse_site_lines(text)
+
+
+def parse_lives_payload(data: bytes) -> list[dict[str, Any]]:
+    text = data.decode("utf-8", errors="ignore").lstrip("\ufeff").strip()
+    if text.startswith("{") or text.startswith("["):
+        try:
+            root = json.loads(text)
+        except json.JSONDecodeError:
+            return _parse_live_lines(text)
+        return _parse_lives_json(root)
+    return _parse_live_lines(text)
+
+
+def _parse_sites_json(root: Any) -> list[dict[str, Any]]:
+    if isinstance(root, list):
+        return _from_items(root, kind="site")
+    if not isinstance(root, dict):
+        return []
+    for name in ("api_site", "apiSite", "sites_map"):
+        block = root.get(name)
+        if isinstance(block, dict):
+            items = []
+            for key, val in block.items():
+                if isinstance(val, dict):
+                    items.append({**val, "key": val.get("key") or key})
+            return _from_items(items, kind="site")
+    for name in ("sites", "list", "sources"):
+        arr = root.get(name)
+        if isinstance(arr, list):
+            # sources may use id/api shape
+            normalized = []
+            for x in arr:
+                if not isinstance(x, dict):
+                    continue
+                if "key" not in x and "id" in x:
+                    x = {**x, "key": x["id"]}
+                normalized.append(x)
+            return _from_items(normalized, kind="site")
+    return []
+
+
+def _parse_lives_json(root: Any) -> list[dict[str, Any]]:
+    if isinstance(root, list):
+        return _from_items(root, kind="live")
+    if isinstance(root, dict):
+        for name in ("lives", "live", "channels"):
+            arr = root.get(name)
+            if isinstance(arr, list):
+                return _from_items(arr, kind="live")
+        # single live object
+        if "url" in root and "name" in root:
+            return _from_items([root], kind="live")
+    return []
+
+
+def _parse_site_lines(text: str) -> list[dict[str, Any]]:
+    items: list[dict[str, Any]] = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        cols = [c.strip() for c in line.split("|")]
+        if len(cols) >= 2:
+            name, api = cols[0], cols[1]
+        else:
+            name, api = "", cols[0]
+        api = api.rstrip("/")
+        if not _usable_url(api):
+            continue
+        items.append({"name": name, "api": api, "type": 1, "searchable": 1})
+    return _from_items(items, kind="site")
+
+
+def _parse_live_lines(text: str) -> list[dict[str, Any]]:
+    """解析 DIY「分组,#genre#」+「名称,url」、管道行、以及 m3u #EXTINF。"""
+    items: list[dict[str, Any]] = []
+    current_group = "直播"
+    lines = text.splitlines()
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+        i += 1
+        if not line:
+            continue
+        # DIY TVBox live list: "央视,#genre#"
+        if "#genre#" in line.lower():
+            current_group = line.split(",", 1)[0].strip() or current_group
+            continue
+        if line.startswith("#") and not line.startswith("#EXTINF"):
+            continue
+        if line.startswith("#EXTINF"):
+            name = line.split(",", 1)[-1].strip() if "," in line else "live"
+            group = current_group
+            m = re.search(r'group-title="([^"]*)"', line)
+            if m and m.group(1).strip():
+                group = m.group(1).strip()
+            if i < len(lines):
+                url = lines[i].strip()
+                i += 1
+                items.append({"name": name, "url": url, "group": group})
+            continue
+        if "|" in line and not line.lower().startswith("http"):
+            cols = [c.strip() for c in line.split("|")]
+            name = cols[0]
+            url = cols[1] if len(cols) > 1 else ""
+            group = cols[2] if len(cols) > 2 else current_group
+            items.append({"name": name, "url": url, "group": group})
+        elif "," in line:
+            name, url = [c.strip() for c in line.split(",", 1)]
+            if not _usable_url(url):
+                continue
+            items.append({"name": name, "url": url, "group": current_group})
+        elif _usable_url(line):
+            items.append({"name": "", "url": line, "group": current_group})
+    return _from_items(items, kind="live")
+
+
+def _upstream_origin(upstream_id: str) -> str:
+    return f"upstream:{upstream_id}"
+
+
+def _fingerprint(item: dict[str, Any], *, kind: str) -> str:
+    raw = (item.get("api") if kind == "site" else item.get("url")) or ""
+    try:
+        u = urlparse(str(raw).strip())
+    except Exception:
+        return str(raw).strip().lower()
+    host = (u.hostname or "").lower().removeprefix("www.")
+    path = (u.path or "").rstrip("/").lower()
+    return f"{host}{path}"
+
+
+def merge_into_pool(
+    path: Path,
+    incoming: list[dict[str, Any]],
+    *,
+    upstream_id: str,
+    kind: str,
+) -> list[dict[str, Any]]:
+    """追加写入全量池：按 key/api 去重，不删除手工条目。"""
+    existing: list[dict[str, Any]] = []
+    if path.is_file():
+        try:
+            raw = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(raw, list):
+                existing = [x for x in raw if isinstance(x, dict)]
+        except (OSError, json.JSONDecodeError):
+            existing = []
+
+    origin = _upstream_origin(upstream_id)
+    seen_keys = {str(x.get("key")) for x in existing if x.get("key")}
+    seen_fps = {_fingerprint(x, kind=kind) for x in existing if _fingerprint(x, kind=kind)}
+
+    merged = list(existing)
+    added = 0
+    for item in incoming:
+        row = dict(item)
+        row["origin"] = origin
+        if not row.get("note"):
+            row["note"] = f"auto sync from {upstream_id}"
+        if not row.get("added_at"):
+            row["added_at"] = date.today().isoformat()
+
+        key = str(row.get("key") or "")
+        fp = _fingerprint(row, kind=kind)
+        if key and key in seen_keys:
+            log_kv(log, logging.INFO, "sync_dedupe_key", key=key, upstream=upstream_id)
+            continue
+        if fp and fp in seen_fps:
+            log_kv(log, logging.INFO, "sync_dedupe_api", fp=fp, upstream=upstream_id)
+            continue
+        if key:
+            seen_keys.add(key)
+        if fp:
+            seen_fps.add(fp)
+        merged.append(row)
+        added += 1
+
+    def sort_key(x: dict[str, Any]) -> tuple[int, str]:
+        is_up = 1 if str(x.get("origin") or "").startswith("upstream:") else 0
+        return (is_up, str(x.get("name") or ""))
+
+    merged.sort(key=sort_key)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(dumps(merged), encoding="utf-8")
+    log_kv(
+        log,
+        logging.INFO,
+        "sync_merged",
+        path=str(path),
+        added=added,
+        total=len(merged),
+        upstream=upstream_id,
+    )
+    return merged
+
+
+# backward-compatible alias
+merge_into_trusted = merge_into_pool
+
+
+def _resolve_kind(upstream: Upstream, payload: bytes) -> str:
+    if upstream.kind in ("sites", "site", "vod"):
+        return "sites"
+    if upstream.kind in ("lives", "live"):
+        return "lives"
+    # auto-detect
+    text = payload.decode("utf-8", errors="ignore").lstrip("\ufeff").strip()
+    if text.startswith("{") or text.startswith("["):
+        try:
+            root = json.loads(text)
+        except json.JSONDecodeError:
+            return "sites"
+        if isinstance(root, dict) and isinstance(root.get("lives"), list) and not root.get("sites"):
+            return "lives"
+        if (
+            isinstance(root, list)
+            and root
+            and isinstance(root[0], dict)
+            and "url" in root[0]
+            and "api" not in root[0]
+        ):
+            return "lives"
+    if upstream.url.lower().endswith((".m3u", ".m3u8")) or "live" in upstream.url.lower():
+        return "lives"
+    return "sites"
+
+
+def _target_dir(cfg: Config, target: str) -> Path:
+    return cfg.trusted_dir if target == "trusted" else cfg.pending_dir
+
+
+def sync_upstreams(cfg: Config, *, dry_run: bool = False) -> dict[str, int]:
+    """执行全部已启用采集源的拉取与合并。"""
+    stats = {"sites": 0, "lives": 0, "feeds": 0, "errors": 0}
+    enabled = [u for u in cfg.upstreams if u.enabled and u.url]
+    log_kv(
+        log,
+        logging.INFO,
+        "sync_start",
+        dry_run=dry_run,
+        configured=len(cfg.upstreams),
+        enabled=len(enabled),
+    )
+    if not enabled:
+        log_kv(log, logging.INFO, "sync_skip", reason="no_enabled_upstream")
+        return stats
+
+    for i, upstream in enumerate(enabled, start=1):
+        uid = upstream.id or _short_hash(upstream.url)
+        log_kv(
+            log,
+            logging.INFO,
+            "sync_feed_begin",
+            index=i,
+            total=len(enabled),
+            id=uid,
+            name=upstream.name or uid,
+            url=upstream.url,
+            kind=upstream.kind,
+            format=upstream.format,
+        )
+        try:
+            payload = fetch_url(upstream.url, timeout=cfg.timeout_read + 30)
+            log_kv(log, logging.INFO, "sync_fetch_ok", id=uid, bytes=len(payload))
+        except Exception as exc:  # noqa: BLE001 — 单源失败不中断整轮
+            log_kv(
+                log, logging.WARNING, "sync_fetch_fail", id=uid, url=upstream.url, error=str(exc)
+            )
+            stats["errors"] += 1
+            continue
+
+        kind = _resolve_kind(upstream, payload)
+        site_items: list[dict[str, Any]] = []
+        live_items: list[dict[str, Any]] = []
+        fmt = (upstream.format or "auto").lower()
+        if kind == "lives":
+            live_items = parse_lives_payload(payload)
+        else:
+            site_items = parse_sites_payload(payload, fmt=fmt)
+            # kind=auto 时，同一文档里若带 lives 一并解析
+            if upstream.kind in ("auto", ""):
+                live_items = parse_lives_payload(payload)
+        log_kv(
+            log,
+            logging.INFO,
+            "sync_parsed",
+            id=uid,
+            kind=kind,
+            sites=len(site_items),
+            lives=len(live_items),
+        )
+
+        target = (upstream.target or "pending").lower()
+        directory = _target_dir(cfg, target)
+
+        if dry_run:
+            log_kv(
+                log,
+                logging.INFO,
+                "sync_dry",
+                id=uid,
+                kind=kind,
+                sites=len(site_items),
+                lives=len(live_items),
+                target=target,
+            )
+            stats["sites"] += len(site_items)
+            stats["lives"] += len(live_items)
+            stats["feeds"] += 1
+            continue
+
+        if site_items:
+            merge_into_pool(
+                directory / "sites.json",
+                site_items,
+                upstream_id=uid,
+                kind="site",
+            )
+            stats["sites"] += len(site_items)
+        if live_items:
+            live_uid = uid if kind == "lives" else f"{uid}-lives"
+            merge_into_pool(
+                directory / "lives.json",
+                live_items,
+                upstream_id=live_uid,
+                kind="live",
+            )
+            stats["lives"] += len(live_items)
+
+        stats["feeds"] += 1
+        log_kv(
+            log,
+            logging.INFO,
+            "sync_feed_done",
+            id=uid,
+            kind=kind,
+            sites=len(site_items),
+            lives=len(live_items),
+            target=target,
+        )
+
+    log_kv(log, logging.INFO, "sync_done", **stats)
+    return stats

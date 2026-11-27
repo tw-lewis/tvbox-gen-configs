@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ouonnki-full-noadult",
+    "name": "OuonnkiTV 无成人 JSON",
+    "url": "https://raw.githubusercontent.com/Yesbaiwan/OuonnkiTV-Source/main/tv_source/OuonnkiTV/full-noadult.json",
+    "enabled": true,
+    "target": "pending",
+    "kind": "sites",
+    "format": "json",
+    "note": "点播采集源"
+  },
+  {
+    "id": "ziyuanzu-cms",
+    "name": "资源组 CMS 接口 TXT",
+    "url": "https://www.ziyuanzu.com/download/ziyuanzu-cms-interfaces.txt",
+    "enabled": true,
+    "target": "pending",
+    "kind": "sites",
+    "format": "txt",
+    "note": "点播采集源"
+  },
+  {
+    "id": "tvbox-tvboxtv",
+    "name": "tw-lewis/tvbox tvboxtv",
+    "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox@master/tvboxtv.txt",
+    "enabled": true,
+    "target": "pending",
+    "kind": "lives",
+    "format": "txt",
+    "note": "直播采集源（DIY #genre# 列表）"
+  },
+  {
+    "id": "tvbox-list",
+    "name": "tw-lewis/tvbox list",
+    "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox@master/list.txt",
+    "enabled": true,
+    "target": "pending",
+    "kind": "lives",
+    "format": "txt",
+    "note": "直播采集源（DIY #genre# 列表）"
+  },
+  {
+    "id": "tvbox-zb",
+    "name": "tw-lewis/tvbox zb",
+    "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox@master/zb.txt",
+    "enabled": true,
+    "target": "pending",
+    "kind": "lives",
+    "format": "txt",
+    "note": "直播采集源（DIY #genre# 列表）"
+  }
+]

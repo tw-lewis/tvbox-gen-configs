@@ -1,0 +1,32 @@
+[
+  {
+    "key": "alpha",
+    "name": "Alpha源",
+    "api": "https://alpha.example.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "tags": ["点播"]
+  },
+  {
+    "key": "beta",
+    "name": "Beta源",
+    "api": "https://beta.example.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "tags": ["点播"]
+  },
+  {
+    "key": "gamma_skip",
+    "name": "Gamma跳过",
+    "api": "https://gamma.example.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 0,
+    "quickSearch": 0,
+    "filterable": 1,
+    "tags": ["点播"]
+  }
+]

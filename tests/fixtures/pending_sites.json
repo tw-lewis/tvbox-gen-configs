@@ -1,0 +1,21 @@
+[
+  {
+    "key": "pending_only",
+    "name": "待确认源",
+    "api": "https://pending.example.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "tags": ["点播"]
+  },
+  {
+    "key": "alpha",
+    "name": "Alpha冲突",
+    "api": "https://other.example.com/api.php/provide/vod",
+    "type": 1,
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1
+  }
+]

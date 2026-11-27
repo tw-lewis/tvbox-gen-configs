@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-11-27T08:00:00Z",
+  "runner": "test",
+  "summary": {
+    "total": 3,
+    "ok": 2,
+    "degraded": 0,
+    "fail": 0,
+    "skipped": 1
+  },
+  "sites": [
+    {
+      "key": "alpha",
+      "status": "ok",
+      "level": "L3",
+      "latency_ms": 200,
+      "score": 90.0,
+      "http_code": 200,
+      "checks": {
+        "reachable": true,
+        "json_ok": true,
+        "shape_ok": true,
+        "search_ok": true
+      },
+      "error": null,
+      "checked_at": "2026-11-27T08:00:01Z"
+    },
+    {
+      "key": "beta",
+      "status": "ok",
+      "level": "L2",
+      "latency_ms": 400,
+      "score": 80.0,
+      "http_code": 200,
+      "checks": {
+        "reachable": true,
+        "json_ok": true,
+        "shape_ok": true,
+        "search_ok": false
+      },
+      "error": null,
+      "checked_at": "2026-11-27T08:00:02Z"
+    },
+    {
+      "key": "gamma_skip",
+      "status": "skipped",
+      "level": "L0",
+      "latency_ms": 0,
+      "score": 0.0,
+      "http_code": null,
+      "checks": {
+        "reachable": false,
+        "json_ok": false,
+        "shape_ok": false,
+        "search_ok": false
+      },
+      "error": "searchable=0",
+      "checked_at": "2026-11-27T08:00:03Z"
+    }
+  ]
+}

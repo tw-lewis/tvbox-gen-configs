@@ -1,0 +1,74 @@
+name: update
+
+on:
+  workflow_run:
+    workflows: ["probe"]
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
+
+      - name: Download probe report
+        if: ${{ github.event_name == 'workflow_run' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: probe-report
+          path: data/
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download synced sources
+        if: ${{ github.event_name == 'workflow_run' }}
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: synced-sources
+          path: sources/
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync + probe + promote if manual
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          python -m tvboxgen sync
+          if [ ! -f data/probe_report.json ]; then
+            python -m tvboxgen probe
+          fi
+          python -m tvboxgen promote
+
+      - name: Build
+        run: python -m tvboxgen build
+
+      - name: Publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python -m tvboxgen publish --no-purge
+
+      - name: Purge jsDelivr
+        continue-on-error: true
+        run: |
+          curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/dist/index.json" || true
