@@ -210,6 +210,16 @@
     "origin": "manual"
   },
   {
+    "key": "20254K_74f7",
+    "name": "2025年春晚 4K",
+    "url": "https://svip.high24-playback.com/20250129/17159_7bca93c4/2000k/hls/mixed.m3u8",
+    "group": "春晚频道",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from suxuang-myiptv-ipv4",
+    "origin": "manual"
+  },
+  {
     "key": "20260827140622_905a",
     "name": "2026-08-27 14:06:22",
     "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv1hd",
@@ -260,6 +270,16 @@
     "origin": "manual"
   },
   {
+    "key": "CCTV1_bb79",
+    "name": "CCTV-1",
+    "url": "http://198.204.228.26/live/cctv1hd.m3u8",
+    "group": "📺央视频道",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from guovin-iptv-ipv4",
+    "origin": "manual"
+  },
+  {
     "key": "CCTV1_be04",
     "name": "CCTV-1",
     "url": "http://74.91.26.218:82/live/cctv1hd.m3u8",
@@ -273,6 +293,16 @@
     "key": "CCTV1_c9db",
     "name": "CCTV-1",
     "url": "http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009",
+    "group": "📺央视频道",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from guovin-iptv-ipv4",
+    "origin": "manual"
+  },
+  {
+    "key": "CCTV1_e459",
+    "name": "CCTV-1",
+    "url": "http://204.12.221.218:8181/3m1080p/cctv1.m3u8",
     "group": "📺央视频道",
     "logo": "",
     "added_at": "2026-11-27",
@@ -430,9 +460,29 @@
     "origin": "manual"
   },
   {
+    "key": "CCTV14_ea14",
+    "name": "CCTV-14",
+    "url": "http://204.12.221.218:8181/3m1080p/cctv14.m3u8",
+    "group": "📺央视频道",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from guovin-iptv-ipv4",
+    "origin": "manual"
+  },
+  {
     "key": "CCTV15_0662",
     "name": "CCTV-15",
     "url": "http://74.91.26.218:82/live/cctv15hd.m3u8",
+    "group": "📺央视频道",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from guovin-iptv-ipv4",
+    "origin": "manual"
+  },
+  {
+    "key": "CCTV15_1922",
+    "name": "CCTV-15",
+    "url": "http://198.204.228.26/live/cctv15hd.m3u8",
     "group": "📺央视频道",
     "logo": "",
     "added_at": "2026-11-27",
@@ -633,6 +683,36 @@
     "key": "CCTV5_7f82",
     "name": "CCTV-5+",
     "url": "http://120.76.248.139/live/bfgd/4200000246.m3u8",
+    "group": "📺央视频道",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from guovin-iptv-ipv4",
+    "origin": "manual"
+  },
+  {
+    "key": "CCTV5_95b7",
+    "name": "CCTV-5+",
+    "url": "http://223.78.65.165:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "group": "📺央视频道",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from guovin-iptv-ipv4",
+    "origin": "manual"
+  },
+  {
+    "key": "CCTV6_451e",
+    "name": "CCTV-6",
+    "url": "http://198.204.228.26/live/cctv6hd.m3u8",
+    "group": "📺央视频道",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from guovin-iptv-ipv4",
+    "origin": "manual"
+  },
+  {
+    "key": "CCTV6_8c73",
+    "name": "CCTV-6",
+    "url": "http://198.204.240.250:82/live/cctv6.m3u8",
     "group": "📺央视频道",
     "logo": "",
     "added_at": "2026-11-27",
@@ -3790,36 +3870,6 @@
     "origin": "manual"
   },
   {
-    "key": "hzcm-livemediahu_933a",
-    "name": "湖州公共民生",
-    "url": "http://hzcm-live.media.hugd.com/1e6b554b9ab74513958c0e1ffe664d22/9acaa7634309494cb29a85eb12136607.m3u8?auth_key=2272900830-9a2389b8bf4e49d580d4ad807423d326-0-ea78a5c7a678c436263582d368f5009e",
-    "group": "☘️浙江频道",
-    "logo": "",
-    "added_at": "2026-11-27",
-    "note": "from guovin-iptv-ipv4",
-    "origin": "manual"
-  },
-  {
-    "key": "hzcm-livemediahu_2d13",
-    "name": "湖州文化娱乐",
-    "url": "http://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887",
-    "group": "☘️浙江频道",
-    "logo": "",
-    "added_at": "2026-11-27",
-    "note": "from guovin-iptv-ipv4",
-    "origin": "manual"
-  },
-  {
-    "key": "hzcm-livemediahu_8678",
-    "name": "湖州新闻综合",
-    "url": "http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865",
-    "group": "☘️浙江频道",
-    "logo": "",
-    "added_at": "2026-11-27",
-    "note": "from guovin-iptv-ipv4",
-    "origin": "manual"
-  },
-  {
     "key": "cdn6163189xyz_ca9f",
     "name": "澳门体育",
     "url": "http://cdn6.163189.xyz/163189/amty",
@@ -5263,16 +5313,6 @@
     "key": "cdn8163189xyz_fbd1",
     "name": "龙华偶像",
     "url": "https://cdn8.163189.xyz/live/lhox/stream.m3u8",
-    "group": "港澳台频道",
-    "logo": "",
-    "added_at": "2026-11-27",
-    "note": "from suxuang-myiptv-ipv4",
-    "origin": "manual"
-  },
-  {
-    "key": "cdn8163189xyz_02f2",
-    "name": "龙华卡通",
-    "url": "https://cdn8.163189.xyz/live/lhkt/stream.m3u8",
     "group": "港澳台频道",
     "logo": "",
     "added_at": "2026-11-27",
