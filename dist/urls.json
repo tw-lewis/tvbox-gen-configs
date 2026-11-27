@@ -1,0 +1,24 @@
+{
+  "urls": [
+    {
+      "name": "纯源",
+      "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox-gen-configs@main/dist/index.json"
+    },
+    {
+      "name": "gaotianliuyun/gao js.json",
+      "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"
+    },
+    {
+      "name": "kstore wex.json",
+      "url": "https://9280.kstore.space/wex.json"
+    },
+    {
+      "name": "liucn/box m.json",
+      "url": "https://raw.liucn.cc/box/m.json"
+    },
+    {
+      "name": "qist/tvbox xiaosa api.json",
+      "url": "https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json"
+    }
+  ]
+}

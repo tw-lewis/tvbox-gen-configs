@@ -1,0 +1,26 @@
+[
+  {
+    "name": "gaotianliuyun/gao js.json",
+    "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
+    "id": "gao-js",
+    "note": "完整 TVBox 点播配置（drpy/js 相对路径依赖该仓库地址）"
+  },
+  {
+    "name": "kstore wex.json",
+    "url": "https://9280.kstore.space/wex.json",
+    "id": "kstore-wex",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该地址）"
+  },
+  {
+    "name": "liucn/box m.json",
+    "url": "https://raw.liucn.cc/box/m.json",
+    "id": "liucn-box-m",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）"
+  },
+  {
+    "name": "qist/tvbox xiaosa api.json",
+    "url": "https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json",
+    "id": "qist-xiaosa-api",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）"
+  }
+]

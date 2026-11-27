@@ -1,0 +1,42 @@
+[
+  {
+    "id": "liucn-box-m",
+    "key": "liucn-box-m",
+    "name": "liucn/box m.json",
+    "url": "https://raw.liucn.cc/box/m.json",
+    "kind": "vod_config",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）",
+    "origin": "",
+    "added_at": ""
+  },
+  {
+    "id": "kstore-wex",
+    "key": "kstore-wex",
+    "name": "kstore wex.json",
+    "url": "https://9280.kstore.space/wex.json",
+    "kind": "vod_config",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该地址）",
+    "origin": "",
+    "added_at": ""
+  },
+  {
+    "id": "gao-js",
+    "key": "gao-js",
+    "name": "gaotianliuyun/gao js.json",
+    "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
+    "kind": "vod_config",
+    "note": "完整 TVBox 点播配置（drpy/js 相对路径依赖该仓库地址）",
+    "origin": "",
+    "added_at": ""
+  },
+  {
+    "id": "qist-xiaosa-api",
+    "key": "qist-xiaosa-api",
+    "name": "qist/tvbox xiaosa api.json",
+    "url": "https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json",
+    "kind": "vod_config",
+    "note": "完整 TVBox 点播配置（蜘蛛/jar 相对路径依赖该仓库地址）",
+    "origin": "",
+    "added_at": ""
+  }
+]
