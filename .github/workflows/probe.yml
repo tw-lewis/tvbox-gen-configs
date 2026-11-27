@@ -47,10 +47,12 @@ jobs:
           unzip -o /tmp/fail-streak.zip -d data/
           ls -la data/fail_streak.json || true
 
-      - name: Sync upstreams into pending
+      - name: Sync upstreams into pending (overwrite)
+        id: sync
+        continue-on-error: true
         run: python -m tvboxgen sync
 
-      - name: Probe pending
+      - name: Probe full inventory (pending ∪ manual)
         env:
           TVBOXGEN_RUNNER: gha-linux
         run: python -m tvboxgen probe

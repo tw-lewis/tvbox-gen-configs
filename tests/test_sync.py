@@ -173,22 +173,23 @@ def test_merge_into_pool_alias(tmp_path: Path) -> None:
     assert merged[0]["origin"] == "upstream:u1"
 
 
-def test_sync_appends_to_pending(tmp_path: Path, monkeypatch) -> None:
+def test_sync_overwrites_pending(tmp_path: Path, monkeypatch) -> None:
     root = tmp_path
     (root / "sources" / "trusted").mkdir(parents=True)
     (root / "sources" / "pending").mkdir(parents=True)
+    (root / "sources" / "manual").mkdir(parents=True)
     (root / "sources" / "trusted" / "sites.json").write_text("[]\n", encoding="utf-8")
     (root / "sources" / "trusted" / "lives.json").write_text("[]\n", encoding="utf-8")
     (root / "sources" / "pending" / "sites.json").write_text(
         json.dumps(
             [
                 {
-                    "key": "manual_keep",
-                    "name": "手工",
-                    "api": "https://manual.example.com/api.php/provide/vod",
+                    "key": "stale_old",
+                    "name": "旧采集",
+                    "api": "https://old.example.com/api.php/provide/vod",
                     "type": 1,
                     "searchable": 1,
-                    "origin": "manual",
+                    "origin": "upstream:old",
                 }
             ],
             ensure_ascii=False,
@@ -196,6 +197,8 @@ def test_sync_appends_to_pending(tmp_path: Path, monkeypatch) -> None:
         encoding="utf-8",
     )
     (root / "sources" / "pending" / "lives.json").write_text("[]\n", encoding="utf-8")
+    (root / "sources" / "manual" / "sites.json").write_text("[]\n", encoding="utf-8")
+    (root / "sources" / "manual" / "lives.json").write_text("[]\n", encoding="utf-8")
     collectors = root / "sources" / "collectors"
     collectors.mkdir(parents=True)
     (collectors / "feeds.json").write_text(
@@ -227,6 +230,7 @@ def test_sync_appends_to_pending(tmp_path: Path, monkeypatch) -> None:
 [sources]
 trusted_dir = "sources/trusted"
 pending_dir = "sources/pending"
+manual_dir = "sources/manual"
 collectors_dir = "sources/collectors"
 """,
         encoding="utf-8",
@@ -247,12 +251,56 @@ collectors_dir = "sources/collectors"
     stats = sync_upstreams(cfg)
     assert stats["sites"] >= 1
     assert stats["lives"] >= 1
+    assert stats.get("written") == 1
 
     sites = json.loads((root / "sources" / "pending" / "sites.json").read_text(encoding="utf-8"))
     lives = json.loads((root / "sources" / "pending" / "lives.json").read_text(encoding="utf-8"))
-    assert any(s.get("key") == "manual_keep" for s in sites)
+    # overwrite: 旧采集条目消失
+    assert not any(s.get("key") == "stale_old" for s in sites)
     assert any(s.get("origin") == "upstream:vod1" for s in sites)
     assert any(lv.get("origin") == "upstream:live1" for lv in lives)
-    # trusted untouched by sync
     trusted = json.loads((root / "sources" / "trusted" / "sites.json").read_text(encoding="utf-8"))
     assert trusted == []
+
+
+def test_sync_keeps_pending_when_all_feeds_fail(tmp_path: Path, monkeypatch) -> None:
+    root = tmp_path
+    (root / "sources" / "pending").mkdir(parents=True)
+    (root / "sources" / "collectors").mkdir(parents=True)
+    old = [{"key": "keep", "name": "旧", "api": "https://keep.example.com/x", "type": 1}]
+    (root / "sources" / "pending" / "sites.json").write_text(
+        json.dumps(old, ensure_ascii=False), encoding="utf-8"
+    )
+    (root / "sources" / "pending" / "lives.json").write_text("[]\n", encoding="utf-8")
+    (root / "sources" / "collectors" / "feeds.json").write_text(
+        json.dumps(
+            [
+                {
+                    "id": "bad",
+                    "url": "https://example.com/down.json",
+                    "enabled": True,
+                    "kind": "sites",
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    (root / "config.toml").write_text(
+        """
+[sources]
+pending_dir = "sources/pending"
+collectors_dir = "sources/collectors"
+""",
+        encoding="utf-8",
+    )
+
+    def boom(url: str, timeout: float = 40.0) -> bytes:
+        raise RuntimeError("network down")
+
+    monkeypatch.setattr("tvboxgen.sync.fetch_url", boom)
+    cfg = load_config(root)
+    stats = sync_upstreams(cfg)
+    assert stats["feeds"] == 0
+    assert stats.get("written", 0) == 0
+    kept = json.loads((root / "sources" / "pending" / "sites.json").read_text(encoding="utf-8"))
+    assert kept[0]["key"] == "keep"

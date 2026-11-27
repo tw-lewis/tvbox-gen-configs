@@ -1,15 +1,16 @@
-"""过滤、排序、分组并序列化 dist/index.json。"""
+"""过滤、排序并序列化三份产物：纯源 / 订阅源 / 多仓源。"""
 
 from __future__ import annotations
 
 import json
 import logging
+from collections import defaultdict
 from typing import Any
 
 from tvboxgen.config import Config
 from tvboxgen.logger import get_logger, log_kv
 from tvboxgen.models import ProbeResult, Report, Site
-from tvboxgen.sources import load_lives, sites_for_build
+from tvboxgen.sources import load_lives, load_trusted_subscriptions, sites_for_build
 
 log = get_logger()
 
@@ -38,10 +39,81 @@ def in_watchlist(cfg: Config, key: str) -> bool:
     return load_streaks(cfg).get(key, 0) >= cfg.fail_streak_limit
 
 
+def lives_to_diy(lives: list[Site]) -> str:
+    """频道列表 → DIY 直播文本（group,#genre# / name,url），供 TVBox LiveParser 识别。"""
+    groups: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    for lv in lives:
+        url = (lv.url or "").strip()
+        if not url:
+            continue
+        name = (lv.name or lv.key or url).strip() or url
+        group = (lv.group or "").strip() or "未分组"
+        groups[group].append((name, url))
+
+    lines: list[str] = []
+    for group in sorted(groups.keys()):
+        lines.append(f"{group},#genre#")
+        for name, url in sorted(groups[group], key=lambda pair: (pair[0], pair[1])):
+            lines.append(f"{name},{url}")
+    return "\n".join(lines) + ("\n" if lines else "")
+
+
+def build_lives_entry(cfg: Config, *, has_channels: bool) -> list[dict[str, Any]]:
+    """TVBox lives：指向同目录 lives.txt 的列表源，而非内嵌频道对象。"""
+    if not has_channels:
+        return []
+    return [
+        {
+            "name": cfg.lives_name or "直播",
+            "type": 0,
+            "url": "./lives.txt",
+            "playerType": 1,
+        }
+    ]
+
+
+def build_subscriptions_product(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """订阅源产物：精简为 name/url（及可选 id/note）。"""
+    out: list[dict[str, Any]] = []
+    for row in sorted(rows, key=lambda r: (str(r.get("name") or ""), str(r.get("url") or ""))):
+        url = str(row.get("url") or "").strip()
+        if not url:
+            continue
+        item: dict[str, Any] = {
+            "name": str(row.get("name") or row.get("id") or url),
+            "url": url,
+        }
+        sid = str(row.get("id") or row.get("key") or "")
+        if sid:
+            item["id"] = sid
+        note = str(row.get("note") or "")
+        if note:
+            item["note"] = note
+        out.append(item)
+    return out
+
+
+def build_urls_depot(cfg: Config, subscriptions: list[dict[str, Any]]) -> dict[str, Any]:
+    """多仓源：TVBox urls depot = 纯源 + 各订阅 URL。"""
+    urls: list[dict[str, str]] = [
+        {
+            "name": cfg.pure_name or "纯源",
+            "url": cfg.dist_public_url("index.json"),
+        }
+    ]
+    for row in subscriptions:
+        name = str(row.get("name") or row.get("id") or "").strip()
+        url = str(row.get("url") or "").strip()
+        if not url:
+            continue
+        urls.append({"name": name or url, "url": url})
+    return {"urls": urls}
+
+
 def build_index(
     report: Report, sites: list[Site], lives: list[Site], cfg: Config
 ) -> dict[str, Any]:
-    """按探测结果过滤 trusted 源，生成 TVBox 产物结构。"""
+    """按探测结果过滤 trusted 源，生成标准 TVBox 纯源 JSON。"""
     by_key = report.by_key()
     accept = set(cfg.accept_status)
     if cfg.allow_degraded:
@@ -68,8 +140,8 @@ def build_index(
 
     alive.sort(key=lambda pair: (-pair[1].score, pair[0].name))
     out_sites = [s.to_index_site() for s, _ in alive]
-    # 直播：trusted 中已晋升的频道直接写入产物
-    out_lives = [lv.to_index_live() for lv in lives]
+    channel_count = sum(1 for lv in lives if (lv.url or "").strip())
+    out_lives = build_lives_entry(cfg, has_channels=channel_count > 0)
 
     log_kv(
         log,
@@ -77,40 +149,63 @@ def build_index(
         "build_filter",
         input_sites=len(sites),
         output_sites=len(out_sites),
-        output_lives=len(out_lives),
+        output_live_sources=len(out_lives),
+        output_live_channels=channel_count,
         **{f"skip_{k}": v for k, v in skip.items()},
     )
 
     return {
+        "spider": cfg.spider,
+        "wallpaper": cfg.wallpaper,
+        "logo": cfg.logo,
         "sites": out_sites,
         "lives": out_lives,
         "parses": cfg.static_parses,
         "flags": cfg.flags,
-        "wallpaper": cfg.wallpaper,
+        "rules": cfg.static_rules,
+        "doh": cfg.static_doh,
+        "ads": cfg.static_ads,
     }
 
 
 def build(cfg: Config, *, dry_run: bool = False) -> dict[str, Any]:
-    """生成 dist/index.json；dry_run 时只对比不写盘。"""
+    """生成纯源 index.json、订阅源 subscriptions.json、多仓 urls.json + lives.txt。"""
     log_kv(log, logging.INFO, "build_start", dry_run=dry_run, index=str(cfg.index_path))
     report = load_report(cfg)
     sites = sites_for_build(cfg)
     lives = load_lives(cfg)
+    sub_rows = load_trusted_subscriptions(cfg)
     log_kv(
         log,
         logging.INFO,
         "build_inputs",
         trusted_sites=len(sites),
         trusted_lives=len(lives),
+        trusted_subscriptions=len(sub_rows),
     )
     index = build_index(report, sites, lives, cfg)
+    subs_product = build_subscriptions_product(sub_rows)
+    depot = build_urls_depot(cfg, subs_product)
     text = dumps(index)
+    subs_text = dumps(subs_product)
+    depot_text = dumps(depot)
+    diy = lives_to_diy(lives)
 
     if dry_run:
-        existing = ""
-        if cfg.index_path.is_file():
-            existing = cfg.index_path.read_text(encoding="utf-8")
-        changed = existing != text
+        existing = cfg.index_path.read_text(encoding="utf-8") if cfg.index_path.is_file() else ""
+        existing_lives = cfg.lives_path.read_text(encoding="utf-8") if cfg.lives_path.is_file() else ""
+        existing_subs = (
+            cfg.subscriptions_path.read_text(encoding="utf-8")
+            if cfg.subscriptions_path.is_file()
+            else ""
+        )
+        existing_urls = cfg.urls_path.read_text(encoding="utf-8") if cfg.urls_path.is_file() else ""
+        changed = (
+            existing != text
+            or existing_lives != diy
+            or existing_subs != subs_text
+            or existing_urls != depot_text
+        )
         log_kv(
             log,
             logging.INFO,
@@ -118,6 +213,8 @@ def build(cfg: Config, *, dry_run: bool = False) -> dict[str, Any]:
             changed=changed,
             sites=len(index["sites"]),
             lives=len(index["lives"]),
+            subscriptions=len(subs_product),
+            depot_urls=len(depot.get("urls") or []),
         )
         if changed:
             print(text, end="")
@@ -125,12 +222,22 @@ def build(cfg: Config, *, dry_run: bool = False) -> dict[str, Any]:
 
     cfg.index_path.parent.mkdir(parents=True, exist_ok=True)
     cfg.index_path.write_text(text, encoding="utf-8")
+    cfg.lives_path.write_text(diy, encoding="utf-8")
+    cfg.subscriptions_path.write_text(subs_text, encoding="utf-8")
+    cfg.urls_path.write_text(depot_text, encoding="utf-8")
+
     log_kv(
         log,
         logging.INFO,
         "build_done",
-        path=str(cfg.index_path),
+        pure=str(cfg.index_path),
+        lives_path=str(cfg.lives_path),
+        subscriptions=str(cfg.subscriptions_path),
+        urls=str(cfg.urls_path),
         sites=len(index["sites"]),
         lives=len(index["lives"]),
+        subscription_count=len(subs_product),
+        depot_urls=len(depot.get("urls") or []),
+        live_channels=sum(1 for line in diy.splitlines() if line and not line.endswith("#genre#")),
     )
     return index

@@ -10,21 +10,13 @@ from tvboxgen.promote import promote_trusted
 
 def _setup(tmp: Path) -> Path:
     pending = tmp / "sources" / "pending"
+    manual = tmp / "sources" / "manual"
     trusted = tmp / "sources" / "trusted"
     pending.mkdir(parents=True)
+    manual.mkdir(parents=True)
     trusted.mkdir(parents=True)
     (tmp / "data").mkdir(parents=True)
     pending_sites = [
-        {
-            "key": "ok_one",
-            "name": "可用",
-            "api": "https://ok.example.com/api.php/provide/vod",
-            "type": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "origin": "manual",
-        },
         {
             "key": "fail_one",
             "name": "不可用",
@@ -34,6 +26,18 @@ def _setup(tmp: Path) -> Path:
             "quickSearch": 1,
             "filterable": 1,
             "origin": "upstream:u1",
+        },
+    ]
+    manual_sites = [
+        {
+            "key": "ok_one",
+            "name": "可用",
+            "api": "https://ok.example.com/api.php/provide/vod",
+            "type": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "origin": "manual",
         },
         {
             "key": "degraded_one",
@@ -48,14 +52,6 @@ def _setup(tmp: Path) -> Path:
     ]
     pending_lives = [
         {
-            "key": "live_ok",
-            "name": "CCTV1",
-            "url": "https://live.example.com/1.m3u8",
-            "group": "央视",
-            "logo": "",
-            "origin": "manual",
-        },
-        {
             "key": "live_bad",
             "name": "挂掉",
             "url": "https://dead.example.com/x.m3u8",
@@ -64,8 +60,20 @@ def _setup(tmp: Path) -> Path:
             "origin": "upstream:live1",
         },
     ]
+    manual_lives = [
+        {
+            "key": "live_ok",
+            "name": "CCTV1",
+            "url": "https://live.example.com/1.m3u8",
+            "group": "央视",
+            "logo": "",
+            "origin": "manual",
+        },
+    ]
     (pending / "sites.json").write_text(dumps(pending_sites), encoding="utf-8")
     (pending / "lives.json").write_text(dumps(pending_lives), encoding="utf-8")
+    (manual / "sites.json").write_text(dumps(manual_sites), encoding="utf-8")
+    (manual / "lives.json").write_text(dumps(manual_lives), encoding="utf-8")
     (trusted / "sites.json").write_text("[]\n", encoding="utf-8")
     (trusted / "lives.json").write_text("[]\n", encoding="utf-8")
     report = {
@@ -161,6 +169,7 @@ def _setup(tmp: Path) -> Path:
 [sources]
 trusted_dir = "sources/trusted"
 pending_dir = "sources/pending"
+manual_dir = "sources/manual"
 pending_affects_output = false
 
 [build]
@@ -183,6 +192,8 @@ def test_promote_only_ok_into_trusted(tmp_path: Path) -> None:
     lives = json.loads((root / "sources" / "trusted" / "lives.json").read_text(encoding="utf-8"))
     assert [s["key"] for s in sites] == ["ok_one"]
     assert [lv["key"] for lv in lives] == ["live_ok"]
-    # pending untouched
+    # pending / manual untouched
     pending = json.loads((root / "sources" / "pending" / "sites.json").read_text(encoding="utf-8"))
-    assert len(pending) == 3
+    manual = json.loads((root / "sources" / "manual" / "sites.json").read_text(encoding="utf-8"))
+    assert len(pending) == 1
+    assert len(manual) == 2

@@ -180,16 +180,21 @@ async def probe_one(
     result = ProbeResult(key=site.key, status="fail", level="L0", checked_at=checked_at)
 
     async with global_sem, domain_sems[domain]:
-        # Live channels: L0 reachability on stream URL only
-        if site.kind == "live":
-            code, _body, ms, err = await _fetch(session, site.url, timeout=timeout)
+        # Live / subscription: L0 reachability on url only
+        if site.kind in ("live", "subscription"):
+            code, body, ms, err = await _fetch(session, site.url, timeout=timeout)
             result.latency_ms = int(ms)
             result.http_code = code
             if err or code is None or (code >= 400 and code != 405):
-                return result.as_fail(error=err or f"live_http_{code}")
+                return result.as_fail(error=err or f"{site.kind}_http_{code}")
             result.checks.reachable = True
             result.level = "L0"
             result.status = "ok"
+            if site.kind == "subscription" and body:
+                data = _looks_json(body)
+                if isinstance(data, dict) and isinstance(data.get("sites"), list):
+                    result.checks.json_ok = True
+                    result.level = "L1"
             result.score = _score(result, _history_stability(cfg, site.key), cfg.max_latency_ms)
             return result
 

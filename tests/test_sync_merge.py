@@ -6,7 +6,7 @@ from pathlib import Path
 from tvboxgen.sync import merge_into_pool
 
 
-def test_append_dedupe_keeps_manual_skips_duplicate_api(tmp_path: Path) -> None:
+def test_merge_into_pool_overwrites_file_with_deduped_batch(tmp_path: Path) -> None:
     pending = tmp_path / "pending"
     pending.mkdir()
     path = pending / "sites.json"
@@ -32,8 +32,8 @@ def test_append_dedupe_keeps_manual_skips_duplicate_api(tmp_path: Path) -> None:
 
     incoming = [
         {
-            "key": "dup_manual",
-            "name": "重复手工API",
+            "key": "dup_same_api",
+            "name": "重复API",
             "api": "https://manual.example.com/api.php/provide/vod",
             "type": 1,
             "searchable": 1,
@@ -56,10 +56,10 @@ def test_append_dedupe_keeps_manual_skips_duplicate_api(tmp_path: Path) -> None:
     merged = merge_into_pool(path, incoming, upstream_id="feed_a", kind="site")
     keys = [s["key"] for s in merged]
     apis = [s["api"] for s in merged]
-    assert "manual_keep" in keys
-    assert "auto_old" in keys
+    # 覆盖写入：旧文件内容不保留；本批内按 api 去重
+    assert "manual_keep" not in keys
     assert "new_feed" in keys
-    assert keys.count("dup_manual") == 0
+    assert "auto_old" in keys or "dup_same_api" in keys
     assert len(apis) == len(set(apis))
-    # append: old upstream entry stays; new one added
-    assert len(merged) == 3
+    on_disk = json.loads(path.read_text(encoding="utf-8"))
+    assert {s["key"] for s in on_disk} == set(keys)

@@ -55,6 +55,32 @@ def test_build_filters_skipped_and_sorts(tmp_path: Path) -> None:
     assert "tags" not in index["sites"][0]
     assert "note" not in index["sites"][0]
     assert index["flags"] == ["qq", "iqiyi"]
+    # TVBox 顶层字段
+    for key in ("spider", "wallpaper", "logo", "sites", "lives", "parses", "flags", "rules", "doh", "ads"):
+        assert key in index
+    assert list(index.keys())[:4] == ["spider", "wallpaper", "logo", "sites"]
+
+
+def test_build_lives_as_txt_source(tmp_path: Path) -> None:
+    root = _setup(tmp_path)
+    (root / "sources" / "trusted" / "lives.json").write_text(
+        dumps(
+            [
+                {"key": "cctv1", "name": "CCTV1", "url": "http://a/1.m3u8", "group": "央视"},
+                {"key": "hunantv", "name": "湖南卫视", "url": "http://b/2.m3u8", "group": "卫视"},
+            ]
+        ),
+        encoding="utf-8",
+    )
+    cfg = load_config(root)
+    index = build(cfg)
+    assert index["lives"] == [
+        {"name": "直播", "type": 0, "url": "./lives.txt", "playerType": 1}
+    ]
+    diy = cfg.lives_path.read_text(encoding="utf-8")
+    assert "央视,#genre#" in diy
+    assert "CCTV1,http://a/1.m3u8" in diy
+    assert "卫视,#genre#" in diy
 
 
 def test_build_idempotent(tmp_path: Path) -> None:
@@ -62,9 +88,12 @@ def test_build_idempotent(tmp_path: Path) -> None:
     cfg = load_config(root)
     build(cfg)
     first = cfg.index_path.read_text(encoding="utf-8")
+    first_lives = cfg.lives_path.read_text(encoding="utf-8")
     build(cfg)
     second = cfg.index_path.read_text(encoding="utf-8")
+    second_lives = cfg.lives_path.read_text(encoding="utf-8")
     assert first == second
+    assert first_lives == second_lives
     assert first.endswith("\n")
 
 

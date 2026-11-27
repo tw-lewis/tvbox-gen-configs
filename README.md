@@ -1,6 +1,6 @@
 # tvbox-gen-configs
 
-Private TVBox config generator：采集全量种子 → 探测可用性 → 晋升高可用源 → 生成订阅配置。
+Private TVBox config generator：采集全量种子 ∪ 手维源 → 探测可用性 → 晋升高可用源 → 生成订阅配置。
 
 > 仅供个人/家庭内网使用。仓库请保持 **Private**。
 
@@ -8,59 +8,47 @@ Private TVBox config generator：采集全量种子 → 探测可用性 → 晋�
 
 | 目录 | 作用 |
 |---|---|
-| `sources/collectors/feeds.json` | **采集源**（手动维护）：点播 API 清单 + 直播频道清单 URL |
-| `sources/pending/sites.json` | 点播全量池（手改 + 采集追加去重） |
-| `sources/pending/lives.json` | 直播全量池（手改 + 直播采集追加去重） |
-| `sources/trusted/` | 探测可用后自动写入；`build` 只读这里生成产物 |
+| `sources/collectors/feeds.json` | **采集源**清单 URL（CMS 点播 / 直播频道列表） |
+| `sources/pending/` | **仅** sync 覆盖写入的采集结果 |
+| `sources/manual/sites.json` `lives.json` | **手维** HTTP 点播 / 直播频道 |
+| `sources/manual/subscriptions.json` | **手维**完整 TVBox 配置 URL（蜘蛛/jar，勿拆站） |
+| `sources/pending/subscriptions.json` | sync 识别到的仓库型配置（整包 URL） |
+| `sources/trusted/` | 探测可用后自动写入（含 `subscriptions.json`）；`build` 只读这里 |
+
+```text
+collectors ──sync(覆盖 pending)──► pending sites/lives/subscriptions ─┐
+                                                                      ├─ probe ─► promote ─► trusted
+manual sites/lives/subscriptions ─────────────────────────────────────┘              │
+                                                                                     ▼
+                                                              dist/index.json      纯源
+                                                              dist/lives.txt       直播 DIY
+                                                              dist/subscriptions.json 订阅源
+                                                              dist/urls.json       多仓源
+```
+
+- sync **整轮成功才覆盖** pending；全部失败或中途崩溃 → **保留旧 pending**，后续 probe 照常跑全量（pending∪manual）。
+- 采集到的完整 TVBox 源（`spider` / type3 / 相对 jar·js）写入 `pending/subscriptions.json`，**不拆站**；`feeds.json` 也可显式 `"kind": "subscriptions"`。
 
 ## 快速开始
 
 ```bash
 python -m venv .venv
-# Windows
 .venv\Scripts\pip install -r requirements.txt -e ".[dev]"
 
-python -m tvboxgen sync      # collectors → pending（追加去重）
-python -m tvboxgen probe     # 探测 pending
-python -m tvboxgen promote   # 可用 → 重写 trusted
-python -m tvboxgen build     # trusted → dist/index.json
+python -m tvboxgen sync      # collectors → 覆盖 pending
+python -m tvboxgen probe     # 探测 pending∪manual（含 subscriptions）
+python -m tvboxgen promote   # 可用 → trusted（含 subscriptions）
+python -m tvboxgen build     # → 纯源 + 订阅源 + 多仓源
 python -m tvboxgen publish --local
 ```
 
-### 采集源配置（手动维护）
+### 盒子订阅
 
-编辑 `sources/collectors/feeds.json`（数组，可配多条）：
-
-```json
-[
-  {
-    "id": "ouonnki-full-noadult",
-    "name": "OuonnkiTV 无成人 JSON",
-    "url": "https://raw.githubusercontent.com/Yesbaiwan/OuonnkiTV-Source/main/tv_source/OuonnkiTV/full-noadult.json",
-    "enabled": true,
-    "target": "pending",
-    "kind": "sites",
-    "format": "json"
-  }
-]
-```
-
-`format`：`json` / `txt` / `auto`。  
-`kind`：`sites`（点播采集）或 `lives`（直播采集，支持 DIY `分组,#genre#` + `名称,url`）。
-
-直播也可继续手改 `sources/pending/lives.json`。
-
-## 订阅地址
-
-```
-https://cdn.jsdelivr.net/gh/<owner>/tvbox-gen-configs@main/dist/index.json
-```
-
-私有仓库 jsDelivr 不可用；家庭场景建议自托管 `dist/`。
-
-## 参考
-
-探测与产物形态参考 [tw-lewis/TVbox-Configs](https://github.com/tw-lewis/TVbox-Configs)。
+| 产物 | 文件 | 说明 |
+|---|---|---|
+| **纯源** | `dist/index.json` (+ `lives.txt`) | CMS 点播 + 直播；标准 TVBox JSON |
+| **订阅源** | `dist/subscriptions.json` | 可用的完整仓库配置 URL 列表 |
+| **多仓源** | `dist/urls.json` | `{"urls":[纯源, …订阅]}`，TVBox 多仓入口 |
 
 ## License
 

@@ -58,7 +58,19 @@ def publish(cfg: Config, *, local: bool = False, do_purge: bool = True) -> int:
     """暂存 sources/dist/data，有变更则 commit；非 local 时 push。"""
     log_kv(log, logging.INFO, "publish_start", local=local, purge=do_purge, root=str(cfg.root))
     root = cfg.root
-    add = _run(["git", "add", "sources/", "dist/index.json", "data/"], cwd=root)
+    add = _run(
+        [
+            "git",
+            "add",
+            "sources/",
+            "dist/index.json",
+            "dist/lives.txt",
+            "dist/subscriptions.json",
+            "dist/urls.json",
+            "data/",
+        ],
+        cwd=root,
+    )
     if add.returncode != 0:
         log_kv(log, logging.ERROR, "git_add_failed", stderr=add.stderr.strip())
         return 1

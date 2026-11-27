@@ -32,6 +32,7 @@ class Config:
     branch: str = "main"
     trusted_dir: Path = field(default_factory=lambda: Path("sources/trusted"))
     pending_dir: Path = field(default_factory=lambda: Path("sources/pending"))
+    manual_dir: Path = field(default_factory=lambda: Path("sources/manual"))
     collectors_dir: Path = field(default_factory=lambda: Path("sources/collectors"))
     pending_affects_output: bool = False
     concurrency: int = 8
@@ -50,7 +51,14 @@ class Config:
     watchlist_keys: list[str] = field(default_factory=list)
     flags: list[str] = field(default_factory=list)
     wallpaper: str = ""
+    spider: str = ""
+    logo: str = ""
+    lives_name: str = "直播"
+    pure_name: str = "纯源"
     static_parses: list[Any] = field(default_factory=list)
+    static_rules: list[Any] = field(default_factory=list)
+    static_doh: list[Any] = field(default_factory=list)
+    static_ads: list[str] = field(default_factory=list)
     upstreams: list[Upstream] = field(default_factory=list)
 
     @property
@@ -63,7 +71,29 @@ class Config:
 
     @property
     def index_path(self) -> Path:
+        """纯源（CMS + 直播引用）。"""
         return self.root / "dist" / "index.json"
+
+    @property
+    def lives_path(self) -> Path:
+        return self.root / "dist" / "lives.txt"
+
+    @property
+    def subscriptions_path(self) -> Path:
+        """订阅源清单（完整 TVBox JSON URL）。"""
+        return self.root / "dist" / "subscriptions.json"
+
+    @property
+    def urls_path(self) -> Path:
+        """多仓源（TVBox urls depot）。"""
+        return self.root / "dist" / "urls.json"
+
+    def dist_public_url(self, filename: str) -> str:
+        """jsDelivr 上 dist 文件的公开地址。"""
+        return (
+            f"https://cdn.jsdelivr.net/gh/{self.owner}/{self.name}"
+            f"@{self.branch}/dist/{filename}"
+        )
 
 
 def _resolve(root: Path, value: str | Path) -> Path:
@@ -162,6 +192,7 @@ def load_config(root: Path | None = None, path: Path | None = None) -> Config:
         branch=str(repo.get("branch") or "main"),
         trusted_dir=_resolve(root, sources.get("trusted_dir") or "sources/trusted"),
         pending_dir=_resolve(root, sources.get("pending_dir") or "sources/pending"),
+        manual_dir=_resolve(root, sources.get("manual_dir") or "sources/manual"),
         collectors_dir=collectors_dir,
         pending_affects_output=bool(sources.get("pending_affects_output", False)),
         concurrency=int(probe.get("concurrency") or 8),
@@ -182,6 +213,13 @@ def load_config(root: Path | None = None, path: Path | None = None) -> Config:
         watchlist_keys=list(watch.get("keys") or []),
         flags=list(static.get("flags") or ["qq", "iqiyi", "youku", "mgtv"]),
         wallpaper=str(static.get("wallpaper") or ""),
+        spider=str(static.get("spider") or ""),
+        logo=str(static.get("logo") or ""),
+        lives_name=str(static.get("lives_name") or "直播"),
+        pure_name=str(static.get("pure_name") or "纯源"),
         static_parses=list(static.get("parses") or []),
+        static_rules=list(static.get("rules") or []),
+        static_doh=list(static.get("doh") or []),
+        static_ads=[str(x) for x in (static.get("ads") or [])],
         upstreams=upstreams,
     )

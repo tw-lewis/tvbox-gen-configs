@@ -33,9 +33,12 @@ def _parser() -> argparse.ArgumentParser:
 
     sub.add_parser("probe", help="探测 pending → data/probe_report.json")
 
-    sub.add_parser("promote", help="探测可用的 pending → 重写 trusted")
+    sub.add_parser("promote", help="探测可用的 pending∪manual → 重写 trusted")
 
-    b = sub.add_parser("build", help="由 trusted + 报告生成 dist/index.json")
+    b = sub.add_parser(
+        "build",
+        help="由 trusted + 报告生成纯源/订阅源/多仓源（index + subscriptions + urls）",
+    )
     b.add_argument("--dry-run", action="store_true", help="只打印差异，不落盘")
 
     pub = sub.add_parser("publish", help="提交产物（可选 push / 清 CDN）")
@@ -56,6 +59,7 @@ def main(argv: list[str] | None = None) -> int:
         "cli_config",
         collectors=str(cfg.collectors_dir),
         pending=str(cfg.pending_dir),
+        manual=str(cfg.manual_dir),
         trusted=str(cfg.trusted_dir),
         upstreams=len(cfg.upstreams),
         probe_lives=cfg.probe_lives,
@@ -66,9 +70,11 @@ def main(argv: list[str] | None = None) -> int:
         stats = sync_upstreams(cfg, dry_run=args.dry_run)
         print(
             f"sync feeds={stats['feeds']} sites={stats['sites']} "
-            f"lives={stats['lives']} errors={stats['errors']}"
+            f"lives={stats['lives']} subscriptions={stats.get('subscriptions', 0)} "
+            f"errors={stats['errors']} written={stats.get('written', 0)}"
         )
-        code = 1 if stats["errors"] and not stats["feeds"] else 0
+        # 采集失败不阻断后续 probe：有成功写入或保留旧 pending 都算可继续
+        code = 0 if stats.get("feeds") or stats.get("written") or not stats["errors"] else 1
         log_kv(log, logging.INFO, "cli_done", cmd="sync", exit=code, **stats)
         return code
 
@@ -85,14 +91,32 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "promote":
         stats = promote_trusted(cfg)
-        print(f"promote sites={stats['sites']} lives={stats['lives']}")
+        print(
+            f"promote sites={stats['sites']} lives={stats['lives']} "
+            f"subscriptions={stats.get('subscriptions', 0)}"
+        )
         log_kv(log, logging.INFO, "cli_done", cmd="promote", **stats)
         return 0
 
     if args.cmd == "build":
         index = build(cfg, dry_run=args.dry_run)
         if not args.dry_run:
-            print(f"build sites={len(index['sites'])} lives={len(index['lives'])}")
+            import json as _json
+
+            subs = (
+                len(_json.loads(cfg.subscriptions_path.read_text(encoding="utf-8")))
+                if cfg.subscriptions_path.is_file()
+                else 0
+            )
+            urls = (
+                len(_json.loads(cfg.urls_path.read_text(encoding="utf-8")).get("urls") or [])
+                if cfg.urls_path.is_file()
+                else 0
+            )
+            print(
+                f"build pure_sites={len(index['sites'])} lives={len(index['lives'])} "
+                f"subscriptions={subs} depot_urls={urls}"
+            )
         log_kv(
             log,
             logging.INFO,

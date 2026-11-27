@@ -446,29 +446,17 @@ def _fingerprint(item: dict[str, Any], *, kind: str) -> str:
     return f"{host}{path}"
 
 
-def merge_into_pool(
-    path: Path,
+def _prepare_rows(
     incoming: list[dict[str, Any]],
     *,
     upstream_id: str,
     kind: str,
 ) -> list[dict[str, Any]]:
-    """追加写入全量池：按 key/api 去重，不删除手工条目。"""
-    existing: list[dict[str, Any]] = []
-    if path.is_file():
-        try:
-            raw = json.loads(path.read_text(encoding="utf-8"))
-            if isinstance(raw, list):
-                existing = [x for x in raw if isinstance(x, dict)]
-        except (OSError, json.JSONDecodeError):
-            existing = []
-
+    """给采集结果打 origin/note，并按 key/fingerprint 去重。"""
     origin = _upstream_origin(upstream_id)
-    seen_keys = {str(x.get("key")) for x in existing if x.get("key")}
-    seen_fps = {_fingerprint(x, kind=kind) for x in existing if _fingerprint(x, kind=kind)}
-
-    merged = list(existing)
-    added = 0
+    out: list[dict[str, Any]] = []
+    seen_keys: set[str] = set()
+    seen_fps: set[str] = set()
     for item in incoming:
         row = dict(item)
         row["origin"] = origin
@@ -476,7 +464,6 @@ def merge_into_pool(
             row["note"] = f"auto sync from {upstream_id}"
         if not row.get("added_at"):
             row["added_at"] = date.today().isoformat()
-
         key = str(row.get("key") or "")
         fp = _fingerprint(row, kind=kind)
         if key and key in seen_keys:
@@ -489,44 +476,147 @@ def merge_into_pool(
             seen_keys.add(key)
         if fp:
             seen_fps.add(fp)
-        merged.append(row)
-        added += 1
+        out.append(row)
+    return out
 
-    def sort_key(x: dict[str, Any]) -> tuple[int, str]:
-        is_up = 1 if str(x.get("origin") or "").startswith("upstream:") else 0
-        return (is_up, str(x.get("name") or ""))
 
-    merged.sort(key=sort_key)
+def _dedupe_rows(rows: list[dict[str, Any]], *, kind: str) -> list[dict[str, Any]]:
+    """跨采集源去重：先到先得。"""
+    out: list[dict[str, Any]] = []
+    seen_keys: set[str] = set()
+    seen_fps: set[str] = set()
+    for row in rows:
+        key = str(row.get("key") or "")
+        fp = _fingerprint(row, kind=kind)
+        if key and key in seen_keys:
+            continue
+        if fp and fp in seen_fps:
+            continue
+        if key:
+            seen_keys.add(key)
+        if fp:
+            seen_fps.add(fp)
+        out.append(row)
+    out.sort(key=lambda x: (str(x.get("name") or ""), str(x.get("key") or "")))
+    return out
+
+
+def _atomic_write_json(path: Path, rows: list[dict[str, Any]]) -> None:
+    """原子覆盖写入，避免中途失败留下半成品。"""
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(dumps(merged), encoding="utf-8")
-    log_kv(
-        log,
-        logging.INFO,
-        "sync_merged",
-        path=str(path),
-        added=added,
-        total=len(merged),
-        upstream=upstream_id,
-    )
-    return merged
+    text = dumps(rows)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    tmp.replace(path)
+
+
+def replace_pool(path: Path, rows: list[dict[str, Any]]) -> None:
+    """覆盖写入 pending 池文件。"""
+    _atomic_write_json(path, rows)
+    log_kv(log, logging.INFO, "sync_replace", path=str(path), total=len(rows))
+
+
+def merge_into_pool(
+    path: Path,
+    incoming: list[dict[str, Any]],
+    *,
+    upstream_id: str,
+    kind: str,
+) -> list[dict[str, Any]]:
+    """兼容旧测试：单源写入（覆盖该文件为去重后的本批结果）。"""
+    rows = _prepare_rows(incoming, upstream_id=upstream_id, kind=kind)
+    replace_pool(path, rows)
+    return rows
 
 
 # backward-compatible alias
 merge_into_trusted = merge_into_pool
 
 
+def is_vod_config_payload(payload: bytes) -> bool:
+    """完整 TVBox 源（蜘蛛/jar/相对脚本）→ 应按仓库 URL 整包订阅，勿拆站。"""
+    text = payload.decode("utf-8", errors="ignore").lstrip("\ufeff").strip()
+    if not text or not (text.startswith("{") or text.startswith("//")):
+        return False
+    root = _loads_json_lenient(text)
+    if not isinstance(root, dict):
+        return False
+    spider = str(root.get("spider") or "").strip()
+    if spider and not spider.lower().startswith("http"):
+        return True
+    sites = root.get("sites")
+    if not isinstance(sites, list):
+        return False
+    for raw in sites:
+        if not isinstance(raw, dict):
+            continue
+        try:
+            site_type = int(raw.get("type", 1))
+        except (TypeError, ValueError):
+            site_type = 1
+        api = str(raw.get("api") or "").strip()
+        jar = str(raw.get("jar") or "").strip()
+        if site_type == 3:
+            return True
+        if api.startswith(("./", "../", "csp_")) or api.endswith((".js", ".py", ".jar")):
+            return True
+        if jar and not jar.lower().startswith("http"):
+            return True
+    return False
+
+
+def _subscription_row(upstream: Upstream, *, uid: str) -> dict[str, Any]:
+    return {
+        "id": uid,
+        "key": uid,
+        "name": upstream.name or uid,
+        "url": upstream.url,
+        "kind": "vod_config",
+        "origin": _upstream_origin(uid),
+        "note": f"auto sync subscription from {uid}",
+        "added_at": date.today().isoformat(),
+    }
+
+
+def _dedupe_subscriptions(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    seen_urls: set[str] = set()
+    for row in rows:
+        sid = str(row.get("id") or row.get("key") or "")
+        url = str(row.get("url") or "").strip().lower()
+        if sid and sid in seen_ids:
+            continue
+        if url and url in seen_urls:
+            continue
+        if sid:
+            seen_ids.add(sid)
+        if url:
+            seen_urls.add(url)
+        out.append(row)
+    out.sort(key=lambda x: (str(x.get("name") or ""), str(x.get("id") or "")))
+    return out
+
+
 def _resolve_kind(upstream: Upstream, payload: bytes) -> str:
-    if upstream.kind in ("sites", "site", "vod"):
-        return "sites"
+    if upstream.kind in ("subscriptions", "subscription", "vod_config", "config"):
+        return "subscriptions"
     if upstream.kind in ("lives", "live"):
         return "lives"
+    if upstream.kind in ("sites", "site", "vod"):
+        # 点播清单若实为完整 TVBox 源，改走 subscriptions
+        if is_vod_config_payload(payload):
+            return "subscriptions"
+        return "sites"
     # auto-detect
+    if is_vod_config_payload(payload):
+        return "subscriptions"
     text = payload.decode("utf-8", errors="ignore").lstrip("\ufeff").strip()
     if text.startswith("{") or text.startswith("["):
         try:
             root = json.loads(text)
         except json.JSONDecodeError:
-            return "sites"
+            root = _loads_json_lenient(text)
         if isinstance(root, dict) and isinstance(root.get("lives"), list) and not root.get("sites"):
             return "lives"
         if (
@@ -542,13 +632,9 @@ def _resolve_kind(upstream: Upstream, payload: bytes) -> str:
     return "sites"
 
 
-def _target_dir(cfg: Config, target: str) -> Path:
-    return cfg.trusted_dir if target == "trusted" else cfg.pending_dir
-
-
 def sync_upstreams(cfg: Config, *, dry_run: bool = False) -> dict[str, int]:
-    """执行全部已启用采集源的拉取与合并。"""
-    stats = {"sites": 0, "lives": 0, "feeds": 0, "errors": 0}
+    """拉取全部启用采集源，成功后**覆盖** pending；中途失败不改写旧 pending。"""
+    stats = {"sites": 0, "lives": 0, "subscriptions": 0, "feeds": 0, "errors": 0, "written": 0}
     enabled = [u for u in cfg.upstreams if u.enabled and u.url]
     log_kv(
         log,
@@ -557,104 +643,137 @@ def sync_upstreams(cfg: Config, *, dry_run: bool = False) -> dict[str, int]:
         dry_run=dry_run,
         configured=len(cfg.upstreams),
         enabled=len(enabled),
+        mode="overwrite_pending",
     )
     if not enabled:
         log_kv(log, logging.INFO, "sync_skip", reason="no_enabled_upstream")
         return stats
 
-    for i, upstream in enumerate(enabled, start=1):
-        uid = upstream.id or _short_hash(upstream.url)
-        log_kv(
-            log,
-            logging.INFO,
-            "sync_feed_begin",
-            index=i,
-            total=len(enabled),
-            id=uid,
-            name=upstream.name or uid,
-            url=upstream.url,
-            kind=upstream.kind,
-            format=upstream.format,
-        )
-        try:
-            payload = fetch_url(upstream.url, timeout=cfg.timeout_read + 30)
-            log_kv(log, logging.INFO, "sync_fetch_ok", id=uid, bytes=len(payload))
-        except Exception as exc:  # noqa: BLE001 — 单源失败不中断整轮
-            log_kv(
-                log, logging.WARNING, "sync_fetch_fail", id=uid, url=upstream.url, error=str(exc)
-            )
-            stats["errors"] += 1
-            continue
+    collected_sites: list[dict[str, Any]] = []
+    collected_lives: list[dict[str, Any]] = []
+    collected_subs: list[dict[str, Any]] = []
+    completed = False
 
-        kind = _resolve_kind(upstream, payload)
-        site_items: list[dict[str, Any]] = []
-        live_items: list[dict[str, Any]] = []
-        fmt = (upstream.format or "auto").lower()
-        if kind == "lives":
-            live_items = parse_lives_payload(payload)
-        else:
-            site_items = parse_sites_payload(payload, fmt=fmt)
-            # kind=auto 时，同一文档里若带 lives 一并解析
-            if upstream.kind in ("auto", ""):
-                live_items = parse_lives_payload(payload)
-        log_kv(
-            log,
-            logging.INFO,
-            "sync_parsed",
-            id=uid,
-            kind=kind,
-            sites=len(site_items),
-            lives=len(live_items),
-        )
-
-        target = (upstream.target or "pending").lower()
-        directory = _target_dir(cfg, target)
-
-        if dry_run:
+    try:
+        for i, upstream in enumerate(enabled, start=1):
+            uid = upstream.id or _short_hash(upstream.url)
             log_kv(
                 log,
                 logging.INFO,
-                "sync_dry",
+                "sync_feed_begin",
+                index=i,
+                total=len(enabled),
+                id=uid,
+                name=upstream.name or uid,
+                url=upstream.url,
+                kind=upstream.kind,
+                format=upstream.format,
+            )
+            try:
+                payload = fetch_url(upstream.url, timeout=cfg.timeout_read + 30)
+                log_kv(log, logging.INFO, "sync_fetch_ok", id=uid, bytes=len(payload))
+            except Exception as exc:  # noqa: BLE001 — 单源失败不中断整轮
+                log_kv(
+                    log,
+                    logging.WARNING,
+                    "sync_fetch_fail",
+                    id=uid,
+                    url=upstream.url,
+                    error=str(exc),
+                )
+                stats["errors"] += 1
+                continue
+
+            kind = _resolve_kind(upstream, payload)
+            site_items: list[dict[str, Any]] = []
+            live_items: list[dict[str, Any]] = []
+            sub_items: list[dict[str, Any]] = []
+            fmt = (upstream.format or "auto").lower()
+            if kind == "subscriptions":
+                sub_items = [_subscription_row(upstream, uid=uid)]
+            elif kind == "lives":
+                live_items = parse_lives_payload(payload)
+            else:
+                site_items = parse_sites_payload(payload, fmt=fmt)
+                if upstream.kind in ("auto", ""):
+                    live_items = parse_lives_payload(payload)
+            log_kv(
+                log,
+                logging.INFO,
+                "sync_parsed",
                 id=uid,
                 kind=kind,
                 sites=len(site_items),
                 lives=len(live_items),
-                target=target,
+                subscriptions=len(sub_items),
             )
-            stats["sites"] += len(site_items)
-            stats["lives"] += len(live_items)
+
+            if site_items:
+                collected_sites.extend(
+                    _prepare_rows(site_items, upstream_id=uid, kind="site")
+                )
+            if live_items:
+                live_uid = uid if kind == "lives" else f"{uid}-lives"
+                collected_lives.extend(
+                    _prepare_rows(live_items, upstream_id=live_uid, kind="live")
+                )
+            if sub_items:
+                collected_subs.extend(sub_items)
+
             stats["feeds"] += 1
-            continue
-
-        if site_items:
-            merge_into_pool(
-                directory / "sites.json",
-                site_items,
-                upstream_id=uid,
-                kind="site",
+            log_kv(
+                log,
+                logging.INFO,
+                "sync_feed_done",
+                id=uid,
+                kind=kind,
+                sites=len(site_items),
+                lives=len(live_items),
+                subscriptions=len(sub_items),
+                target=upstream.target or "pending",
             )
-            stats["sites"] += len(site_items)
-        if live_items:
-            live_uid = uid if kind == "lives" else f"{uid}-lives"
-            merge_into_pool(
-                directory / "lives.json",
-                live_items,
-                upstream_id=live_uid,
-                kind="live",
-            )
-            stats["lives"] += len(live_items)
+        completed = True
+    except Exception as exc:  # noqa: BLE001 — 保旧 pending，后续 probe 仍可用
+        log_kv(log, logging.ERROR, "sync_aborted", error=str(exc))
+        stats["errors"] += 1
+        log_kv(log, logging.INFO, "sync_keep_previous_pending", reason="aborted")
+        log_kv(log, logging.INFO, "sync_done", **stats)
+        return stats
 
-        stats["feeds"] += 1
+    sites = _dedupe_rows(collected_sites, kind="site")
+    lives = _dedupe_rows(collected_lives, kind="live")
+    subs = _dedupe_subscriptions(collected_subs)
+    stats["sites"] = len(sites)
+    stats["lives"] = len(lives)
+    stats["subscriptions"] = len(subs)
+
+    if dry_run:
         log_kv(
             log,
             logging.INFO,
-            "sync_feed_done",
-            id=uid,
-            kind=kind,
-            sites=len(site_items),
-            lives=len(live_items),
-            target=target,
+            "sync_dry",
+            sites=len(sites),
+            lives=len(lives),
+            subscriptions=len(subs),
         )
+        log_kv(log, logging.INFO, "sync_done", **stats)
+        return stats
 
+    if not completed:
+        log_kv(log, logging.INFO, "sync_keep_previous_pending", reason="incomplete")
+        log_kv(log, logging.INFO, "sync_done", **stats)
+        return stats
+
+    if stats["feeds"] == 0:
+        # 全部采集源失败：保留旧 pending，避免写空
+        log_kv(log, logging.WARNING, "sync_keep_previous_pending", reason="all_feeds_failed")
+        log_kv(log, logging.INFO, "sync_done", **stats)
+        return stats
+
+    pending = cfg.pending_dir
+    replace_pool(pending / "sites.json", sites)
+    replace_pool(pending / "lives.json", lives)
+    replace_pool(pending / "subscriptions.json", subs)
+    stats["written"] = 1
     log_kv(log, logging.INFO, "sync_done", **stats)
     return stats

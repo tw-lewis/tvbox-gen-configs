@@ -6,9 +6,11 @@ branch = "main"
 [sources]
 trusted_dir = "sources/trusted"
 pending_dir = "sources/pending"
-# 采集源 JSON 配置目录（手动维护）
+# 手维源（人改）；与 pending 隔离，避免被 sync 污染
+manual_dir = "sources/manual"
+# 采集源 JSON 配置目录（手动维护的「清单 URL」）
 collectors_dir = "sources/collectors"
-# 产物只读 trusted；pending 是全量池
+# 产物只读 trusted；探测全量 = pending(采集) ∪ manual(手维)
 pending_affects_output = false
 
 [probe]
@@ -36,6 +38,14 @@ sort = "score_desc"
 keys = []
 
 [static]
-flags = ["qq", "iqiyi", "youku", "mgtv", "bilibili"]
+# TVBox 主配置顶层字段（与常见源 JSON 对齐）
+spider = ""
 wallpaper = ""
+logo = ""
+lives_name = "直播"
+pure_name = "纯源"
+flags = ["qq", "iqiyi", "youku", "mgtv", "bilibili"]
 parses = []
+rules = []
+doh = []
+ads = []
