@@ -335,7 +335,7 @@ accept_status = ["ok"]
 flags = ["qq"]
 wallpaper = ""
 parses = []
-pure_name = "纯源"
+pure_name = "tvbox视频源"
 """,
         encoding="utf-8",
     )
@@ -357,7 +357,7 @@ pure_name = "纯源"
     assert index["lives"][0]["url"] == "./lives.txt"
 
     # 纯源
-    pure = json.loads((root / "dist" / "index.json").read_text(encoding="utf-8"))
+    pure = json.loads((root / "dist" / "tvbox.json").read_text(encoding="utf-8"))
     assert pure["sites"][0]["key"] == "cms_ok"
 
     # 订阅源
@@ -371,8 +371,8 @@ pure_name = "纯源"
     depot = json.loads((root / "dist" / "urls.json").read_text(encoding="utf-8"))
     assert "urls" in depot
     names = [u["name"] for u in depot["urls"]]
-    assert names[0] == "纯源"
+    assert names[0] == "tvbox视频源"
     assert "cdn.jsdelivr.net/gh/" in depot["urls"][0]["url"]
-    assert depot["urls"][0]["url"].endswith("/dist/index.json")
+    assert depot["urls"][0]["url"].endswith("/dist/tvbox.json")
     assert len(depot["urls"]) == 3
     assert not any("raw.githubusercontent.com" in u["url"] for u in depot["urls"])

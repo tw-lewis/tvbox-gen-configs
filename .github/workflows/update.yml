@@ -71,4 +71,4 @@ jobs:
       - name: Purge jsDelivr
         continue-on-error: true
         run: |
-          curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/dist/index.json" || true
+          curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/dist/tvbox.json" || true

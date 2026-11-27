@@ -37,7 +37,7 @@ def _parser() -> argparse.ArgumentParser:
 
     b = sub.add_parser(
         "build",
-        help="由 trusted + 报告生成纯源/订阅源/多仓源（index + subscriptions + urls）",
+        help="由 trusted + 报告生成纯源/订阅源/多仓源（tvbox + subscriptions + urls）",
     )
     b.add_argument("--dry-run", action="store_true", help="只打印差异，不落盘")
 

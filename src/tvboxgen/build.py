@@ -107,9 +107,9 @@ def build_urls_depot(cfg: Config, subscriptions: list[dict[str, Any]]) -> dict[s
     """多仓源：纯源 + 已校验的订阅 URL（订阅列表应已通过 resolve）。"""
     urls: list[dict[str, str]] = [
         {
-            "name": cfg.pure_name or "纯源",
+            "name": cfg.pure_name or "tvbox视频源",
             # 本仓库产物：发布后由 jsDelivr 提供；本地 build 不远程校验（可能尚未推送）
-            "url": cfg.dist_public_url("index.json"),
+            "url": cfg.dist_public_url("tvbox.json"),
         }
     ]
     for row in subscriptions:
@@ -180,7 +180,7 @@ def build_index(
 
 
 def build(cfg: Config, *, dry_run: bool = False) -> dict[str, Any]:
-    """生成纯源 index.json、订阅源 subscriptions.json、多仓 urls.json + lives.txt。"""
+    """生成纯源 tvbox.json、订阅源 subscriptions.json、多仓 urls.json + lives.txt。"""
     log_kv(log, logging.INFO, "build_start", dry_run=dry_run, index=str(cfg.index_path))
     report = load_report(cfg)
     sites = sites_for_build(cfg)

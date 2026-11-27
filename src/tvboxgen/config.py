@@ -54,7 +54,7 @@ class Config:
     spider: str = ""
     logo: str = ""
     lives_name: str = "直播"
-    pure_name: str = "纯源"
+    pure_name: str = "tvbox视频源"
     static_parses: list[Any] = field(default_factory=list)
     static_rules: list[Any] = field(default_factory=list)
     static_doh: list[Any] = field(default_factory=list)
@@ -71,8 +71,8 @@ class Config:
 
     @property
     def index_path(self) -> Path:
-        """纯源（CMS + 直播引用）。"""
-        return self.root / "dist" / "index.json"
+        """纯源（CMS + 直播引用）：dist/tvbox.json。"""
+        return self.root / "dist" / "tvbox.json"
 
     @property
     def lives_path(self) -> Path:
@@ -216,7 +216,7 @@ def load_config(root: Path | None = None, path: Path | None = None) -> Config:
         spider=str(static.get("spider") or ""),
         logo=str(static.get("logo") or ""),
         lives_name=str(static.get("lives_name") or "直播"),
-        pure_name=str(static.get("pure_name") or "纯源"),
+        pure_name=str(static.get("pure_name") or "tvbox视频源"),
         static_parses=list(static.get("parses") or []),
         static_rules=list(static.get("rules") or []),
         static_doh=list(static.get("doh") or []),

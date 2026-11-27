@@ -20,7 +20,7 @@ collectors ──sync(覆盖 pending)──► pending sites/lives/subscriptions
                                                                       ├─ probe ─► promote ─► trusted
 manual sites/lives/subscriptions ─────────────────────────────────────┘              │
                                                                                      ▼
-                                                              dist/index.json      纯源
+                                                              dist/tvbox.json      纯源
                                                               dist/lives.txt       直播 DIY
                                                               dist/subscriptions.json 订阅源
                                                               dist/urls.json       多仓源
@@ -46,7 +46,7 @@ python -m tvboxgen publish --local
 
 | 产物 | 文件 | 说明 |
 |---|---|---|
-| **纯源** | `dist/index.json` (+ `lives.txt`) | CMS 点播 + 直播；标准 TVBox JSON |
+| **纯源** | `dist/tvbox.json` (+ `lives.txt`) | CMS 点播 + 直播；标准 TVBox JSON |
 | **订阅源** | `dist/subscriptions.json` | 可用的完整仓库配置 URL 列表 |
 | **多仓源** | `dist/urls.json` | `{"urls":[纯源, …订阅]}`，TVBox 多仓入口 |
 

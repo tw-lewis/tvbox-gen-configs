@@ -35,8 +35,8 @@ def _summary_from_report(cfg: Config) -> str:
 
 
 def purge_jsdelivr(cfg: Config) -> bool:
-    """清理 jsDelivr 上 dist/index.json 的缓存。"""
-    url = f"https://purge.jsdelivr.net/gh/{cfg.owner}/{cfg.name}@{cfg.branch}/dist/index.json"
+    """清理 jsDelivr 上 dist/tvbox.json 的缓存。"""
+    url = f"https://purge.jsdelivr.net/gh/{cfg.owner}/{cfg.name}@{cfg.branch}/dist/tvbox.json"
     log_kv(log, logging.INFO, "purge_start", url=url)
     try:
         resp = requests.get(url, timeout=15)
@@ -63,7 +63,7 @@ def publish(cfg: Config, *, local: bool = False, do_purge: bool = True) -> int:
             "git",
             "add",
             "sources/",
-            "dist/index.json",
+            "dist/tvbox.json",
             "dist/lives.txt",
             "dist/subscriptions.json",
             "dist/urls.json",

@@ -1,8 +1,8 @@
 {
   "urls": [
     {
-      "name": "纯源",
-      "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox-gen-configs@main/dist/index.json"
+      "name": "tvbox视频源",
+      "url": "https://cdn.jsdelivr.net/gh/tw-lewis/tvbox-gen-configs@main/dist/tvbox.json"
     },
     {
       "name": "gaotianliuyun/gao js.json",
