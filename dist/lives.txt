@@ -51,6 +51,7 @@ CGTN英语,https://0472.org/hls/cgtn.m3u8
 大湾区卫视,http://107.150.60.122/live/nfws.m3u8
 大湾区卫视,http://198.204.228.26/live/nfws.m3u8
 大湾区卫视,http://38.75.136.137:98/gslb/dsdqpub/nfws.m3u8?auth=testpub
+广东体育,http://38.75.136.137:98/gslb/dsdqpub/gdty.m3u8?auth=testpub
 广东体育,http://cdn2.163189.xyz/live/gdty/stream.m3u8
 广东新闻,http://38.75.136.137:98/gslb/dsdqpub/gdxw.m3u8?auth=testpub
 广东民生,http://38.75.136.137:98/gslb/dsdqpub/gdgg.m3u8?auth=testpub
@@ -199,7 +200,6 @@ tvg-id="宁夏卫视" tvg-name="宁夏卫视" tvg-logo="https://gitee.com/suxuan
 国际频道,#genre#
 ABC News Live,https://d4ybyqrhce41r.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-xumo-linear-nbcu-hlsv3/master.m3u8?ads.channelId=99991626
 Arirang,https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/chunklist_b3256000_sleng.m3u8
-Bloomberg Asia,https://epg.pw/stream/d2edf469b9079064a283f4b0811cbf6f2597ebbb3d08dcf77036a4b5a791b7cf.m3u8
 CBC News,https://dbrb49pjoymg4.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-ams-aws/master.m3u8?ads.xumo_channelId=99991276
 CNA,https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8
 Newsmax,http://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
@@ -299,12 +299,12 @@ NOW NEWS,http://cdn.163189.xyz/163189/now
 翡翠台4K,http://cdn6.163189.xyz/163189/fct4k
 韩国电影1,https://stream.ads.ottera.tv/playlist.m3u8?network_id=595
 龙华偶像,https://cdn8.163189.xyz/live/lhox/stream.m3u8
-龙华卡通,https://cdn8.163189.xyz/live/lhkt/stream.m3u8
 龙华戏剧,https://cdn8.163189.xyz/live/lhxj/stream.m3u8
+龙华日韩,https://cdn8.163189.xyz/live/lhrh/stream.m3u8
 龙华洋片,https://cdn8.163189.xyz/live/lhyp/stream.m3u8
-龙华电影,https://cdn8.163189.xyz/live/lhdy/stream.m3u8
 龙华经典,https://cdn8.163189.xyz/live/lhjd/stream.m3u8
 点播电影,#genre#
+倩女幽魂人间道,http://jsmov2.a.yximgs.com/bs3/video-hls/5250634317044855747_hlsb.m3u8
 倩女幽魂妖魔道,http://jsmov2.a.yximgs.com/bs3/video-hls/5232901391302199073_hlsb.m3u8
 倩女幽魂道道道,http://jsmov2.a.yximgs.com/bs3/video-hls/5216294367991385255_hlsb.m3u8
 龙门飞甲,http://jsmov2.a.yximgs.com/bs3/video-hls/5203346449046555193_hlsb.m3u8
