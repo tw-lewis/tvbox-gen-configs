@@ -6,8 +6,34 @@ from pathlib import Path
 
 from tvboxgen.build import dumps
 from tvboxgen.config import load_config
+from tvboxgen.diag import log_unavailable
 from tvboxgen.promote import promote_trusted
 from tvboxgen.sync import _dedupe_rows
+
+
+def test_log_unavailable_accepts_probe_level_kwarg(monkeypatch) -> None:
+    """probe 结果的 level（L0/L1…）不得与 log_kv(level=…) 参数冲突。"""
+    seen: list[tuple[str, dict]] = []
+
+    def capture(logger, level, msg, **kv):
+        seen.append((msg, kv))
+
+    monkeypatch.setattr("tvboxgen.diag.log_kv", capture)
+    log_unavailable(
+        stage="probe",
+        kind="site",
+        key="4K_49d9",
+        reason="timeout",
+        status="fail",
+        level="L0",
+        latency_ms=12,
+    )
+    assert len(seen) == 1
+    msg, kv = seen[0]
+    assert msg == "source_unavailable"
+    assert "level" not in kv
+    assert kv.get("probe_level") == "L0"
+    assert kv.get("status") == "fail"
 
 
 def test_dedupe_rows_logs_duplicate(monkeypatch) -> None:

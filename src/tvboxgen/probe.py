@@ -524,7 +524,7 @@ def probe(cfg: Config) -> Report:
             target=target,
             reason=r.error or r.status,
             status=r.status,
-            level=r.level,
+            probe_level=r.level,
             latency_ms=r.latency_ms,
             http_code=r.http_code if r.http_code is not None else "",
         )

@@ -9,6 +9,22 @@ from tvboxgen.logger import get_logger, log_kv
 
 log = get_logger()
 
+# log_kv(logger, level, msg, **kv) — these names cannot appear in **kv.
+_LOG_KV_COLLISIONS = {
+    "level": "probe_level",
+    "msg": "detail",
+    "logger": "logger_name",
+}
+
+
+def _forward_extra(extra: dict[str, Any]) -> dict[str, Any]:
+    """Rename kwargs that would collide with log_kv's positional parameters."""
+    out = dict(extra)
+    for src, dest in _LOG_KV_COLLISIONS.items():
+        if src in out:
+            out.setdefault(dest, out.pop(src))
+    return out
+
 
 def log_unavailable(
     *,
@@ -31,7 +47,7 @@ def log_unavailable(
         name=name or key or "-",
         target=target or "-",
         reason=reason,
-        **extra,
+        **_forward_extra(extra),
     )
 
 
@@ -66,5 +82,5 @@ def log_duplicate(
         drop_name=drop_name or drop_key or "-",
         drop_origin=drop_origin or "-",
         target=target or "-",
-        **extra,
+        **_forward_extra(extra),
     )
