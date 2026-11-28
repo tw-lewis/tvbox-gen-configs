@@ -240,16 +240,6 @@
     "origin": "manual"
   },
   {
-    "key": "BloombergAsia_30d2",
-    "name": "Bloomberg Asia",
-    "url": "https://epg.pw/stream/d2edf469b9079064a283f4b0811cbf6f2597ebbb3d08dcf77036a4b5a791b7cf.m3u8",
-    "group": "国际频道",
-    "logo": "",
-    "added_at": "2026-11-27",
-    "note": "from suxuang-myiptv-ipv4",
-    "origin": "manual"
-  },
-  {
     "key": "CBCNews_5072",
     "name": "CBC News",
     "url": "https://dbrb49pjoymg4.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-ams-aws/master.m3u8?ads.xumo_channelId=99991276",
@@ -1570,6 +1560,16 @@
     "origin": "manual"
   },
   {
+    "key": "jsmov2ayximgscom_39ec",
+    "name": "倩女幽魂人间道",
+    "url": "http://jsmov2.a.yximgs.com/bs3/video-hls/5250634317044855747_hlsb.m3u8",
+    "group": "点播电影",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from suxuang-myiptv-ipv4",
+    "origin": "manual"
+  },
+  {
     "key": "jsmov2ayximgscom_506f",
     "name": "倩女幽魂妖魔道",
     "url": "http://jsmov2.a.yximgs.com/bs3/video-hls/5232901391302199073_hlsb.m3u8",
@@ -2494,6 +2494,16 @@
     "name": "山西卫视",
     "url": "http://204.12.221.218:8181/3m1080p/sxws.m3u8",
     "group": "📡卫视频道",
+    "logo": "",
+    "added_at": "2026-11-27",
+    "note": "from guovin-iptv-ipv4",
+    "origin": "manual"
+  },
+  {
+    "key": "3875136137_cd1b",
+    "name": "广东体育",
+    "url": "http://38.75.136.137:98/gslb/dsdqpub/gdty.m3u8?auth=testpub",
+    "group": "☘️广东频道",
     "logo": "",
     "added_at": "2026-11-27",
     "note": "from guovin-iptv-ipv4",
@@ -5340,16 +5350,6 @@
     "origin": "manual"
   },
   {
-    "key": "cdn8163189xyz_02f2",
-    "name": "龙华卡通",
-    "url": "https://cdn8.163189.xyz/live/lhkt/stream.m3u8",
-    "group": "港澳台频道",
-    "logo": "",
-    "added_at": "2026-11-27",
-    "note": "from suxuang-myiptv-ipv4",
-    "origin": "manual"
-  },
-  {
     "key": "cdn8163189xyz_74d5",
     "name": "龙华戏剧",
     "url": "https://cdn8.163189.xyz/live/lhxj/stream.m3u8",
@@ -5360,9 +5360,9 @@
     "origin": "manual"
   },
   {
-    "key": "cdn8163189xyz_9e12",
-    "name": "龙华洋片",
-    "url": "https://cdn8.163189.xyz/live/lhyp/stream.m3u8",
+    "key": "cdn8163189xyz_5a35",
+    "name": "龙华日韩",
+    "url": "https://cdn8.163189.xyz/live/lhrh/stream.m3u8",
     "group": "港澳台频道",
     "logo": "",
     "added_at": "2026-11-27",
@@ -5370,9 +5370,9 @@
     "origin": "manual"
   },
   {
-    "key": "cdn8163189xyz_8eba",
-    "name": "龙华电影",
-    "url": "https://cdn8.163189.xyz/live/lhdy/stream.m3u8",
+    "key": "cdn8163189xyz_9e12",
+    "name": "龙华洋片",
+    "url": "https://cdn8.163189.xyz/live/lhyp/stream.m3u8",
     "group": "港澳台频道",
     "logo": "",
     "added_at": "2026-11-27",

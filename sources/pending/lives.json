@@ -5,7 +5,7 @@
     "url": "http://gslbserv.itv.cmvideo.cn:80/1.m3u8?channel-id=FifastbLive&Contentid=5000000001000004953&livemode=1&stbId=yu&mode=1",
     "group": "央视频道",
     "logo": "",
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from tvbox-ITV",
     "origin": "upstream:tvbox-ITV"
   }

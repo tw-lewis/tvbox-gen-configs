@@ -12,7 +12,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -29,7 +29,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -46,7 +46,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -63,7 +63,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -80,7 +80,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -97,7 +97,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -114,7 +114,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -131,26 +131,9 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "1080zyk4-com",
-    "name": "优质",
-    "api": "https://api.yzzy-api.com/inc/apijson.php",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
   },
   {
     "key": "apiyzzycom_86bd",
@@ -165,12 +148,12 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
   {
-    "key": "api-guangsuapi-com",
+    "key": "apiguangsuapicom_fb3a",
     "name": "光速",
     "api": "https://api.guangsuapi.com/api.php/provide/vod",
     "type": 1,
@@ -182,9 +165,9 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
+    "added_at": "2026-11-28",
+    "note": "auto sync from ziyuanzu-cms",
+    "origin": "upstream:ziyuanzu-cms"
   },
   {
     "key": "dadiapicom_3e54",
@@ -199,7 +182,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -216,7 +199,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -233,7 +216,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -250,26 +233,9 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "www-ryzyw-com",
-    "name": "如意",
-    "api": "https://cj.rycjapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
   },
   {
     "key": "apixiaojizylive_69c4",
@@ -284,7 +250,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -301,7 +267,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -318,7 +284,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -335,26 +301,9 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "xinlangapi-com",
-    "name": "新浪",
-    "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
   },
   {
     "key": "wujinzy-me",
@@ -369,7 +318,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -386,7 +335,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -403,7 +352,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -420,7 +369,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -437,7 +386,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -454,7 +403,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -471,7 +420,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -488,7 +437,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -505,7 +454,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -522,7 +471,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -539,7 +488,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -556,7 +505,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -573,7 +522,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -590,7 +539,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -607,7 +556,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -624,7 +573,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -641,7 +590,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -658,7 +607,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -675,7 +624,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -692,7 +641,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -709,7 +658,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -726,7 +675,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -743,7 +692,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -760,26 +709,9 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "www-huyaapi-com",
-    "name": "虎牙",
-    "api": "https://www.huyaapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
   },
   {
     "key": "dbzytv_0c0e",
@@ -794,7 +726,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -811,7 +743,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -828,26 +760,9 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "www-haohuazy-com",
-    "name": "豪华",
-    "api": "https://hhzyapi.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
   },
   {
     "key": "apivnzyzcom_65a5",
@@ -862,7 +777,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -879,7 +794,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -896,26 +811,9 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
-  },
-  {
-    "key": "www-subozy-com",
-    "name": "速播",
-    "api": "https://subocaiji.com/api.php/provide/vod",
-    "type": 1,
-    "searchable": 1,
-    "quickSearch": 1,
-    "filterable": 1,
-    "ext": "",
-    "tags": [
-      "点播",
-      "综合"
-    ],
-    "added_at": "2026-11-27",
-    "note": "auto sync from ouonnki-full-noadult",
-    "origin": "upstream:ouonnki-full-noadult"
   },
   {
     "key": "cj-lzcaiji-com",
@@ -930,7 +828,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -947,7 +845,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -964,7 +862,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -981,7 +879,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -998,7 +896,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -1015,7 +913,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -1032,7 +930,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -1049,7 +947,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -1066,7 +964,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   },
@@ -1083,7 +981,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -1100,7 +998,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ouonnki-full-noadult",
     "origin": "upstream:ouonnki-full-noadult"
   },
@@ -1117,7 +1015,7 @@
       "点播",
       "综合"
     ],
-    "added_at": "2026-11-27",
+    "added_at": "2026-11-28",
     "note": "auto sync from ziyuanzu-cms",
     "origin": "upstream:ziyuanzu-cms"
   }
